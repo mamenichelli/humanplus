@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Plus Magazine - La Biologia di Domani</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .serif-font { font-family: 'Playfair Display', serif; }
+        
+        /* Proporzioni esatte per simulare una copertina A4 */
+        .magazine-cover {
+            aspect-ratio: 1 / 1.414;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-[#f8fafc] text-slate-800 antialiased selection:bg-emerald-200">
+
+    <!-- NAVBAR -->
+    <nav class="w-full bg-slate-900 text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="font-black text-2xl tracking-tighter italic">HUMAN<span class="text-emerald-500">PLUS</span></div>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold uppercase tracking-widest text-slate-300">
+                <a href="#ultimo-numero" class="hover:text-emerald-400 transition">Ultimo Numero</a>
+                <a href="#chi-siamo" class="hover:text-emerald-400 transition">Chi Siamo</a>
+                <a href="#archivio" class="hover:text-emerald-400 transition">Archivio</a>
+            </div>
+            <a href="#ultimo-numero" class="bg-emerald-600 hover:bg-emerald-500 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition shadow-lg">Leggi Ora</a>
+        </div>
+    </nav>
+
+    <!-- ======================================================= -->
+    <!-- ULTIMO NUMERO (AGGIORNA QUESTA SEZIONE OGNI MESE)       -->
+    <!-- ======================================================= -->
+    <section id="ultimo-numero" class="pt-20 pb-24 px-6 relative overflow-hidden">
+        <!-- Elemento decorativo di sfondo (Toni Salute/Longevità) -->
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-emerald-100/40 to-transparent -z-10 rounded-bl-[100px]"></div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            <!-- COPERTINA MAGAZINE (SINISTRA) -->
+            <div class="relative group mx-auto w-full max-w-[450px]">
+                <!-- Effetto ombra dietro la copertina -->
+                <div class="absolute inset-0 bg-emerald-600 rounded-2xl transform translate-x-4 translate-y-4 opacity-20 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-300"></div>
+                
+                <!-- COPERTINA CSS (Simula il PDF) -->
+                <div class="magazine-cover relative rounded-2xl shadow-2xl overflow-hidden bg-slate-900 text-white flex flex-col justify-between p-8 transform transition-transform duration-300 group-hover:-translate-y-2">
+                    
+                    <!-- Sfondo Copertina (CAMBIA L'URL DELL'IMMAGINE QUI) -->
+                    <div class="absolute inset-0 opacity-40 mix-blend-screen transition duration-700 group-hover:scale-105 group-hover:opacity-50" style="background-image: url('https://images.unsplash.com/photo-1614036634955-f586ae1d2aca?auto=format&fit=crop&w=800&q=80&fm=webp'); background-size: cover; background-position: center;"></div>
+                    <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/40 to-slate-900/95"></div>
+                    
+                    <!-- Contenuto Copertina -->
+                    <div class="relative z-10 flex justify-between items-start">
+                        <h4 class="font-black text-3xl tracking-tighter italic drop-shadow-md">HUMAN<span class="text-emerald-500">PLUS</span></h4>
+                        <div class="text-right">
+                            <span class="bg-emerald-600 text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg">Aprile 2026</span> <!-- MESE DA CAMBIARE -->
+                        </div>
+                    </div>
+
+                    <div class="relative z-10 mt-auto pb-4">
+                        <p class="text-emerald-400 font-bold tracking-[0.2em] uppercase text-[9px] border-l-2 border-emerald-500 pl-2 mb-2">Dossier Energia, Biochimica & Ottimizzazione</p>
+                        <!-- TITOLO COPERTINA DA CAMBIARE -->
+                        <h1 class="serif-font text-5xl leading-[0.9] font-black drop-shadow-2xl mb-4">
+                            NON SEI<br>STRESSATO.<br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400 drop-shadow-none">SEI CARENTE.</span>
+                        </h1>
+                        <p class="text-[13px] font-light text-slate-300 leading-relaxed border-l-2 border-slate-700 pl-3">
+                            Il manuale definitivo per sbloccare le vie metaboliche silenti, spegnere l'infiammazione con la PEA e riprogrammare il sonno.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DESCRIZIONE NUMERO (DESTRA) -->
+            <div>
+                <span class="bg-emerald-100 text-emerald-700 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block shadow-sm">Nuova Uscita</span>
+                <h2 class="serif-font text-5xl md:text-6xl font-black text-slate-900 mb-6 leading-tight">Volume 04:<br>L'Energia Nascosta.</h2>
+                
+                <!-- DESCRIZIONE BREVE DEL NUMERO (DA CAMBIARE) -->
+                <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                    Siamo sazi di macronutrienti, ma le nostre cellule stanno morendo di inedia. In questo numero esclusivo esploriamo le vie del <strong>bio-hacking clinico</strong> per disinnescare la fatica cronica, arrestare il furto ormonale del cortisolo e accedere al tuo vero potenziale biologico.
+                </p>
+
+                <div class="space-y-4 mb-10">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center font-bold">✓</div>
+                        <p class="text-slate-700 font-medium">Endocrinologia: Ferma il "Pregnenolone Steal".</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold">✓</div>
+                        <p class="text-slate-700 font-medium">Protocollo PEA: Spegni la neuro-infiammazione.</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold">✓</div>
+                        <p class="text-slate-700 font-medium">Architettura del Sonno: Ripristina i ritmi circadiani.</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <!-- LINK ALLA PAGINA DEL MAGAZINE (Sostituisci con il link reale) -->
+                    <a href="#" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 px-8 rounded-full shadow-xl transition-all transform hover:-translate-y-1 text-center inline-block">
+                        Vai al Numero
+                    </a>
+                    <!-- ANTEPRIMA INDICE (Ad es. apre una modale o un id specifico) -->
+                    <a href="#indice" class="bg-white border-2 border-slate-200 hover:border-emerald-500 text-slate-700 font-bold py-4 px-8 rounded-full shadow-sm transition-all hover:text-emerald-700 text-center inline-block">
+                        Anteprima Indice
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SEZIONE CHI SIAMO (DESCRIZIONE GENERALE DEL MAGAZINE)   -->
+    <!-- ======================================================= -->
+    <section id="chi-siamo" class="py-24 bg-white relative">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h3 class="text-emerald-600 font-bold uppercase tracking-[0.2em] text-sm mb-4">Il nostro Manifesto</h3>
+            <h2 class="serif-font text-5xl font-black text-slate-900 mb-8 leading-tight">Molto più di un magazine.<br>Il tuo manuale di biologia avanzata.</h2>
+            
+            <p class="text-xl text-slate-600 leading-relaxed mb-8">
+                <strong>Human Plus</strong> non si accontenta di farti "sopravvivere" o di tenerti all'interno della mediocrità dei classici range di laboratorio. La nostra missione è guidarti verso la <strong>salute ottimale</strong>, la rigenerazione cellulare e la <strong>longevità attiva</strong>.
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-8 mt-16 text-left">
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:shadow-lg transition duration-300 hover:border-emerald-200">
+                    <div class="text-4xl mb-4">🧬</div>
+                    <h4 class="font-bold text-xl text-slate-900 mb-3">Longevità</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Strategie anti-aging reali e biochimicamente provate. Non solo aggiungere anni alla vita, ma aggiungere vita agli anni, preservando l'integrità del DNA.</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:shadow-lg transition duration-300 hover:border-emerald-200">
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h4 class="font-bold text-xl text-slate-900 mb-3">Bio-Hacking</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Protocolli clinici, integrazioni mirate e abitudini per hackerare il tuo metabolismo, spegnere l'infiammazione silente e massimizzare l'energia (ATP).</p>
+                </div>
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:shadow-lg transition duration-300 hover:border-emerald-200">
+                    <div class="text-4xl mb-4">🌿</div>
+                    <h4 class="font-bold text-xl text-slate-900 mb-3">Vitalità Pura</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Mente affilata in un corpo performante. Ti insegniamo a nutrire le vie metaboliche corrette per ritrovare focus, forza e un equilibrio endocrino perfetto.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- ARCHIVIO NUMERI PRECEDENTI                              -->
+    <!-- ======================================================= -->
+    <section id="archivio" class="py-24 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-16 border-b border-slate-700 pb-6">
+                <div>
+                    <h3 class="text-emerald-400 font-bold uppercase tracking-[0.2em] text-sm mb-2">Collezione Storica</h3>
+                    <h2 class="serif-font text-5xl font-black">Archivio Numeri.</h2>
+                </div>
+                <a href="#" class="hidden sm:block text-slate-400 hover:text-emerald-400 font-semibold transition uppercase text-sm tracking-wider">Sfoglia tutti &rarr;</a>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                
+                <!-- NUMERO PRECEDENTE (Vol. 03) -->
+                <!-- QUANDO AGGIORNI: Sposta il Vol. 04 qui sotto, e spingi gli altri in giù -->
+                <a href="#" class="group block">
+                    <div class="magazine-cover relative rounded-xl overflow-hidden mb-6 bg-slate-800 shadow-xl transition-transform duration-300 group-hover:-translate-y-2">
+                        <div class="absolute inset-0 opacity-50 mix-blend-screen transition duration-500 group-hover:opacity-70 group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80'); background-size: cover; background-position: center;"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <span class="bg-white/20 backdrop-blur-md text-white px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-widest mb-3 inline-block">Marzo 2026</span>
+                            <h3 class="serif-font text-3xl font-black leading-tight drop-shadow-lg">Il Codice del<br>Sonno Profondo</h3>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-xl mb-1 group-hover:text-emerald-400 transition">Volume 03</h4>
+                    <p class="text-sm text-slate-400 line-clamp-2">Come riprogrammare il ritmo circadiano e sconfiggere l'insonnia per massimizzare il recupero cellulare e cognitivo.</p>
+                </a>
+
+                <!-- NUMERO PRECEDENTE (Vol. 02) -->
+                <a href="#" class="group block">
+                    <div class="magazine-cover relative rounded-xl overflow-hidden mb-6 bg-slate-800 shadow-xl transition-transform duration-300 group-hover:-translate-y-2">
+                        <div class="absolute inset-0 opacity-50 mix-blend-screen transition duration-500 group-hover:opacity-70 group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80'); background-size: cover; background-position: center;"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <span class="bg-white/20 backdrop-blur-md text-white px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-widest mb-3 inline-block">Febbraio 2026</span>
+                            <h3 class="serif-font text-3xl font-black leading-tight drop-shadow-lg">Nutrizione<br>Anti-Età</h3>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-xl mb-1 group-hover:text-emerald-400 transition">Volume 02</h4>
+                    <p class="text-sm text-slate-400 line-clamp-2">I cibi e i supplementi testati per ritardare l'invecchiamento biologico. Il potere dei polifenoli e del digiuno funzionale.</p>
+                </a>
+
+                <!-- NUMERO PRECEDENTE (Vol. 01) - Nascosto su tablet, visibile su desktop -->
+                <a href="#" class="group hidden lg:block">
+                    <div class="magazine-cover relative rounded-xl overflow-hidden mb-6 bg-slate-800 shadow-xl transition-transform duration-300 group-hover:-translate-y-2">
+                        <div class="absolute inset-0 opacity-50 mix-blend-screen transition duration-500 group-hover:opacity-70 group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=600&q=80'); background-size: cover; background-position: center;"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6">
+                            <span class="bg-white/20 backdrop-blur-md text-white px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-widest mb-3 inline-block">Gennaio 2026</span>
+                            <h3 class="serif-font text-3xl font-black leading-tight drop-shadow-lg">La Macchina<br>Perfetta</h3>
+                        </div>
+                    </div>
+                    <h4 class="font-bold text-xl mb-1 group-hover:text-emerald-400 transition">Volume 01</h4>
+                    <p class="text-sm text-slate-400 line-clamp-2">Il numero inaugurale. Basi di bio-hacking endocrino, ottimizzazione testosteronica e rigenerazione mitocondriale.</p>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-400 py-12 text-center text-sm border-t border-slate-900">
+        <div class="font-black text-2xl tracking-tighter italic text-slate-700 mb-4">HUMAN<span class="text-slate-600">PLUS</span></div>
+        <p>&copy; 2026 Relife Nutrition. Tutti i diritti riservati.</p>
+        <p class="mt-2 text-xs text-emerald-900 uppercase tracking-widest font-bold">The Biology of Tomorrow, Today.</p>
+    </footer>
+
+</body>
+</html>
