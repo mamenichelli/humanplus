@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Human Plus Magazine - La Biologia di Domani</title>
     
-   <!-- SEO Ottimizzata & Social Meta Tags per la Homepage -->
+    <!-- SEO Ottimizzata & Social Meta Tags per la Homepage -->
     <meta name="description" content="Human Plus Magazine: il tuo manuale di biologia avanzata per la salute ottimale, la longevità attiva e il bio-hacking.">
     <meta name="keywords" content="magazine, bio-hacking, longevità, medicina funzionale, metabolismo, energia, sonno, infiammazione, integrazione, Human Plus, Marco Menichelli, salute">
     <meta name="author" content="Marco Menichelli">
@@ -15,14 +15,14 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Human Plus Magazine - La Biologia di Domani">
     <meta property="og:description" content="Molto più di un magazine. Scopri le strategie di bio-hacking, nutrizione avanzata e longevità attiva per sbloccare il tuo vero potenziale biologico.">
-    <meta property="og:image" content="https://www.iltuosito.com/immagine-social.png"> <!-- SOSTITUISCI CON L'URL ASSOLUTO DELLA TUA IMMAGINE -->
-    <meta property="og:url" content="https://www.iltuosito.com/"> <!-- SOSTITUISCI CON IL TUO URL REALE -->
+    <meta property="og:image" content="https://humanplusmagazine.com/immagine-social.png"> <!-- SOSTITUISCI CON L'URL ASSOLUTO DELLA TUA IMMAGINE -->
+    <meta property="og:url" content="https://humanplusmagazine.com/"> <!-- SOSTITUISCI CON IL TUO URL REALE -->
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Human Plus Magazine - La Biologia di Domani">
     <meta name="twitter:description" content="Molto più di un magazine. Scopri le strategie di bio-hacking, nutrizione avanzata e longevità attiva per sbloccare il tuo vero potenziale biologico.">
-    <meta name="twitter:image" content="https://www.iltuosito.com/immagine-social.png"> <!-- SOSTITUISCI CON L'URL ASSOLUTO DELLA TUA IMMAGINE -->
+    <meta name="twitter:image" content="https://humanplusmagazine.com/immagine-social.pngg"> <!-- SOSTITUISCI CON L'URL ASSOLUTO DELLA TUA IMMAGINE -->
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="fav.png">
@@ -125,17 +125,59 @@
                     </div>
                 </div>
 
-                <!-- PULSANTI AGGIORNATI -->
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <!-- Questo link porterà al file del magazine -->
-                    <a href="maggio26.html" class="bg-slate-900 hover:bg-emerald-600 text-white font-bold py-4 px-8 rounded-full shadow-xl transition-all transform hover:-translate-y-1 text-center inline-block">
-                        Vai al Numero 3
-                    </a>
-                    <!-- Bottone per aprire un modale o scorrere (lasciato come bottone placeholder) -->
-                    <button class="bg-white border-2 border-slate-200 hover:border-slate-400 text-slate-700 font-bold py-4 px-8 rounded-full shadow-sm transition-all text-center">
-                        Anteprima Indice
-                    </button>
+                <!-- CONTENITORE ACCESSO (Si scambia tra Form e Accesso Diretto in base ai cookie) -->
+                <div id="access-container" class="mt-6">
+                    <!-- FORM DI REGISTRAZIONE -->
+                    <div id="registration-form" class="bg-white p-6 rounded-2xl shadow-xl border border-slate-100 relative overflow-hidden transition-all duration-300">
+                        <!-- Bordo decorativo laterale -->
+                        <div class="absolute top-0 left-0 w-1.5 h-full bg-emerald-500"></div>
+                        
+                        <h3 class="font-bold text-xl text-slate-900 mb-2">Iscriviti per accedere al Magazine</h3>
+                        <p class="text-sm text-slate-500 mb-6">Compila i campi per sbloccare la lettura gratuita dell'ultimo numero e dell'archivio.</p>
+                        
+                        <form id="magazineForm" onsubmit="handleRegistration(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="nome" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Nome</label>
+                                    <input type="text" id="nome" required placeholder="Es. Mario" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors">
+                                </div>
+                                <div>
+                                    <label for="cognome" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Cognome</label>
+                                    <input type="text" id="cognome" required placeholder="Es. Rossi" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Indirizzo Email</label>
+                                <input type="email" id="email" required placeholder="mario.rossi@email.com" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors">
+                            </div>
+                            <div>
+                                <label for="telefono" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Numero di Telefono</label>
+                                <input type="tel" id="telefono" required placeholder="+39 333 000 0000" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors">
+                            </div>
+                            
+                            <div class="pt-4 flex flex-col sm:flex-row gap-5 items-center">
+                                <button type="submit" class="w-full sm:w-auto bg-slate-900 hover:bg-emerald-600 text-white font-bold py-4 px-8 rounded-full shadow-lg transition-all transform hover:-translate-y-1 text-center whitespace-nowrap">
+                                    Sblocca Accesso &rarr;
+                                </button>
+                                <p class="text-[10px] text-slate-400 text-center sm:text-left leading-relaxed">
+                                    I tuoi dati sono al sicuro. Cliccando il bottone accetti la nostra privacy policy e l'invio delle future edizioni.
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- ACCESSO DIRETTO (Nascosto di default, mostrato via JS se loggato) -->
+                    <div id="direct-access" style="display: none;" class="bg-emerald-50 p-6 rounded-2xl border border-emerald-200 relative overflow-hidden text-center sm:text-left flex flex-col sm:flex-row items-center gap-6">
+                        <div class="flex-1">
+                            <h3 class="font-bold text-xl text-emerald-900 mb-1">Bentornato! Accesso Sbloccato</h3>
+                            <p class="text-sm text-emerald-700">Sei già registrato. Puoi leggere l'ultimo numero o scaricare i pdf nell'archivio in basso.</p>
+                        </div>
+                        <a href="maggio26.html" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 px-8 rounded-full shadow-lg transition-all transform hover:-translate-y-1 text-center whitespace-nowrap">
+                            Vai al Numero 3 &rarr;
+                        </a>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -189,8 +231,9 @@
                 
                 <!-- NUMERO PRECEDENTE (Vol. 02) -->
                 <!-- QUANDO AGGIORNI IL SITO: Sposta il Vol. 04 qui sotto, e spingi gli altri in giù -->
-                <a href="HUMANPlus-Agosto2025.pdf" class="group block">
+                <a href="HUMANPlus-Agosto2025.pdf" onclick="return checkAccess(event)" class="group block">
                     <div class="magazine-cover relative rounded-xl overflow-hidden mb-6 bg-slate-800 shadow-xl transition-transform duration-300 group-hover:-translate-y-2">
+                        <!-- HO INSERITO url('HUMANagosto.png') QUI -->
                         <div class="absolute inset-0 opacity-50 mix-blend-screen transition duration-500 group-hover:opacity-70 group-hover:scale-105" style="background-image: url('HUMANagosto.png'); background-size: cover; background-position: center;"></div>
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
                         <div class="absolute bottom-6 left-6 right-6">
@@ -203,8 +246,9 @@
                 </a>
 
                 <!-- NUMERO PRECEDENTE (Vol. 01) -->
-                <a href="HUMANPlus-Luglio2025.pdf" class="group block">
+                <a href="HUMANPlus-Luglio2025.pdf" onclick="return checkAccess(event)" class="group block">
                     <div class="magazine-cover relative rounded-xl overflow-hidden mb-6 bg-slate-800 shadow-xl transition-transform duration-300 group-hover:-translate-y-2">
+                        <!-- HO CORRETTO LA SINTASSI CON url('HUMANluglio.png') QUI -->
                         <div class="absolute inset-0 opacity-50 mix-blend-screen transition duration-500 group-hover:opacity-70 group-hover:scale-105" style="background-image: url('HUMANluglio.png'); background-size: cover; background-position: center;"></div>
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
                         <div class="absolute bottom-6 left-6 right-6">
@@ -227,5 +271,77 @@
         <p class="mt-2 text-xs text-emerald-900 uppercase tracking-widest font-bold">The Biology of Tomorrow, Today.</p>
     </footer>
 
+    <!-- Script per gestire form, cookie e reindirizzamento -->
+    <script>
+        // Nome del cookie per tracciare la registrazione
+        const COOKIE_NAME = "hp_registered";
+
+        // Al caricamento della pagina
+        document.addEventListener('DOMContentLoaded', () => {
+            if (checkIfRegistered()) {
+                // Se l'utente ha il cookie, nascondi il form e mostra l'area di accesso diretto
+                document.getElementById('registration-form').style.display = 'none';
+                document.getElementById('direct-access').style.display = 'flex';
+            }
+        });
+
+        // Controlla se il cookie esiste
+        function checkIfRegistered() {
+            return document.cookie.split(';').some(c => {
+                return c.trim().startsWith(COOKIE_NAME + '=');
+            });
+        }
+
+        // Imposta il cookie (scadenza 1 anno)
+        function setRegistrationCookie() {
+            const d = new Date();
+            d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000)); // 365 giorni
+            document.cookie = COOKIE_NAME + "=true;expires=" + d.toUTCString() + ";path=/";
+        }
+
+        // Funzione per intercettare i click sui PDF dell'archivio
+        function checkAccess(event) {
+            if (!checkIfRegistered()) {
+                event.preventDefault(); // Ferma il download del PDF
+                
+                // Scorri su verso il form di iscrizione
+                document.getElementById('ultimo-numero').scrollIntoView({ behavior: 'smooth' });
+                
+                // Crea un effetto di "lampeggio" sul form per attirare l'attenzione
+                const formElement = document.getElementById('registration-form');
+                formElement.classList.add('ring-4', 'ring-emerald-500', 'ring-offset-2', 'scale-[1.02]');
+                
+                // Rimuovi l'effetto dopo poco
+                setTimeout(() => {
+                    formElement.classList.remove('ring-4', 'ring-emerald-500', 'ring-offset-2', 'scale-[1.02]');
+                }, 1500);
+                
+                return false;
+            }
+            // Se loggato, lascia proseguire il download
+            return true;
+        }
+
+        function handleRegistration(event) {
+            event.preventDefault(); 
+            
+            // Qui inserisci la logica per salvare i dati sul tuo CRM (Mailchimp, Brevo, ecc.)
+            
+            // Salva il cookie per la prossima volta
+            setRegistrationCookie();
+            
+            // Cambia l'aspetto del bottone per dare feedback all'utente
+            const btn = event.target.querySelector('button[type="submit"]');
+            btn.innerHTML = 'Accesso Sbloccato...';
+            btn.classList.add('animate-pulse', 'bg-emerald-600');
+            btn.classList.remove('bg-slate-900', 'hover:-translate-y-1');
+            btn.disabled = true;
+            
+            // Reindirizza alla pagina del magazine
+            setTimeout(() => {
+                window.location.href = 'maggio26.html'; 
+            }, 800);
+        }
+    </script>
 </body>
 </html>
