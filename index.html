@@ -15,14 +15,14 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Human Plus Magazine - La Biologia di Domani">
     <meta property="og:description" content="Molto più di un magazine. Scopri le strategie di bio-hacking, nutrizione avanzata e longevità attiva per sbloccare il tuo vero potenziale biologico.">
-    <meta property="og:image" content="https://humanplusmagazine.com/immagine-social.png"> <!-- SOSTITUISCI CON L'URL ASSOLUTO DELLA TUA IMMAGINE -->
-    <meta property="og:url" content="https://humanplusmagazine.com/"> <!-- SOSTITUISCI CON IL TUO URL REALE -->
+    <meta property="og:image" content="https://www.iltuosito.com/immagine-social-homepage.png"> <!-- SOSTITUISCI CON L'URL ASSOLUTO DELLA TUA IMMAGINE -->
+    <meta property="og:url" content="https://www.iltuosito.com/"> <!-- SOSTITUISCI CON IL TUO URL REALE -->
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Human Plus Magazine - La Biologia di Domani">
     <meta name="twitter:description" content="Molto più di un magazine. Scopri le strategie di bio-hacking, nutrizione avanzata e longevità attiva per sbloccare il tuo vero potenziale biologico.">
-    <meta name="twitter:image" content="https://humanplusmagazine.com/immagine-social.pngg"> <!-- SOSTITUISCI CON L'URL ASSOLUTO DELLA TUA IMMAGINE -->
+    <meta name="twitter:image" content="https://www.iltuosito.com/immagine-social-homepage.png"> <!-- SOSTITUISCI CON L'URL ASSOLUTO DELLA TUA IMMAGINE -->
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="fav.png">
@@ -136,23 +136,28 @@
                         <p class="text-sm text-slate-500 mb-6">Compila i campi per sbloccare la lettura gratuita dell'ultimo numero e dell'archivio.</p>
                         
                         <form id="magazineForm" onsubmit="handleRegistration(event)" class="space-y-4">
+                            <!-- CHIAVI WEB3FORMS (Nascoste) -->
+                            <input type="hidden" name="access_key" value="844cbdca-08e2-4491-88fc-c52a805cc05e">
+                            <input type="hidden" name="subject" value="Nuovo iscritto a Human Plus Magazine!">
+                            <input type="hidden" name="from_name" value="Human Plus Sito Web">
+
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
                                     <label for="nome" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Nome</label>
-                                    <input type="text" id="nome" required placeholder="Es. Mario" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors">
+                                    <input type="text" id="nome" name="Nome" required placeholder="Es. Mario" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors">
                                 </div>
                                 <div>
                                     <label for="cognome" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Cognome</label>
-                                    <input type="text" id="cognome" required placeholder="Es. Rossi" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors">
+                                    <input type="text" id="cognome" name="Cognome" required placeholder="Es. Rossi" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors">
                                 </div>
                             </div>
                             <div>
                                 <label for="email" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Indirizzo Email</label>
-                                <input type="email" id="email" required placeholder="mario.rossi@email.com" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors">
+                                <input type="email" id="email" name="Email" required placeholder="mario.rossi@email.com" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors">
                             </div>
                             <div>
                                 <label for="telefono" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Numero di Telefono</label>
-                                <input type="tel" id="telefono" required placeholder="+39 333 000 0000" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors">
+                                <input type="tel" id="telefono" name="Telefono" required placeholder="+39 333 000 0000" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors">
                             </div>
                             
                             <div class="pt-4 flex flex-col sm:flex-row gap-5 items-center">
@@ -322,25 +327,57 @@
             return true;
         }
 
-        function handleRegistration(event) {
+        async function handleRegistration(event) {
             event.preventDefault(); 
             
-            // Qui inserisci la logica per salvare i dati sul tuo CRM (Mailchimp, Brevo, ecc.)
+            const form = event.target;
+            const btn = form.querySelector('button[type="submit"]');
+            const originalText = btn.innerHTML;
             
-            // Salva il cookie per la prossima volta
-            setRegistrationCookie();
-            
-            // Cambia l'aspetto del bottone per dare feedback all'utente
-            const btn = event.target.querySelector('button[type="submit"]');
-            btn.innerHTML = 'Accesso Sbloccato...';
+            // Cambia l'aspetto del bottone per dare feedback all'utente (Invio in corso)
+            btn.innerHTML = 'Invio in corso...';
             btn.classList.add('animate-pulse', 'bg-emerald-600');
             btn.classList.remove('bg-slate-900', 'hover:-translate-y-1');
             btn.disabled = true;
-            
-            // Reindirizza alla pagina del magazine
-            setTimeout(() => {
-                window.location.href = 'maggio26.html'; 
-            }, 800);
+
+            // Raccogli i dati del form
+            const formData = new FormData(form);
+
+            try {
+                // Invia i dati a Web3Forms senza ricaricare la pagina
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    // Se l'invio è andato a buon fine, salva il cookie
+                    setRegistrationCookie();
+                    
+                    btn.innerHTML = 'Accesso Sbloccato!';
+                    btn.classList.remove('animate-pulse');
+                    
+                    // Reindirizza alla pagina del magazine
+                    setTimeout(() => {
+                        window.location.href = 'maggio26.html'; 
+                    }, 800);
+                } else {
+                    // Se c'è un errore dal server
+                    alert("Si è verificato un errore durante l'invio. Riprova tra poco.");
+                    ripristinaBottone(btn, originalText);
+                }
+            } catch (error) {
+                // Se c'è un errore di connessione (es. internet assente)
+                alert("Errore di connessione. Verifica di essere connesso a internet e riprova.");
+                ripristinaBottone(btn, originalText);
+            }
+        }
+
+        function ripristinaBottone(btn, originalText) {
+            btn.innerHTML = originalText;
+            btn.classList.remove('animate-pulse', 'bg-emerald-600');
+            btn.classList.add('bg-slate-900', 'hover:-translate-y-1');
+            btn.disabled = false;
         }
     </script>
 </body>
