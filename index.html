@@ -5,24 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Human Plus Magazine - La Biologia di Domani</title>
     
-    <!-- SEO Ottimizzata & Social Meta Tags per la Homepage -->
+    <!-- SEO Ottimizzata & Social Meta Tags -->
     <meta name="description" content="Human Plus Magazine: il tuo manuale di biologia avanzata per la salute ottimale, la longevità attiva e il bio-hacking.">
     <meta name="keywords" content="magazine, bio-hacking, longevità, medicina funzionale, metabolismo, energia, sonno, infiammazione, integrazione, Human Plus, Marco Menichelli, salute">
     <meta name="author" content="Marco Menichelli">
     <meta name="robots" content="index, follow">
     
-    <!-- Open Graph / Condivisione Social (Facebook, WhatsApp, LinkedIn) -->
+    <!-- Open Graph / Condivisione Social -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Human Plus Magazine - La Biologia di Domani">
     <meta property="og:description" content="Molto più di un magazine. Scopri le strategie di bio-hacking, nutrizione avanzata e longevità attiva per sbloccare il tuo vero potenziale biologico.">
-    <meta property="og:image" content="https://humanplusmagazine.com/immagine-social.png"> <!-- SOSTITUISCI CON L'URL ASSOLUTO DELLA TUA IMMAGINE -->
-    <meta property="og:url" content="https://humanplusmagazine.com/"> <!-- SOSTITUISCI CON IL TUO URL REALE -->
+    <meta property="og:image" content="https://humanplusmagazine.com/immagine-social.png">
+    <meta property="og:url" content="https://humanplusmagazine.com/">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Human Plus Magazine - La Biologia di Domani">
     <meta name="twitter:description" content="Molto più di un magazine. Scopri le strategie di bio-hacking, nutrizione avanzata e longevità attiva per sbloccare il tuo vero potenziale biologico.">
-    <meta name="twitter:image" content="https://humanplusmagazine.com/immagine-social.png"> <!-- SOSTITUISCI CON L'URL ASSOLUTO DELLA TUA IMMAGINE -->
+    <meta name="twitter:image" content="https://humanplusmagazine.com/immagine-social.png">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="fav.png">
@@ -40,6 +40,12 @@
             background-size: cover;
             background-position: center;
         }
+
+        /* Supporto per i nuovi brand colors del frammento fornito */
+        .text-brand-accent { color: #10b981; } /* Emerald 500 */
+        .bg-brand-accent { background-color: #10b981; }
+        .border-brand-accent { border-color: #10b981; }
+        .from-brand-accent\/20 { --tw-gradient-from: rgba(16, 185, 129, 0.2) var(--tw-gradient-from-position); }
     </style>
 </head>
 <body class="bg-[#f8fafc] text-slate-800 antialiased selection:bg-emerald-200">
@@ -61,41 +67,56 @@
     <!-- ULTIMO NUMERO (AGGIORNA QUESTA SEZIONE OGNI MESE)       -->
     <!-- ======================================================= -->
     <section id="ultimo-numero" class="pt-20 pb-24 px-6 relative overflow-hidden">
-        <!-- Elemento decorativo di sfondo (Tema Salute/Longevità) -->
+        <!-- Elemento decorativo di sfondo -->
         <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-emerald-100/60 to-transparent -z-10 rounded-bl-[100px]"></div>
 
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             
-            <!-- COPERTINA MAGAZINE (SINISTRA) -->
-            <div class="relative group mx-auto w-full max-w-[450px]">
+            <!-- COPERTINA MAGAZINE (SINISTRA) - AGGIORNATA -->
+            <div class="relative group mx-auto w-full max-w-[500px]">
                 <!-- Effetto ombra dietro la copertina -->
-                <div class="absolute inset-0 bg-emerald-600 rounded-2xl transform translate-x-4 translate-y-4 opacity-20 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-300"></div>
+                <div class="absolute inset-0 bg-blue-600 rounded-2xl transform translate-x-4 translate-y-4 opacity-20 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-300"></div>
                 
-                <!-- COPERTINA CSS (Simula l'estetica del Magazine) -->
-                <div class="magazine-cover relative rounded-2xl shadow-2xl overflow-hidden bg-slate-900 text-white flex flex-col justify-between p-8 transform transition-transform duration-300 group-hover:-translate-y-2">
-                    
-                    <!-- Sfondo Copertina (CAMBIA L'URL DELL'IMMAGINE QUI) -->
-                    <div class="absolute inset-0 opacity-40 mix-blend-screen transition duration-700 group-hover:scale-105 group-hover:opacity-50" style="background-image: url('https://images.unsplash.com/photo-1614036634955-f586ae1d2aca?auto=format&fit=crop&w=800&q=80&fm=webp'); background-size: cover; background-position: center;"></div>
-                    <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/40 to-slate-900/95"></div>
-                    
-                    <!-- Contenuto Copertina -->
-                    <div class="relative z-10 flex justify-between items-start">
-                        <img src="LOGO_HP.png" alt="Human Plus Logo" class="h-10 object-contain drop-shadow-md">
-                        <div class="text-right">
-                            <span class="bg-emerald-600 text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg">Aprile 2026</span> <!-- MESE DA CAMBIARE -->
-                        </div>
-                    </div>
+                <!-- NUOVA STRUTTURA COPERTINA -->
+                <div class="magazine-cover relative rounded-2xl shadow-2xl overflow-hidden bg-slate-900 text-white flex flex-col transform transition-transform duration-300 group-hover:-translate-y-2">
+                    <div class="h-full w-full p-6 md:p-10 flex flex-col justify-between relative overflow-hidden z-10">
+                        <!-- Background Image -->
+                        <div class="absolute inset-0 opacity-40 mix-blend-screen transition duration-700 group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1614036634955-f586ae1d2aca?auto=format&fit=crop&w=2000&q=80&fm=webp'); background-size: cover; background-position: center;"></div>
+                        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/40 to-slate-900/95"></div>
+                        
+                        <div class="relative z-20">
+                            <div class="flex justify-between items-start mb-6 md:mb-10">
+                                <!-- Logo -->
+                                <img src="LOGO_HP.png" alt="Human Plus Logo" class="h-10 md:h-12 object-contain drop-shadow-md">
+                                <div class="text-right flex flex-col items-end gap-1">
+                                    <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-[9px] font-bold uppercase tracking-widest shadow-lg">Aprile 2026</span>
+                                    <span class="text-[8px] text-slate-400 font-bold uppercase tracking-widest">Edizione Speciale</span>
+                                </div>
+                            </div>
 
-                    <div class="relative z-10 mt-auto pb-4">
-                        <p class="text-emerald-400 font-bold tracking-[0.2em] uppercase text-[10px] border-l-2 border-emerald-500 pl-2 mb-2">Edizione Speciale</p>
-                        <!-- TITOLO COPERTINA DA CAMBIARE OGNI MESE -->
-                        <h1 class="serif-font text-5xl leading-[0.9] font-black drop-shadow-2xl mb-4">
-                            NON SEI<br>STRESSATO.<br>
-                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300 drop-shadow-none">SEI CARENTE.</span>
-                        </h1>
-                        <p class="text-sm font-light text-slate-300 leading-relaxed border-l-2 border-slate-700 pl-3">
-                            Il manuale definitivo per sbloccare le vie metaboliche silenti e spegnere l'infiammazione cronica alla radice.
-                        </p>
+                            <div class="space-y-3 md:space-y-4 mt-6">
+                                <p class="text-blue-400 font-bold tracking-[0.2em] uppercase text-[9px] md:text-[10px] border-l-2 border-blue-500 pl-2">Dossier Energia & Ottimizzazione</p>
+                                <h1 class="serif-font text-4xl md:text-5xl lg:text-6xl leading-[0.9] font-black drop-shadow-2xl">
+                                    NON SEI<br>STRESSATO.<br>
+                                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 drop-shadow-none">SEI CARENTE.</span>
+                                </h1>
+                                
+                                <p class="text-xs md:text-sm font-light text-slate-200 max-w-xs mt-4 leading-relaxed border-l border-slate-700 pl-3">
+                                    Il manuale pratico per sbloccare il tuo metabolismo, spegnere l'infiammazione alla radice e riprogrammare il tuo sonno.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="relative z-20 grid grid-cols-1 gap-3 border-t border-slate-700/80 pt-4 mt-6">
+                            <div class="bg-white/5 p-3 rounded-xl backdrop-blur-sm border border-white/10">
+                                <p class="text-blue-400 font-bold text-[8px] uppercase tracking-widest mb-1 flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>Ormoni e Stress</p>
+                                <p class="font-semibold text-[10px] text-slate-200 leading-tight">Il "Pregnenolone Steal": come l'ansia ruba i tuoi ormoni.</p>
+                            </div>
+                            <div class="bg-white/5 p-3 rounded-xl backdrop-blur-sm border border-white/10">
+                                <p class="text-blue-400 font-bold text-[8px] uppercase tracking-widest mb-1 flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span>Bio-Hacking Pratico</p>
+                                <p class="font-semibold text-[10px] text-slate-200 leading-tight">Protocollo PEA: torna a dormire bene senza farmaci.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -105,9 +126,8 @@
                 <span class="bg-emerald-100 text-emerald-800 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block shadow-sm">Nuova Uscita</span>
                 <h2 class="serif-font text-5xl md:text-6xl font-black text-slate-900 mb-6 leading-tight">Volume 04:<br>L'Energia Nascosta.</h2>
                 
-                <!-- DESCRIZIONE BREVE DEL NUMERO (DA CAMBIARE) -->
                 <p class="text-lg text-slate-600 mb-8 leading-relaxed">
-                    Siamo sazi di macronutrienti, ma le nostre cellule stanno morendo di inedia. In questo dossier esclusivo smontiamo le illusioni della dietetica moderna, svelando la cascata del <strong>Pregnenolone Steal</strong>, il miracolo dell'ammide <strong>PEA</strong> contro la neuro-infiammazione, e i protocolli per l'ottimizzazione del sonno e del metabolismo basale.
+                    Siamo sazi di macronutrienti, ma le nostre cellule stanno morendo di inedia. In questo dossier esclusivo smontiamo le illusioni della dietetica moderna, svelando la cascata del <strong>Pregnenolone Steal</strong>, il miracolo dell'ammide <strong>PEA</strong> contro la neuro-infiammazione, e i protocolli per l'ottimizzazione del sonno.
                 </p>
 
                 <div class="space-y-4 mb-10">
@@ -125,18 +145,15 @@
                     </div>
                 </div>
 
-                <!-- CONTENITORE ACCESSO (Si scambia tra Form e Accesso Diretto in base ai cookie) -->
+                <!-- CONTENITORE ACCESSO -->
                 <div id="access-container" class="mt-6">
                     <!-- FORM DI REGISTRAZIONE -->
                     <div id="registration-form" class="bg-white p-6 rounded-2xl shadow-xl border border-slate-100 relative overflow-hidden transition-all duration-300">
-                        <!-- Bordo decorativo laterale -->
                         <div class="absolute top-0 left-0 w-1.5 h-full bg-emerald-500"></div>
-                        
                         <h3 class="font-bold text-xl text-slate-900 mb-2">Iscriviti per accedere al Magazine</h3>
                         <p class="text-sm text-slate-500 mb-6">Compila i campi per sbloccare la lettura gratuita dell'ultimo numero e dell'archivio.</p>
                         
                         <form id="magazineForm" onsubmit="handleRegistration(event)" class="space-y-4">
-                            <!-- CHIAVI WEB3FORMS (Nascoste) -->
                             <input type="hidden" name="access_key" value="844cbdca-08e2-4491-88fc-c52a805cc05e">
                             <input type="hidden" name="subject" value="Nuovo iscritto a Human Plus Magazine!">
                             <input type="hidden" name="from_name" value="Human Plus Sito Web">
@@ -144,84 +161,77 @@
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
                                     <label for="nome" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Nome</label>
-                                    <input type="text" id="nome" name="Nome" required placeholder="Es. Mario" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors">
+                                    <input type="text" id="nome" name="Nome" required placeholder="Es. Mario" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-colors">
                                 </div>
                                 <div>
                                     <label for="cognome" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Cognome</label>
-                                    <input type="text" id="cognome" name="Cognome" required placeholder="Es. Rossi" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors">
+                                    <input type="text" id="cognome" name="Cognome" required placeholder="Es. Rossi" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-colors">
                                 </div>
                             </div>
                             <div>
                                 <label for="email" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Indirizzo Email</label>
-                                <input type="email" id="email" name="Email" required placeholder="mario.rossi@email.com" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors">
+                                <input type="email" id="email" name="Email" required placeholder="mario.rossi@email.com" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-colors">
                             </div>
                             <div>
-                                <label for="telefono" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Numero di Telefono</label>
-                                <input type="tel" id="telefono" name="Telefono" required placeholder="+39 333 000 0000" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors">
+                                <label for="telefono" class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1">Telefono</label>
+                                <input type="tel" id="telefono" name="Telefono" required placeholder="+39 333 000 0000" class="w-full bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-colors">
                             </div>
                             
                             <div class="pt-4 flex flex-col sm:flex-row gap-5 items-center">
-                                <button type="submit" class="w-full sm:w-auto bg-slate-900 hover:bg-emerald-600 text-white font-bold py-4 px-8 rounded-full shadow-lg transition-all transform hover:-translate-y-1 text-center whitespace-nowrap">
+                                <button type="submit" class="w-full sm:w-auto bg-slate-900 hover:bg-emerald-600 text-white font-bold py-4 px-8 rounded-full shadow-lg transition-all transform hover:-translate-y-1 text-center">
                                     Sblocca Accesso &rarr;
                                 </button>
                                 <p class="text-[10px] text-slate-400 text-center sm:text-left leading-relaxed">
-                                    I tuoi dati sono al sicuro. Cliccando il bottone accetti la nostra privacy policy e l'invio delle future edizioni.
+                                    I tuoi dati sono al sicuro. Cliccando accetti la nostra privacy policy.
                                 </p>
                             </div>
                         </form>
                     </div>
 
-                    <!-- ACCESSO DIRETTO (Nascosto di default, mostrato via JS se loggato) -->
+                    <!-- ACCESSO DIRETTO -->
                     <div id="direct-access" style="display: none;" class="bg-emerald-50 p-6 rounded-2xl border border-emerald-200 relative overflow-hidden text-center sm:text-left flex flex-col sm:flex-row items-center gap-6">
                         <div class="flex-1">
                             <h3 class="font-bold text-xl text-emerald-900 mb-1">Bentornato! Accesso Sbloccato</h3>
-                            <p class="text-sm text-emerald-700">Sei già registrato. Puoi leggere l'ultimo numero o scaricare i pdf nell'archivio in basso.</p>
+                            <p class="text-sm text-emerald-700">Sei già registrato. Puoi leggere l'ultimo numero o scaricare i pdf nell'archivio.</p>
                         </div>
                         <a href="maggio26.html" class="w-full sm:w-auto bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 px-8 rounded-full shadow-lg transition-all transform hover:-translate-y-1 text-center whitespace-nowrap">
-                            Vai al Numero 3 &rarr;
+                            Vai al Numero 4 &rarr;
                         </a>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- ======================================================= -->
-    <!-- SEZIONE CHI SIAMO (DESCRIZIONE GENERALE DEL MAGAZINE)   -->
-    <!-- ======================================================= -->
+    <!-- SEZIONE CHI SIAMO -->
     <section id="chi-siamo" class="py-24 bg-white relative">
         <div class="max-w-4xl mx-auto px-6 text-center">
             <h3 class="text-emerald-600 font-bold uppercase tracking-[0.2em] text-sm mb-4">Il nostro Manifesto</h3>
             <h2 class="serif-font text-5xl font-black text-slate-900 mb-8 leading-tight">Molto più di un magazine.<br>Il tuo manuale di biologia avanzata.</h2>
-            
             <p class="text-xl text-slate-600 leading-relaxed mb-8">
-                <strong>Human Plus</strong> non si accontenta di farti "sopravvivere" o di tenerti all'interno della mediocrità dei classici range di laboratorio. La nostra missione è decodificare la complessità umana per guidarti verso la <strong>salute ottimale</strong> e la <strong>longevità attiva</strong>.
+                <strong>Human Plus</strong> non si accontenta di farti "sopravvivere". La nostra missione è decodificare la complessità umana per guidarti verso la <strong>salute ottimale</strong> e la <strong>longevità attiva</strong>.
             </p>
-            
             <div class="grid md:grid-cols-3 gap-8 mt-16 text-left">
-                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-emerald-200 hover:shadow-lg transition duration-300">
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-emerald-200 transition duration-300">
                     <div class="text-4xl mb-4">🧬</div>
                     <h4 class="font-bold text-xl text-slate-900 mb-3">Longevità</h4>
-                    <p class="text-slate-600 text-sm leading-relaxed">Strategie anti-aging reali e applicabili. Non solo aggiungere anni alla vita, ma aggiungere vita agli anni, preservando l'integrità del DNA e la salute mitocondriale.</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">Strategie anti-aging reali e applicabili per preservare l'integrità del DNA e la salute mitocondriale.</p>
                 </div>
-                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-emerald-200 hover:shadow-lg transition duration-300">
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-emerald-200 transition duration-300">
                     <div class="text-4xl mb-4">⚡</div>
                     <h4 class="font-bold text-xl text-slate-900 mb-3">Bio-Hacking</h4>
-                    <p class="text-slate-600 text-sm leading-relaxed">Trucchi clinici, integrazioni mirate e protocolli ancestrali per hackerare il tuo metabolismo, spegnere l'infiammazione e sbloccare le energie latenti.</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">Protocolli per hackerare il tuo metabolismo, spegnere l'infiammazione e sbloccare energie latenti.</p>
                 </div>
-                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-emerald-200 hover:shadow-lg transition duration-300">
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-emerald-200 transition duration-300">
                     <div class="text-4xl mb-4">💪</div>
-                    <h4 class="font-bold text-xl text-slate-900 mb-3">Forma Fisica & Mente</h4>
-                    <p class="text-slate-600 text-sm leading-relaxed">Mente lucida in un corpo biochimicamente perfetto. Dimentica le diete da fame: impara a nutrire le cellule per abbattere il grasso viscerale e massimizzare il focus.</p>
+                    <h4 class="font-bold text-xl text-slate-900 mb-3">Forma Fisica</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Mente lucida in un corpo biochimicamente perfetto. Nutri le cellule per abbattere il grasso viscerale.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ======================================================= -->
-    <!-- ARCHIVIO NUMERI PRECEDENTI                              -->
-    <!-- ======================================================= -->
+    <!-- ARCHIVIO NUMERI PRECEDENTI -->
     <section id="archivio" class="py-24 bg-slate-900 text-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex justify-between items-end mb-16 border-b border-slate-700 pb-6">
@@ -233,12 +243,9 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-                
-                <!-- NUMERO PRECEDENTE (Vol. 02) -->
-                <!-- QUANDO AGGIORNI IL SITO: Sposta il Vol. 04 qui sotto, e spingi gli altri in giù -->
+                <!-- NUMERO PRECEDENTE (Vol. 03) -->
                 <a href="HUMANPlus-Agosto2025.pdf" onclick="return checkAccess(event)" class="group block">
                     <div class="magazine-cover relative rounded-xl overflow-hidden mb-6 bg-slate-800 shadow-xl transition-transform duration-300 group-hover:-translate-y-2">
-                        <!-- HO INSERITO url('HUMANagosto.png') QUI -->
                         <div class="absolute inset-0 opacity-50 mix-blend-screen transition duration-500 group-hover:opacity-70 group-hover:scale-105" style="background-image: url('HUMANagosto.png'); background-size: cover; background-position: center;"></div>
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
                         <div class="absolute bottom-6 left-6 right-6">
@@ -247,13 +254,12 @@
                         </div>
                     </div>
                     <h4 class="font-bold text-xl mb-1 group-hover:text-emerald-400 transition">Volume 03</h4>
-                    <p class="text-sm text-slate-400 line-clamp-2">Come riprogrammare il metabolismo, le diete non sono per tutti, DNA e gruppo sanguigno, come trovare la dieta propria dieta attraverso la medicina di precisione.</p>
+                    <p class="text-sm text-slate-400 line-clamp-2">Come riprogrammare il metabolismo, DNA e gruppo sanguigno, come trovare la propria dieta ideale.</p>
                 </a>
 
-                <!-- NUMERO PRECEDENTE (Vol. 01) -->
+                <!-- NUMERO PRECEDENTE (Vol. 02) -->
                 <a href="HUMANPlus-Luglio2025.pdf" onclick="return checkAccess(event)" class="group block">
                     <div class="magazine-cover relative rounded-xl overflow-hidden mb-6 bg-slate-800 shadow-xl transition-transform duration-300 group-hover:-translate-y-2">
-                        <!-- HO CORRETTO LA SINTASSI CON url('HUMANluglio.png') QUI -->
                         <div class="absolute inset-0 opacity-50 mix-blend-screen transition duration-500 group-hover:opacity-70 group-hover:scale-105" style="background-image: url('HUMANluglio.png'); background-size: cover; background-position: center;"></div>
                         <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent"></div>
                         <div class="absolute bottom-6 left-6 right-6">
@@ -262,9 +268,8 @@
                         </div>
                     </div>
                     <h4 class="font-bold text-xl mb-1 group-hover:text-emerald-400 transition">Volume 02</h4>
-                    <p class="text-sm text-slate-400 line-clamp-2">Tutto sulle Sirtuine! I cibi e i supplementi testati per ritardare l'invecchiamento. Il potere dei polifenoli e i veri benefici del digiuno intermittente.</p>
+                    <p class="text-sm text-slate-400 line-clamp-2">Tutto sulle Sirtuine! I cibi e i supplementi testati per ritardare l'invecchiamento.</p>
                 </a>
-
             </div>
         </div>
     </section>
@@ -278,97 +283,70 @@
 
     <!-- Script per gestire form, cookie e reindirizzamento -->
     <script>
-        // Nome del cookie per tracciare la registrazione
         const COOKIE_NAME = "hp_registered";
 
-        // Al caricamento della pagina
         document.addEventListener('DOMContentLoaded', () => {
             if (checkIfRegistered()) {
-                // Se l'utente ha il cookie, nascondi il form e mostra l'area di accesso diretto
                 document.getElementById('registration-form').style.display = 'none';
                 document.getElementById('direct-access').style.display = 'flex';
             }
         });
 
-        // Controlla se il cookie esiste
         function checkIfRegistered() {
-            return document.cookie.split(';').some(c => {
-                return c.trim().startsWith(COOKIE_NAME + '=');
-            });
+            return document.cookie.split(';').some(c => c.trim().startsWith(COOKIE_NAME + '='));
         }
 
-        // Imposta il cookie (scadenza 1 anno)
         function setRegistrationCookie() {
             const d = new Date();
-            d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000)); // 365 giorni
+            d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
             document.cookie = COOKIE_NAME + "=true;expires=" + d.toUTCString() + ";path=/";
         }
 
-        // Funzione per intercettare i click sui PDF dell'archivio
         function checkAccess(event) {
             if (!checkIfRegistered()) {
-                event.preventDefault(); // Ferma il download del PDF
-                
-                // Scorri su verso il form di iscrizione
+                event.preventDefault();
                 document.getElementById('ultimo-numero').scrollIntoView({ behavior: 'smooth' });
-                
-                // Crea un effetto di "lampeggio" sul form per attirare l'attenzione
                 const formElement = document.getElementById('registration-form');
                 formElement.classList.add('ring-4', 'ring-emerald-500', 'ring-offset-2', 'scale-[1.02]');
-                
-                // Rimuovi l'effetto dopo poco
                 setTimeout(() => {
                     formElement.classList.remove('ring-4', 'ring-emerald-500', 'ring-offset-2', 'scale-[1.02]');
                 }, 1500);
-                
                 return false;
             }
-            // Se loggato, lascia proseguire il download
             return true;
         }
 
         async function handleRegistration(event) {
             event.preventDefault(); 
-            
             const form = event.target;
             const btn = form.querySelector('button[type="submit"]');
             const originalText = btn.innerHTML;
             
-            // Cambia l'aspetto del bottone per dare feedback all'utente (Invio in corso)
             btn.innerHTML = 'Invio in corso...';
             btn.classList.add('animate-pulse', 'bg-emerald-600');
-            btn.classList.remove('bg-slate-900', 'hover:-translate-y-1');
+            btn.classList.remove('bg-slate-900');
             btn.disabled = true;
 
-            // Raccogli i dati del form
             const formData = new FormData(form);
 
             try {
-                // Invia i dati a Web3Forms senza ricaricare la pagina
                 const response = await fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
                     body: formData
                 });
 
                 if (response.ok) {
-                    // Se l'invio è andato a buon fine, salva il cookie
                     setRegistrationCookie();
-                    
                     btn.innerHTML = 'Accesso Sbloccato!';
-                    btn.classList.remove('animate-pulse');
-                    
-                    // Reindirizza alla pagina del magazine
                     setTimeout(() => {
                         window.location.href = 'maggio26.html'; 
                     }, 800);
                 } else {
-                    // Se c'è un errore dal server
-                    alert("Si è verificato un errore durante l'invio. Riprova tra poco.");
+                    alert("Errore durante l'invio. Riprova.");
                     ripristinaBottone(btn, originalText);
                 }
             } catch (error) {
-                // Se c'è un errore di connessione (es. internet assente)
-                alert("Errore di connessione. Verifica di essere connesso a internet e riprova.");
+                alert("Errore di connessione.");
                 ripristinaBottone(btn, originalText);
             }
         }
@@ -376,7 +354,7 @@
         function ripristinaBottone(btn, originalText) {
             btn.innerHTML = originalText;
             btn.classList.remove('animate-pulse', 'bg-emerald-600');
-            btn.classList.add('bg-slate-900', 'hover:-translate-y-1');
+            btn.classList.add('bg-slate-900');
             btn.disabled = false;
         }
     </script>
