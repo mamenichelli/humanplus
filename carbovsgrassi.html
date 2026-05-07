@@ -5,23 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Human Plus - Volume 05: Carburante Metabolico</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; }
         .serif-font { font-family: 'Playfair Display', serif; }
+        
+        /* Layout Responsivo della Pagina */
         .page-a4 {
-            width: 210mm;
-            min-height: 297mm;
-            padding: 20mm;
-            margin: 10mm auto;
+            width: 100%;
+            max-width: 210mm;
+            min-height: 100vh;
+            padding: 2rem 1.5rem;
+            margin: 0 auto 1.5rem auto;
             background: white;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
         }
+
+        /* Dimensioni fisse A4 per Desktop/Tablet grandi */
+        @media (min-width: 768px) {
+            .page-a4 {
+                min-height: 297mm;
+                padding: 20mm;
+                margin: 10mm auto;
+                box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            }
+        }
+
         .section-tag {
             display: inline-block;
             padding: 6px 16px;
@@ -32,82 +45,79 @@
             letter-spacing: 0.1em;
             margin-bottom: 20px;
         }
+
+        /* Footer Assoluto Responsivo */
         .page-number {
             position: absolute;
-            bottom: 20mm;
-            right: 20mm;
+            bottom: 1rem;
+            right: 1.5rem;
             font-weight: 800;
             font-size: 14px;
             color: #94a3b8;
         }
         .footer-brand {
             position: absolute;
-            bottom: 20mm;
-            left: 20mm;
+            bottom: 1rem;
+            left: 1.5rem;
             font-weight: 800;
             font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 0.2em;
             color: #cbd5e1;
         }
-        /* Assicura che i testi siano formattati perfettamente in PDF */
+
+        @media (min-width: 768px) {
+            .page-number { bottom: 20mm; right: 20mm; }
+            .footer-brand { bottom: 20mm; left: 20mm; }
+        }
+
         p { text-align: justify; hyphens: auto; }
+        
         @media print {
             body { background: none; }
             .page-a4 { margin: 0; box-shadow: none; page-break-after: always; }
-            #downloadBtn { display: none; }
         }
     </style>
 </head>
 <body class="text-slate-800 antialiased selection:bg-amber-200">
 
-    <!-- Controllo Download -->
-    <div class="fixed top-6 right-6 z-50">
-        <button id="downloadBtn" onclick="generatePDF()" class="bg-slate-900 hover:bg-slate-800 text-white px-6 py-3 rounded-full font-bold shadow-2xl transition-all flex items-center gap-3">
-            <span id="btnText">Scarica Volume 05 (PDF)</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-            </svg>
-        </button>
-    </div>
-
     <div id="magazine-container">
         
         <!-- PAGINA 1: COPERTINA -->
         <div class="page-a4 bg-slate-900 text-white p-0 relative">
-            <div class="h-full w-full p-20 flex flex-col justify-between relative overflow-hidden z-10">
+            <div class="h-full w-full p-8 md:p-20 flex flex-col justify-between relative overflow-hidden z-10">
                 <div class="absolute inset-0 opacity-30 mix-blend-overlay" style="background-image: url('https://images.unsplash.com/photo-1543362906-acfc16c67564?auto=format&fit=crop&w=1500&q=80'); background-size: cover; background-position: center;"></div>
                 <div class="absolute inset-0 bg-gradient-to-b from-slate-900/90 via-transparent to-slate-900/95"></div>
                 
                 <div class="relative z-20">
-                    <div class="flex justify-between items-center mb-16">
-                        <img src="LOGO_HP.png" alt="Logo" class="h-16 object-contain">
-                        <div class="text-right">
-                            <span class="bg-amber-500 text-slate-900 px-5 py-2 rounded-full text-sm font-black uppercase tracking-widest">Maggio 2026</span>
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6 mb-12 md:mb-16">
+                        <img src="LOGO_HP.png" alt="Logo" class="h-12 md:h-16 object-contain">
+                        <div class="text-left sm:text-right">
+                            <span class="bg-amber-500 text-slate-900 px-5 py-2 rounded-full text-xs md:text-sm font-black uppercase tracking-widest">Maggio 2026</span>
                         </div>
                     </div>
 
-                    <div class="mt-20">
-                        <p class="text-amber-400 font-bold tracking-[0.3em] uppercase text-base mb-6">Volume 05: Bioenergetica Applicata</p>
-                        <h1 class="serif-font text-[95px] leading-[0.9] font-black italic tracking-tighter drop-shadow-lg">
+                    <div class="mt-10 md:mt-20">
+                        <p class="text-amber-400 font-bold tracking-[0.2em] md:tracking-[0.3em] uppercase text-xs md:text-base mb-4 md:mb-6">Volume 05: Bioenergetica Applicata</p>
+                        <h1 class="serif-font text-7xl md:text-[95px] leading-[0.9] font-black italic tracking-tighter drop-shadow-lg">
                             CARBO<br>V S<br>GRASSI
                         </h1>
-                        <h2 class="text-4xl font-light mt-8 text-slate-300 leading-tight">La fine scientifica<br>del dogma degli zuccheri.</h2>
+                        <h2 class="text-2xl md:text-4xl font-light mt-6 md:mt-8 text-slate-300 leading-tight">La fine scientifica<br>del dogma degli zuccheri.</h2>
                     </div>
                 </div>
 
-                <div class="relative z-20 grid grid-cols-3 gap-8 border-t border-slate-700 pt-10 mt-auto">
+                <div class="relative z-20 grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-slate-700 pt-8 mt-12 md:mt-auto">
                     <div>
-                        <p class="text-amber-500 font-black text-sm uppercase tracking-widest mb-3">Lipidi d'Élite</p>
-                        <p class="text-sm font-medium text-slate-300 leading-relaxed">Perché il colesterolo del tuorlo d'uovo è il più potente neuroprotettore per il tuo cervello.</p>
+                        <p class="text-amber-500 font-black text-xs md:text-sm uppercase tracking-widest mb-2 md:mb-3">Lipidi d'Élite</p>
+                        <p class="text-xs md:text-sm font-medium text-slate-300 leading-relaxed">Perché il colesterolo del tuorlo d'uovo è il più potente neuroprotettore per il tuo cervello.</p>
                     </div>
                     <div>
-                        <p class="text-amber-500 font-black text-sm uppercase tracking-widest mb-3">Modulazione Glicemica</p>
-                        <p class="text-sm font-medium text-slate-300 leading-relaxed">Manipolazione termica degli amidi: come rendere il riso un prebiotico antinfiammatorio.</p>
+                        <p class="text-amber-500 font-black text-xs md:text-sm uppercase tracking-widest mb-2 md:mb-3">Modulazione Glicemica</p>
+                        <p class="text-xs md:text-sm font-medium text-slate-300 leading-relaxed">Manipolazione termica degli amidi: come rendere il riso un prebiotico antinfiammatorio.</p>
                     </div>
                     <div>
-                        <p class="text-amber-500 font-black text-sm uppercase tracking-widest mb-3">L'Eccezione Ibrida</p>
-                        <p class="text-sm font-medium text-slate-300 leading-relaxed">Strategie metaboliche di ricarica strutturata per atleti sottoposti ad altissima intensità.</p>
+                        <p class="text-amber-500 font-black text-xs md:text-sm uppercase tracking-widest mb-2 md:mb-3">L'Eccezione Ibrida</p>
+                        <p class="text-xs md:text-sm font-medium text-slate-300 leading-relaxed">Strategie metaboliche di ricarica strutturata per atleti sottoposti ad altissima intensità.</p>
                     </div>
                 </div>
             </div>
@@ -116,9 +126,9 @@
         <!-- PAGINA 2: EDITORIALE P1 -->
         <div class="page-a4">
             <span class="section-tag bg-slate-100 text-slate-800">Editoriale / Parte 1</span>
-            <h2 class="serif-font text-5xl font-black text-slate-900 mb-8 leading-tight italic">Efficienza mitocondriale,<br>non solo bilancio calorico.</h2>
+            <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-6 md:mb-8 leading-tight italic">Efficienza mitocondriale,<br>non solo bilancio calorico.</h2>
             
-            <div class="text-base text-slate-700 leading-loose space-y-6">
+            <div class="text-sm md:text-base text-slate-700 leading-loose space-y-6">
                 <p>
                     Per decenni la scienza dell'alimentazione si è basata su un'equazione tanto semplice quanto biologicamente limitata: "calorie in entrata contro calorie in uscita". Questo approccio meccanicistico ignora la complessa rete di segnalazione ormonale che ogni singolo macronutriente innesca una volta ingerito. Il corpo umano non è una stufa a legna in cui bruciare indistintamente ciò che capita; è una macchina ibrida estremamente sofisticata, progettata dall'evoluzione per prosperare alternando fonti energetiche in base all'esigenza e alla disponibilità.
                 </p>
@@ -129,12 +139,12 @@
                     In questo volume, smontiamo decenni di vero e proprio terrorismo nutrizionale. Analizzeremo in modo inequivocabile perché i <strong>Grassi</strong> rappresentano il carburante qualitativamente superiore, non solo per la composizione corporea, ma soprattutto per la longevità cellulare e la lucidità mentale.
                 </p>
                 
-                <div class="p-8 bg-amber-50 rounded-3xl border-l-4 border-amber-500 mt-8 shadow-sm">
-                    <h3 class="font-black text-amber-900 mb-3 text-lg">Il problema dei Radicali Liberi (ROS)</h3>
-                    <p class="text-sm text-slate-800 leading-relaxed">
+                <div class="p-6 md:p-8 bg-amber-50 rounded-[2rem] border-l-4 border-amber-500 mt-8 shadow-sm">
+                    <h3 class="font-black text-amber-900 mb-3 text-base md:text-lg">Il problema dei Radicali Liberi (ROS)</h3>
+                    <p class="text-xs md:text-sm text-slate-800 leading-relaxed">
                         La glicolisi (il metabolismo cellulare degli zuccheri) è un processo rapido ma estremamente "sporco". La combustione del glucosio all'interno dei nostri mitocondri genera un tasso molto elevato di Specie Reattive dell'Ossigeno (i famigerati radicali liberi). È come alimentare un'auto sportiva con carbone di bassa lega: produce energia, ma la fuliggine distrugge il motore dall'interno nel lungo periodo.
                     </p>
-                    <p class="text-sm text-slate-800 leading-relaxed mt-4">
+                    <p class="text-xs md:text-sm text-slate-800 leading-relaxed mt-4">
                         Al contrario, la <em>beta-ossidazione</em> (il metabolismo dei grassi) è un processo squisitamente "pulito" ed efficiente. Bruciare acidi grassi produce una quantità nettamente superiore di ATP (la nostra moneta energetica vitale) minimizzando lo stress ossidativo e proteggendo l'integrità del DNA cellulare.
                     </p>
                 </div>
@@ -146,54 +156,54 @@
         <!-- PAGINA 3: EDITORIALE P2 -->
         <div class="page-a4">
             <span class="section-tag bg-slate-100 text-slate-800">Editoriale / Parte 2</span>
-            <h2 class="serif-font text-5xl font-black text-slate-900 mb-8 leading-tight italic">Il vero significato di<br>Flessibilità Metabolica.</h2>
+            <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-6 md:mb-8 leading-tight italic">Il vero significato di<br>Flessibilità Metabolica.</h2>
             
-            <div class="text-base text-slate-700 leading-loose space-y-6">
+            <div class="text-sm md:text-base text-slate-700 leading-loose space-y-6">
                 <p>
                     L'obiettivo della biologia ottimizzata non è eliminare fobicamente ogni traccia di carboidrato dalla faccia della terra. L'ortoressia non è mai la risposta. L'obiettivo primario è smettere di esserne <em>metabolicamente schiavi</em>. Vogliamo un corpo capace di utilizzare gli zuccheri quando richiesti (ad esempio durante un intenso sforzo esplosivo), ma che sappia tornare immediatamente a bruciare grasso non appena l'emergenza cessa.
                 </p>
-                <p class="italic font-bold text-slate-900 text-lg border-l-4 border-amber-500 pl-4 py-2 my-6">
+                <p class="italic font-bold text-slate-900 text-base md:text-lg border-l-4 border-amber-500 pl-4 py-2 my-6">
                     "La vera flessibilità metabolica è la capacità dei tuoi mitocondri di passare dall'uso degli zuccheri all'ossidazione dei grassi in frazioni di secondo, senza scatenare letargia, crisi energetiche o la classica 'nebbia mentale'. È questa l'essenza della libertà biologica."
                 </p>
             </div>
 
-            <div class="mt-12">
-                <h3 class="font-black text-slate-900 mb-6 uppercase tracking-widest text-xl text-center">Analisi Comparativa: Glucidi vs Lipidi</h3>
+            <div class="mt-10 md:mt-12">
+                <h3 class="font-black text-slate-900 mb-6 uppercase tracking-widest text-lg md:text-xl text-center">Analisi Comparativa: Glucidi vs Lipidi</h3>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                     <!-- CARBOIDRATI -->
-                    <div class="bg-white border-2 border-slate-200 rounded-3xl p-8 shadow-md">
-                        <span class="text-lg font-black text-slate-500 uppercase tracking-widest border-b-2 border-slate-300 pb-2 block mb-6 text-center">I Carboidrati</span>
-                        <ul class="text-sm space-y-6 text-slate-700 leading-relaxed">
+                    <div class="bg-white border-2 border-slate-200 rounded-[2rem] p-6 md:p-8 shadow-md">
+                        <span class="text-base md:text-lg font-black text-slate-500 uppercase tracking-widest border-b-2 border-slate-300 pb-2 block mb-6 text-center">I Carboidrati</span>
+                        <ul class="text-xs md:text-sm space-y-5 text-slate-700 leading-relaxed">
                             <li>
-                                <strong class="text-slate-900 block text-base mb-1">1. Resa Energetica Volatile</strong>
+                                <strong class="text-slate-900 block text-sm md:text-base mb-1">1. Resa Energetica Volatile</strong>
                                 Forniscono energia rapida e di pronto impiego, ma le scorte si esauriscono nel giro di un paio d'ore, innescando il segnale biologico della fame e causando la tipica letargia e sonnolenza post-prandiale.
                             </li>
                             <li>
-                                <strong class="text-slate-900 block text-base mb-1">2. Blocco Totale della Lipolisi</strong>
+                                <strong class="text-slate-900 block text-sm md:text-base mb-1">2. Blocco Totale della Lipolisi</strong>
                                 La loro assunzione stimola massicciamente l'insulina, l'ormone dell'accumulo. Fisiologicamente parlando, finché l'insulina circola a livelli alti nel sangue, l'organismo è biochimicamente impossibilitato ad attingere al grasso corporeo.
                             </li>
                             <li>
-                                <strong class="text-slate-900 block text-base mb-1">3. Processo di Glicazione</strong>
+                                <strong class="text-slate-900 block text-sm md:text-base mb-1">3. Processo di Glicazione</strong>
                                 Gli eccessi cronici di glucosio nel torrente ematico agiscono come una sorta di "caramello" tossico: si legano alle proteine (fenomeno della glicazione), irrigidendo i tessuti e accelerando visibilmente l'invecchiamento del collagene e delle arterie.
                             </li>
                         </ul>
                     </div>
 
                     <!-- GRASSI -->
-                    <div class="bg-amber-50 border-2 border-amber-200 rounded-3xl p-8 shadow-md">
-                        <span class="text-lg font-black text-amber-700 uppercase tracking-widest border-b-2 border-amber-300 pb-2 block mb-6 text-center">I Grassi (Vincitori)</span>
-                        <ul class="text-sm space-y-6 text-amber-900 leading-relaxed">
+                    <div class="bg-amber-50 border-2 border-amber-200 rounded-[2rem] p-6 md:p-8 shadow-md">
+                        <span class="text-base md:text-lg font-black text-amber-700 uppercase tracking-widest border-b-2 border-amber-300 pb-2 block mb-6 text-center">I Grassi (Vincitori)</span>
+                        <ul class="text-xs md:text-sm space-y-5 text-amber-900 leading-relaxed">
                             <li>
-                                <strong class="text-amber-800 block text-base mb-1">1. Erogazione Costante e Massiccia</strong>
+                                <strong class="text-amber-800 block text-sm md:text-base mb-1">1. Erogazione Costante e Massiccia</strong>
                                 Un singolo grammo di lipidi fornisce 9 kilocalorie stabili contro le 4 dei carboidrati. Nessun picco glicemico, nessun crollo: si traduce in una lucidità mentale prolungata per l'intera giornata.
                             </li>
                             <li>
-                                <strong class="text-amber-800 block text-base mb-1">2. Fondamenta Ormonali Essenziali</strong>
+                                <strong class="text-amber-800 block text-sm md:text-base mb-1">2. Fondamenta Ormonali Essenziali</strong>
                                 I grassi saturi e il tanto temuto colesterolo sono i mattoni primari (attraverso il processo di Steroidogenesi) per la sintesi dei nostri ormoni sessuali: testosterone, estrogeni e la fondamentale Vitamina D3.
                             </li>
                             <li>
-                                <strong class="text-amber-800 block text-base mb-1">3. Neuroprotezione Assoluta</strong>
+                                <strong class="text-amber-800 block text-sm md:text-base mb-1">3. Neuroprotezione Assoluta</strong>
                                 Il cervello umano, al netto dell'acqua, è composto per circa il 60% da materia grassa. I lipidi alimentari riparano le guaine mieliniche dei nervi, ottimizzando drasticamente la velocità di trasmissione degli impulsi elettrici.
                             </li>
                         </ul>
@@ -207,45 +217,45 @@
         <!-- PAGINA 4: DOSSIER CARBOIDRATI NASCOSTI P1 -->
         <div class="page-a4">
             <span class="section-tag bg-orange-100 text-orange-700">Dossier Investigativo / Glucidi P.1</span>
-            <h2 class="serif-font text-5xl font-black text-slate-900 mb-6 leading-tight">L'Inganno del "Verde":<br>Le false insalate.</h2>
+            <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">L'Inganno del "Verde":<br>Le false insalate.</h2>
             
-            <p class="text-base text-slate-700 mb-8 leading-loose">
+            <p class="text-sm md:text-base text-slate-700 mb-8 leading-loose">
                 L'industria del fitness e le diete commerciali ci hanno convinti che "qualsiasi cosa di colore verde sia automaticamente dietetica e benefica". In realtà, moltissimi alimenti vegetali percepiti come "sani, leggeri e a volontà" nascondono vuoti nutrizionali imbarazzanti, o peggio, un carico glicemico e infiammatorio capace di bloccare a lungo termine il dimagrimento. Iniziamo a smascherare i falsi miti.
             </p>
 
-            <div class="space-y-8">
+            <div class="space-y-6 md:space-y-8">
                 <!-- Chicca 1 -->
-                <div class="flex gap-6 items-start p-8 bg-slate-50 rounded-3xl border border-slate-200">
-                    <div class="text-5xl mt-2">🥬</div>
+                <div class="flex flex-col md:flex-row gap-4 md:gap-6 items-start p-6 md:p-8 bg-slate-50 rounded-3xl border border-slate-200">
+                    <div class="text-5xl mt-1 md:mt-2">🥬</div>
                     <div>
-                        <h4 class="font-black text-slate-900 text-xl mb-3 uppercase tracking-wide">Insalata Iceberg: Acqua e Antinutrienti</h4>
-                        <p class="text-sm text-slate-700 leading-relaxed">
+                        <h4 class="font-black text-slate-900 text-lg md:text-xl mb-3 uppercase tracking-wide">Insalata Iceberg: Acqua e Antinutrienti</h4>
+                        <p class="text-xs md:text-sm text-slate-700 leading-relaxed">
                             È universalmente considerata il pilastro indiscusso delle classiche "diete da fame". Ma l'insalata Iceberg (e simili lattughe a foglia chiara) rasenta la totale inutilità nutrizionale. Essendo composta per oltre il 95% da acqua, è drammaticamente priva della ricchezza di clorofilla, polifenoli e precursori dell'ossido nitrico che caratterizzano invece le foglie scure.
                         </p>
-                        <p class="text-sm text-slate-700 leading-relaxed mt-4">
+                        <p class="text-xs md:text-sm text-slate-700 leading-relaxed mt-4">
                             Il vero problema? È costituita prevalentemente da cellulosa rigida e fibre insolubili che l'intestino umano fatica immensamente a disgregare. Mangiata in grandi "bacinelle" con l'illusione di saziarsi a zero calorie, l'Iceberg causa una fermentazione abnorme nel tratto intestinale, gonfiore addominale acuto e fornisce letteralmente <strong>zero</strong> reale nutrimento a livello cellulare.
                         </p>
                         <div class="mt-4 p-4 bg-emerald-50 rounded-xl border-l-4 border-emerald-500">
                             <span class="text-emerald-800 font-bold text-xs uppercase tracking-widest">L'Alternativa d'Élite:</span>
-                            <p class="text-xs text-emerald-900 mt-1">Sostituisci l'Iceberg con il <strong>Tarassaco</strong> (potente stimolatore del flusso biliare epatico), il <strong>Cavolo Nero</strong> (ricchissimo di sulforafano, il più noto attivatore della detossificazione cellulare) o la <strong>Rucola pungente</strong> (eccellente per favorire la vasodilatazione tramite ossido nitrico).</p>
+                            <p class="text-xs md:text-sm text-emerald-900 mt-1">Sostituisci l'Iceberg con il <strong>Tarassaco</strong> (potente stimolatore del flusso biliare epatico), il <strong>Cavolo Nero</strong> (ricchissimo di sulforafano) o la <strong>Rucola pungente</strong> (eccellente per favorire la vasodilatazione tramite ossido nitrico).</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Chicca 2 -->
-                <div class="flex gap-6 items-start p-8 bg-slate-50 rounded-3xl border border-slate-200">
-                    <div class="text-5xl mt-2">🫘</div>
+                <div class="flex flex-col md:flex-row gap-4 md:gap-6 items-start p-6 md:p-8 bg-slate-50 rounded-3xl border border-slate-200">
+                    <div class="text-5xl mt-1 md:mt-2">🫘</div>
                     <div>
-                        <h4 class="font-black text-slate-900 text-xl mb-3 uppercase tracking-wide">Il Paradosso Positivo: Lupini e Soia Nera</h4>
-                        <p class="text-sm text-slate-700 leading-relaxed">
+                        <h4 class="font-black text-slate-900 text-lg md:text-xl mb-3 uppercase tracking-wide">Il Paradosso Positivo: Lupini e Soia Nera</h4>
+                        <p class="text-xs md:text-sm text-slate-700 leading-relaxed">
                             La stragrande maggioranza dei legumi (fagioli bianchi, ceci, lenticchie rosse) vengono venduti come "fonte proteica". La cruda verità chimica è che sono, per circa il 60%, delle "bombe di amido". In soggetti insulino-resistenti innalzano la glicemia al pari di un piatto di pasta. 
                         </p>
-                        <p class="text-sm text-slate-700 leading-relaxed mt-4">
+                        <p class="text-xs md:text-sm text-slate-700 leading-relaxed mt-4">
                             Tuttavia, esiste un'élite ristretta di legumi che sfida questa regola biologica. I <strong>Lupini</strong>, ad esempio, hanno un profilo macronutrizionale formidabile: quasi totalmente proteine nobili e fibre viscose, con una quota di carboidrati netti vicinissima allo zero. 
                         </p>
                         <div class="mt-4 p-4 bg-emerald-50 rounded-xl border-l-4 border-emerald-500">
                             <span class="text-emerald-800 font-bold text-xs uppercase tracking-widest">Altre eccezioni preziose:</span>
-                            <p class="text-xs text-emerald-900 mt-1">L'<strong>Edamame</strong> (i fagioli di soia verde raccolti acerbi) e l'ancor più rara <strong>Soia Nera</strong>. Questi legumi offrono densità proteica elevatissima e un impatto glicemico nullo, rendendoli alleati perfetti per chi ricerca spuntini che non interrompano la fase di brucia-grassi.</p>
+                            <p class="text-xs md:text-sm text-emerald-900 mt-1">L'<strong>Edamame</strong> (i fagioli di soia verde raccolti acerbi) e l'ancor più rara <strong>Soia Nera</strong>. Questi legumi offrono densità proteica elevatissima e un impatto glicemico nullo, rendendoli alleati perfetti per non interrompere la fase di brucia-grassi.</p>
                         </div>
                     </div>
                 </div>
@@ -257,54 +267,54 @@
         <!-- PAGINA 5: DOSSIER CARBOIDRATI NASCOSTI P2 -->
         <div class="page-a4">
             <span class="section-tag bg-orange-100 text-orange-700">Dossier Investigativo / Glucidi P.2</span>
-            <h2 class="serif-font text-5xl font-black text-slate-900 mb-6 leading-tight">I Falsi Amici:<br>Verdure che non lo sono.</h2>
+            <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">I Falsi Amici:<br>Verdure che non lo sono.</h2>
             
-            <p class="text-base text-slate-700 mb-8 leading-loose">
+            <p class="text-sm md:text-base text-slate-700 mb-8 leading-loose">
                 Un errore sistematico che distrugge i piani nutrizionali di moltissime persone è la confusione botanica. Molti alimenti ad altissima densità zuccherina vengono inseriti nel pasto come semplice "contorno leggero", inondando il sangue di glucosio inaspettato. 
             </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-                <div class="bg-white border border-slate-200 p-6 rounded-3xl shadow-sm">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-10">
+                <div class="bg-white border border-slate-200 p-6 rounded-[2rem] shadow-sm">
                     <span class="text-4xl mb-3 block">🌽</span>
                     <h4 class="font-black text-slate-900 text-lg mb-2">Il Mais è un Cereale</h4>
-                    <p class="text-sm text-slate-700 leading-relaxed">
-                        Le colorate insalatone estive spesso abbondano di mais dolce. Errore fatale: il mais non è un ortaggio, è un <strong>cereale ad alto indice glicemico</strong>. Ricorda che è proprio dal mais che l'industria estrae lo sciroppo di fruttosio ad alto rendimento, uno dei principali responsabili dell'epidemia di fegato grasso.
+                    <p class="text-xs md:text-sm text-slate-700 leading-relaxed">
+                        Le colorate insalatone estive spesso abbondano di mais dolce. Errore fatale: il mais non è un ortaggio, è un <strong>cereale ad alto indice glicemico</strong>. Ricorda che è proprio dal mais che l'industria estrae lo sciroppo di fruttosio ad alto rendimento.
                     </p>
                 </div>
                 
-                <div class="bg-white border border-slate-200 p-6 rounded-3xl shadow-sm">
+                <div class="bg-white border border-slate-200 p-6 rounded-[2rem] shadow-sm">
                     <span class="text-4xl mb-3 block">🟢</span>
                     <h4 class="font-black text-slate-900 text-lg mb-2">I Piselli sono Amido</h4>
-                    <p class="text-sm text-slate-700 leading-relaxed">
-                        Venduti spessissimo insieme alle carote come "verdure miste", i piselli sono a tutti gli effetti dei legumi densissimi di zuccheri complessi. Un bel piatto di seppie e piselli equivale, a livello metabolico, a un piatto di seppie con contorno di patate.
+                    <p class="text-xs md:text-sm text-slate-700 leading-relaxed">
+                        Venduti spessissimo insieme alle carote come "verdure miste", i piselli sono a tutti gli effetti dei legumi densissimi di zuccheri complessi. Un piatto di seppie e piselli equivale, a livello metabolico, a un piatto di seppie con contorno di patate.
                     </p>
                 </div>
 
-                <div class="bg-white border border-slate-200 p-6 rounded-3xl shadow-sm">
+                <div class="bg-white border border-slate-200 p-6 rounded-[2rem] shadow-sm">
                     <span class="text-4xl mb-3 block">🥔</span>
                     <h4 class="font-black text-slate-900 text-lg mb-2">Tuberi: Energia Pura</h4>
-                    <p class="text-sm text-slate-700 leading-relaxed">
-                        Patate, patate dolci, rape e barbabietole. Crescono sottoterra proprio per immagazzinare energia per la pianta sotto forma di amido compresso. Non possono MAI essere considerati "verdura da contorno". Devono sostituire la pasta o il pane, non accompagnarli.
+                    <p class="text-xs md:text-sm text-slate-700 leading-relaxed">
+                        Patate, patate dolci, rape e barbabietole crescono sottoterra per immagazzinare energia sotto forma di amido compresso. Non possono MAI essere considerati "verdura da contorno". Devono sostituire la pasta o il pane.
                     </p>
                 </div>
 
-                <div class="bg-white border border-slate-200 p-6 rounded-3xl shadow-sm">
+                <div class="bg-white border border-slate-200 p-6 rounded-[2rem] shadow-sm">
                     <span class="text-4xl mb-3 block">🥕</span>
                     <h4 class="font-black text-slate-900 text-lg mb-2">Carote e Zucche Cotte</h4>
-                    <p class="text-sm text-slate-700 leading-relaxed">
-                        Crude, le carote hanno un impatto moderato grazie alla matrice fibrosa intatta. Ma una volta lessate, o frullate in calde vellutate di zucca, il calore rompe le pareti cellulari: l'amido viene idrolizzato e l'Indice Glicemico schizza verso l'alto superando quota 70.
+                    <p class="text-xs md:text-sm text-slate-700 leading-relaxed">
+                        Crude, le carote hanno un impatto moderato grazie alla matrice fibrosa intatta. Ma una volta lessate, o frullate in calde vellutate, il calore rompe le pareti cellulari: l'amido viene idrolizzato e l'Indice Glicemico schizza verso l'alto.
                     </p>
                 </div>
             </div>
 
-            <div class="p-8 bg-slate-900 text-white rounded-3xl border-l-8 border-amber-500 shadow-2xl relative overflow-hidden">
-                <div class="absolute -right-4 -bottom-4 text-8xl opacity-10">🥜</div>
-                <h4 class="text-amber-500 font-black text-lg uppercase mb-3 tracking-widest">⚠️ L'Inganno delle Arachidi</h4>
-                <p class="text-sm leading-relaxed text-slate-300">
-                    Sfatiamo un dogma assoluto: le arachidi (e il burro di arachidi commerciale) <strong>non appartengono alla nobile famiglia della frutta a guscio</strong> (come noci, macadamia o mandorle). Botanicamente, crescono sottoterra e sono dei legumi a tutti gli effetti.
+            <div class="p-6 md:p-8 bg-slate-900 text-white rounded-[2rem] border-l-8 border-amber-500 shadow-2xl relative overflow-hidden mt-auto">
+                <div class="absolute -right-4 -bottom-4 text-8xl opacity-10 hidden md:block">🥜</div>
+                <h4 class="text-amber-500 font-black text-base md:text-lg uppercase mb-3 tracking-widest">⚠️ L'Inganno delle Arachidi</h4>
+                <p class="text-xs md:text-sm leading-relaxed text-slate-300">
+                    Sfatiamo un dogma assoluto: le arachidi (e il burro di arachidi commerciale) <strong>non appartengono alla nobile famiglia della frutta a guscio</strong>. Botanicamente, crescono sottoterra e sono dei legumi a tutti gli effetti.
                 </p>
-                <p class="text-sm leading-relaxed text-slate-300 mt-4">
-                    Questo significa che le arachidi sono cariche di <em>lectine</em> (proteine antinutrizionali usate dalla pianta per difendersi dai predatori, altamente irritanti per la nostra mucosa intestinale) e possiedono un profilo lipidico gravemente sbilanciato a favore degli <strong>Acidi Grassi Omega-6</strong>. Un eccesso di Omega-6 rispetto agli Omega-3 è la miccia che innesca l'infiammazione silente a livello sistemico. Se cerchi grassi nobili per nutrire il cervello, le arachidi sono una delle scelte metaboliche peggiori.
+                <p class="text-xs md:text-sm leading-relaxed text-slate-300 mt-3 md:mt-4">
+                    Questo significa che le arachidi sono cariche di <em>lectine</em> (proteine antinutrizionali altamente irritanti per la nostra mucosa intestinale) e possiedono un profilo lipidico gravemente sbilanciato a favore degli <strong>Acidi Grassi Omega-6</strong>. Se cerchi grassi nobili per nutrire il cervello, le arachidi sono una delle scelte metaboliche peggiori.
                 </p>
             </div>
 
@@ -314,77 +324,71 @@
         <!-- PAGINA 6: TABELLA FRUTTA SECCA -->
         <div class="page-a4">
             <span class="section-tag bg-emerald-100 text-emerald-700">Manuale Operativo / Lipidi Vegetali</span>
-            <h2 class="serif-font text-5xl font-black text-slate-900 mb-4 leading-tight">La Tavola Periodica della<br>Frutta a Guscio.</h2>
-            <p class="text-sm text-slate-600 mb-6 leading-relaxed">
-                Abbandona le arachidi. Ecco la guida biochimica definitiva per estrarre il massimo potenziale neuroprotettivo, ormonale ed energetico dai veri semi oleosi. Ogni noce possiede un codice specifico: imparare come e quando assumerla è fondamentale per evitare i blocchi digestivi causati dall'acido fitico.
+            <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-4 leading-tight">La Tavola Periodica della<br>Frutta a Guscio.</h2>
+            <p class="text-sm md:text-base text-slate-600 mb-6 leading-relaxed">
+                Abbandona le arachidi. Ecco la guida biochimica definitiva per estrarre il massimo potenziale neuroprotettivo, ormonale ed energetico dai veri semi oleosi. Imparare come e quando assumerli è fondamentale per evitare blocchi digestivi.
             </p>
 
-            <div class="overflow-x-auto">
-                <table class="w-full text-left border-collapse bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200">
+            <div class="overflow-x-auto pb-4">
+                <table class="w-full text-left border-collapse bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 min-w-[700px]">
                     <thead>
                         <tr class="bg-slate-900 text-white">
-                            <th class="p-3 text-[10px] font-black uppercase tracking-widest border-b border-slate-700 w-1/5">Nome / Seme</th>
-                            <th class="p-3 text-[10px] font-black uppercase tracking-widest border-b border-slate-700 w-1/3">Profilo Biologico & Scopo</th>
-                            <th class="p-3 text-[10px] font-black uppercase tracking-widest border-b border-slate-700 w-1/6">Quando Consumarla</th>
-                            <th class="p-3 text-[10px] font-black uppercase tracking-widest border-b border-slate-700">Modalità Operativa</th>
+                            <th class="p-3 text-[10px] md:text-xs font-black uppercase tracking-widest border-b border-slate-700 w-1/5">Nome / Seme</th>
+                            <th class="p-3 text-[10px] md:text-xs font-black uppercase tracking-widest border-b border-slate-700 w-1/3">Profilo Biologico & Scopo</th>
+                            <th class="p-3 text-[10px] md:text-xs font-black uppercase tracking-widest border-b border-slate-700 w-1/6">Quando Consumarla</th>
+                            <th class="p-3 text-[10px] md:text-xs font-black uppercase tracking-widest border-b border-slate-700">Modalità Operativa</th>
                         </tr>
                     </thead>
-                    <tbody class="text-[11px] text-slate-800 font-medium">
+                    <tbody class="text-xs md:text-sm text-slate-800 font-medium">
                         <tr class="border-b border-slate-100 hover:bg-slate-50">
-                            <td class="p-3 font-bold text-slate-900">Noci Comuni (Walnuts)</td>
-                            <td class="p-3 leading-relaxed">Eccezionale fonte di Acido Alfa-Linolenico (ALA, Omega-3 vegetale). Supportano la struttura della membrana neuronale e l'elasticità arteriosa.</td>
+                            <td class="p-3 font-bold text-slate-900">Noci Comuni</td>
+                            <td class="p-3 leading-relaxed">Eccezionale fonte di Acido Alfa-Linolenico (ALA, Omega-3 vegetale). Supportano la struttura della membrana neuronale.</td>
                             <td class="p-3 text-emerald-700 font-bold">Pasto Serale</td>
-                            <td class="p-3 leading-relaxed">Cruciale <strong>l'ammollo in acqua e sale per 8-12 ore</strong> (attivazione) per degradare i fortissimi inibitori enzimatici della pellicina. Asciugare prima dell'uso.</td>
+                            <td class="p-3 leading-relaxed">Cruciale <strong>l'ammollo in acqua e sale per 8-12 ore</strong> per degradare gli inibitori enzimatici della pellicina.</td>
                         </tr>
                         <tr class="border-b border-slate-100 hover:bg-slate-50">
-                            <td class="p-3 font-bold text-slate-900">Noci di Macadamia</td>
-                            <td class="p-3 leading-relaxed">I "Re" dei grassi. Costituite quasi interamente da Acidi Grassi Monoinsaturi (Omega-9), profilate biochimicamente in modo simile all'olio d'oliva. Zero antinutrienti.</td>
-                            <td class="p-3 text-emerald-700 font-bold">Pre-Workout / Digiuno</td>
-                            <td class="p-3 leading-relaxed"><strong>Crude al naturale</strong>. Essendo quasi prive di acido fitico, non necessitano di ammollo. Forniscono energia purissima per lo stato di chetosi.</td>
+                            <td class="p-3 font-bold text-slate-900">Noci Macadamia</td>
+                            <td class="p-3 leading-relaxed">I "Re" dei grassi. Costituite interamente da Monoinsaturi (Omega-9). Profilo biochimico simile all'olio d'oliva.</td>
+                            <td class="p-3 text-emerald-700 font-bold">Pre-Workout</td>
+                            <td class="p-3 leading-relaxed"><strong>Crude al naturale</strong>. Essendo quasi prive di acido fitico, non necessitano di ammollo.</td>
                         </tr>
                         <tr class="border-b border-slate-100 hover:bg-slate-50">
                             <td class="p-3 font-bold text-slate-900">Mandorle</td>
-                            <td class="p-3 leading-relaxed">Densissime di Vitamina E (scudo antiossidante per le membrane cellulari) e Magnesio. Ottime per il controllo dell'appetito tramite rilascio di colecistochinina.</td>
-                            <td class="p-3 text-emerald-700 font-bold">Spuntino Metà Mattina</td>
-                            <td class="p-3 leading-relaxed"><strong>Sbucciate (Bianche) o Attivate</strong>. La buccia marrone è ricchissima di tannini e ossalati che inibiscono l'assorbimento del ferro. Sbollentarle e rimuovere la pelle.</td>
+                            <td class="p-3 leading-relaxed">Densissime di Vitamina E (scudo antiossidante per le membrane) e Magnesio. Ottime per il controllo dell'appetito.</td>
+                            <td class="p-3 text-emerald-700 font-bold">Metà Mattina</td>
+                            <td class="p-3 leading-relaxed"><strong>Sbucciate o Attivate</strong>. La buccia marrone è ricchissima di tannini che inibiscono l'assorbimento del ferro.</td>
                         </tr>
                         <tr class="border-b border-slate-100 hover:bg-slate-50">
                             <td class="p-3 font-bold text-slate-900">Noci del Brasile</td>
-                            <td class="p-3 leading-relaxed">La più potente miniera organica di <strong>Selenio</strong> esistente. Questo oligoelemento è il co-fattore assoluto per l'enzima deiodinasi (converte l'ormone tiroideo T4 in T3 attivo).</td>
+                            <td class="p-3 leading-relaxed">La più potente miniera organica di <strong>Selenio</strong>, co-fattore assoluto per convertire l'ormone tiroideo T4 in T3 attivo.</td>
                             <td class="p-3 text-emerald-700 font-bold">Prima Colazione</td>
-                            <td class="p-3 leading-relaxed"><strong>Massimo 2 o 3 noci al giorno.</strong> Un dosaggio superiore rischia di causare tossicità da Selenio (selenosio). Da mangiare rigorosamente crude.</td>
+                            <td class="p-3 leading-relaxed"><strong>Massimo 2-3 noci al giorno.</strong> Un dosaggio superiore rischia tossicità da Selenio. Rigorosamente crude.</td>
                         </tr>
                         <tr class="border-b border-slate-100 hover:bg-slate-50">
                             <td class="p-3 font-bold text-slate-900">Noci Pecan</td>
-                            <td class="p-3 leading-relaxed">Tra le noci con il minor quantitativo netto di carboidrati in assoluto, perfette per mantenere un rigido controllo insulinico. Ricche di antiossidanti fenolici.</td>
-                            <td class="p-3 text-emerald-700 font-bold">Fase di Chetosi / Spuntino</td>
-                            <td class="p-3 leading-relaxed"><strong>Crude</strong>. Ideali spezzettate in aggiunta a yogurt greco intero o per la formulazione di barrette fat-bomb domestiche.</td>
+                            <td class="p-3 leading-relaxed">Hanno il minor quantitativo netto di carboidrati in assoluto, perfette per mantenere un rigido controllo insulinico.</td>
+                            <td class="p-3 text-emerald-700 font-bold">Spuntino Keto</td>
+                            <td class="p-3 leading-relaxed"><strong>Crude</strong>. Ideali spezzettate in aggiunta a yogurt greco intero o per barrette domestiche.</td>
                         </tr>
                         <tr class="border-b border-slate-100 hover:bg-slate-50">
                             <td class="p-3 font-bold text-slate-900">Pistacchi</td>
-                            <td class="p-3 leading-relaxed">Custodiscono un segreto clinico: sono una delle pochissime fonti vegetali densamente popolate di <strong>Melatonina bio-identica</strong>, l'ormone regolatore del ritmo circadiano.</td>
+                            <td class="p-3 leading-relaxed">Custodiscono un segreto: sono una delle rarissime fonti vegetali densamente popolate di <strong>Melatonina bio-identica</strong>.</td>
                             <td class="p-3 text-emerald-700 font-bold">2 Ore Pre-Sonno</td>
-                            <td class="p-3 leading-relaxed"><strong>Tostati ma non salati</strong>. Il sale aggiunto causa ipertensione transitoria e ritenzione. Da consumare per facilitare l'architettura profonda del sonno.</td>
-                        </tr>
-                        <tr class="border-b border-slate-100 hover:bg-slate-50">
-                            <td class="p-3 font-bold text-slate-900">Nocciole</td>
-                            <td class="p-3 leading-relaxed">Ottima proporzione di grassi monoinsaturi e folati, fondamentali per la metilazione del DNA. Bassissimo impatto pro-infiammatorio.</td>
-                            <td class="p-3 text-emerald-700 font-bold">Pasto Libero / Post-Pranzo</td>
-                            <td class="p-3 leading-relaxed"><strong>Tostate a bassa temperatura</strong> (sotto i 140°C) per non ossidare i lipidi interni. Ottime per la formulazione di creme di cacao funzionali fatte in casa.</td>
+                            <td class="p-3 leading-relaxed"><strong>Tostati ma non salati</strong>. Da consumare per facilitare l'architettura profonda del sonno.</td>
                         </tr>
                         <tr class="hover:bg-slate-50">
                             <td class="p-3 font-bold text-slate-900">Anacardi</td>
-                            <td class="p-3 leading-relaxed text-amber-700 font-bold">Attenzione: Le "finte noci". Hanno il più alto carico glicemico e di amido rispetto a tutte le altre. Apportano zinco e rame, ma stimolano l'insulina.</td>
-                            <td class="p-3 text-amber-600 font-bold">Solo Post-Workout Ibrido</td>
-                            <td class="p-3 leading-relaxed"><strong>Ammollati e frullati</strong>. Utilizzatissimi nella cucina vegana per fare "formaggi", vanno trattati come una mezza fonte glucidica, non lipidica.</td>
+                            <td class="p-3 leading-relaxed text-amber-700 font-bold">Attenzione: Le "finte noci". Hanno il più alto carico glicemico e di amido rispetto a tutte le altre.</td>
+                            <td class="p-3 text-amber-600 font-bold">Post-Workout</td>
+                            <td class="p-3 leading-relaxed"><strong>Ammollati</strong>. Vanno trattati come una mezza fonte glucidica, non lipidica.</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <div class="mt-6 p-4 bg-slate-900 text-amber-400 rounded-xl">
-                <p class="text-[10px] leading-relaxed italic text-justify">
-                    <strong>La Regola d'Oro dell'Acido Fitico:</strong> Le noci sono "semi", progettati dalla pianta per sopravvivere al transito intestinale degli animali. A tale scopo contengono Acido Fitico, una corazza chimica che lega a sé Minerali preziosi (Ferro, Calcio, Zinco) impedendoti di assorbirli (chelando). L'ammollo preventivo in acqua tiepida e sale marino innesca la germinazione, disattivando l'acido fitico e rendendo la noce biologicamente "aperta" per la digestione umana.
+            <div class="mt-4 md:mt-6 p-4 md:p-6 bg-slate-900 text-amber-400 rounded-xl md:rounded-2xl">
+                <p class="text-xs md:text-sm leading-relaxed italic text-justify">
+                    <strong>La Regola d'Oro dell'Acido Fitico:</strong> Le noci sono "semi", progettati dalla pianta per sopravvivere al transito intestinale. Contengono Acido Fitico, una corazza chimica che lega a sé Minerali preziosi (Ferro, Calcio, Zinco) impedendoti di assorbirli. L'ammollo in acqua e sale marino innesca la germinazione, disattivando l'acido fitico.
                 </p>
             </div>
 
@@ -394,55 +398,50 @@
         <!-- PAGINA 7: TABELLA ZUCCHERI OCCULTI -->
         <div class="page-a4">
             <span class="section-tag bg-orange-100 text-orange-700">Analisi Chimica / Zuccheri</span>
-            <h2 class="serif-font text-5xl font-black text-slate-900 mb-4 leading-tight">Il Dossier degli<br>Zuccheri Occulti.</h2>
-            <p class="text-sm text-slate-600 mb-6 leading-relaxed">
-                Migliaia di persone frustrano i propri tentativi di miglioramento metabolico ingerendo inconsapevolmente decine di grammi di glucosio, fruttosio e destrosio abilmente occultati dall'industria alimentare all'interno di alimenti considerati "salati" o "light". Ecco le truffe biochimiche quotidiane e le loro alternative pure.
+            <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-4 leading-tight">Il Dossier degli<br>Zuccheri Occulti.</h2>
+            <p class="text-sm md:text-base text-slate-600 mb-6 leading-relaxed">
+                Migliaia di persone frustrano i propri tentativi ingerendo inconsapevolmente decine di grammi di glucosio, fruttosio e destrosio abilmente occultati dall'industria alimentare all'interno di alimenti "salati" o "light". 
             </p>
 
-            <div class="overflow-x-auto">
-                <table class="w-full text-left border-collapse bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200">
+            <div class="overflow-x-auto pb-4">
+                <table class="w-full text-left border-collapse bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 min-w-[700px]">
                     <thead>
                         <tr class="bg-amber-600 text-white">
-                            <th class="p-3 text-[10px] font-black uppercase tracking-widest border-b border-amber-800 w-1/4">Il Falso Amico Dietetico</th>
-                            <th class="p-3 text-[10px] font-black uppercase tracking-widest border-b border-amber-800 w-1/2">L'Inganno Biochimico (Perché evitarlo)</th>
-                            <th class="p-3 text-[10px] font-black uppercase tracking-widest border-b border-amber-800 w-1/4">L'Alternativa Pura e Ottimizzata</th>
+                            <th class="p-3 text-[10px] md:text-xs font-black uppercase tracking-widest border-b border-amber-800 w-1/4">Il Falso Amico Dietetico</th>
+                            <th class="p-3 text-[10px] md:text-xs font-black uppercase tracking-widest border-b border-amber-800 w-1/2">L'Inganno Biochimico (Perché evitarlo)</th>
+                            <th class="p-3 text-[10px] md:text-xs font-black uppercase tracking-widest border-b border-amber-800 w-1/4">L'Alternativa Ottimizzata</th>
                         </tr>
                     </thead>
-                    <tbody class="text-[11px] text-slate-800 font-medium">
+                    <tbody class="text-xs md:text-sm text-slate-800 font-medium">
                         <tr class="border-b border-slate-100 hover:bg-slate-50">
-                            <td class="p-3 font-bold text-slate-900">Aceto Balsamico in "Glassa"</td>
-                            <td class="p-3 leading-relaxed text-justify">Presentata come guarnizione per piatti gourmet e insalate "salutari". È composta quasi integralmente da sciroppo di glucosio, mosto cotto caramellato e coloranti (E150d). Innalza l'insulina annullando l'effetto benefico delle verdure sottostanti.</td>
-                            <td class="p-3 text-emerald-700 font-bold leading-relaxed">Aceto di Mele non pastorizzato (con "La Madre") o Aceto di Vino purissimo invecchiato.</td>
+                            <td class="p-3 font-bold text-slate-900">Aceto in "Glassa"</td>
+                            <td class="p-3 leading-relaxed text-justify">Composta quasi integralmente da sciroppo di glucosio, mosto cotto caramellato e coloranti. Innalza l'insulina annullando l'effetto benefico delle verdure sottostanti.</td>
+                            <td class="p-3 text-emerald-700 font-bold leading-relaxed">Aceto di Mele puro o Aceto di Vino invecchiato.</td>
                         </tr>
                         <tr class="border-b border-slate-100 hover:bg-slate-50">
-                            <td class="p-3 font-bold text-slate-900">Yogurt "Zero Grassi" alla Frutta</td>
-                            <td class="p-3 leading-relaxed text-justify">La truffa suprema degli anni '90. Rimuovendo i grassi naturali del latte (che donano sapore e sazietà), il prodotto risulta acido e liquido. L'industria compensa aggiungendo amido di mais modificato e fino a 15g di zuccheri raffinati per vasetto.</td>
-                            <td class="p-3 text-emerald-700 font-bold leading-relaxed">Yogurt Greco Intero (minimo 5% di grassi) o Kefir bianco, addizionato a casa con frutti di bosco freschi o noci.</td>
+                            <td class="p-3 font-bold text-slate-900">Yogurt "Zero Grassi"</td>
+                            <td class="p-3 leading-relaxed text-justify">Rimuovendo i grassi naturali, il prodotto risulta acido. L'industria compensa aggiungendo amido di mais modificato e fino a 15g di zuccheri raffinati per vasetto.</td>
+                            <td class="p-3 text-emerald-700 font-bold leading-relaxed">Yogurt Greco Intero o Kefir bianco, addizionato a casa con noci.</td>
                         </tr>
                         <tr class="border-b border-slate-100 hover:bg-slate-50">
-                            <td class="p-3 font-bold text-slate-900">Fesa di Tacchino e Affettati Magri</td>
-                            <td class="p-3 leading-relaxed text-justify">Venduti come lo spuntino "fit" per eccellenza per il loro scarso apporto lipidico. Leggendo l'etichetta si scopre che le carni sono iniettate con <em>Destrosio</em> (glucosio puro) o Saccarosio per trattenere l'acqua (aumentando il peso di vendita) e mascherare la sapidità dei nitriti conservanti.</td>
-                            <td class="p-3 text-emerald-700 font-bold leading-relaxed">Tagli di carne interi cotti al forno domestico, oppure Prosciutto Crudo DOP stagionato 24 mesi (solo carne e sale).</td>
+                            <td class="p-3 font-bold text-slate-900">Fesa di Tacchino confezionata</td>
+                            <td class="p-3 leading-relaxed text-justify">Spesso le carni affettate "light" sono iniettate con <em>Destrosio</em> (glucosio) o Saccarosio per trattenere l'acqua e mascherare la sapidità dei nitriti conservanti.</td>
+                            <td class="p-3 text-emerald-700 font-bold leading-relaxed">Tagli di carne interi cotti al forno, o Prosciutto Crudo DOP.</td>
                         </tr>
                         <tr class="border-b border-slate-100 hover:bg-slate-50">
-                            <td class="p-3 font-bold text-slate-900">Latte di Avena "Barista"</td>
-                            <td class="p-3 leading-relaxed text-justify">Sponsorizzato come la scelta green e salutare nei bar. L'avena è un cereale. Durante il processo di produzione liquida, l'amido subisce una scissione enzimatica che lo trasforma in <em>Maltosio</em> (zucchero con altissimo indice glicemico). Equivale a bere una bibita zuccherata a stomaco vuoto.</td>
-                            <td class="p-3 text-emerald-700 font-bold leading-relaxed">Latte di Mandorla puro (zero zuccheri aggiunti, max 20kcal/100ml) o Latte di Cocco Full Fat.</td>
+                            <td class="p-3 font-bold text-slate-900">Latte di Avena</td>
+                            <td class="p-3 leading-relaxed text-justify">Durante il processo di produzione liquida, l'amido dell'avena subisce una scissione che lo trasforma in <em>Maltosio</em> (zucchero con altissimo indice glicemico).</td>
+                            <td class="p-3 text-emerald-700 font-bold leading-relaxed">Latte di Mandorla puro (zero zuccheri) o Cocco Full Fat.</td>
                         </tr>
                         <tr class="border-b border-slate-100 hover:bg-slate-50">
                             <td class="p-3 font-bold text-slate-900">Il Riso del Sushi</td>
-                            <td class="p-3 leading-relaxed text-justify">L'illusione del pasto proteico a base di solo pesce. Il riso per sushi (Sumeshi) viene cotto e successivamente irrorato con un denso sciroppo composto da aceto di riso, sale e <em>quantità mostruose di zucchero bianco sciolto</em> per renderlo compatto, dolce e colloso.</td>
-                            <td class="p-3 text-emerald-700 font-bold leading-relaxed">Sashimi puro, Tataki scottato, Tartare di salmone o pesce bianco senza salsine dolciastre in accompagnamento.</td>
-                        </tr>
-                        <tr class="border-b border-slate-100 hover:bg-slate-50">
-                            <td class="p-3 font-bold text-slate-900">Salse al Pomodoro Pronte</td>
-                            <td class="p-3 leading-relaxed text-justify">Il sugo di pomodoro commerciale, soprattutto basilico, bolognese o arrabbiata, subisce massicce aggiunte di saccarosio per "correggere" l'acidità di pomodori raccolti precocemente e di bassa qualità. Trasformano un pasto salato in un dessert insulinico.</td>
-                            <td class="p-3 text-emerald-700 font-bold leading-relaxed">Passata di pomodoro 100% biologica (ingredienti: pomodoro, sale), corretta in cottura con bicarbonato se acida.</td>
+                            <td class="p-3 leading-relaxed text-justify">Il riso per sushi viene cotto e irrorato con un denso sciroppo di aceto e <em>quantità mostruose di zucchero bianco</em> per renderlo compatto e dolce.</td>
+                            <td class="p-3 text-emerald-700 font-bold leading-relaxed">Sashimi puro, Tataki o Tartare senza salse dolciastre.</td>
                         </tr>
                         <tr class="hover:bg-slate-50">
-                            <td class="p-3 font-bold text-slate-900">Cereali da Colazione "Fitness"</td>
-                            <td class="p-3 leading-relaxed text-justify">Box tappezzati da donne in forma e misuratori di girovita. Sono letteralmente cereali soffiati (estrusione termica che distrugge l'amido alzando la glicemia alle stelle) ricoperti da strati di sciroppo di glucosio per farli rimanere "croccanti" nel latte. Il veleno perfetto per iniziare la giornata.</td>
-                            <td class="p-3 text-emerald-700 font-bold leading-relaxed">Pudding di semi di Chia, oppure uova strapazzate nel Ghee per un reset ormonale totale mattutino.</td>
+                            <td class="p-3 font-bold text-slate-900">Salse al Pomodoro</td>
+                            <td class="p-3 leading-relaxed text-justify">Il sugo commerciale subisce massicce aggiunte di saccarosio per "correggere" l'acidità. Trasformano un pasto salato in un dessert insulinico.</td>
+                            <td class="p-3 text-emerald-700 font-bold leading-relaxed">Passata di pomodoro 100% bio corretta in cottura con bicarbonato.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -454,30 +453,30 @@
         <!-- PAGINA 8: IL RISCATTO DEI GRASSI P1 -->
         <div class="page-a4">
             <span class="section-tag bg-emerald-100 text-emerald-700">Dossier Clinico / Lipidi P.1</span>
-            <h2 class="serif-font text-5xl font-black text-slate-900 mb-6 leading-tight">La Rivincita dei<br>Grassi Saturi.</h2>
+            <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">La Rivincita dei<br>Grassi Saturi.</h2>
             
-            <p class="text-base text-slate-700 mb-8 leading-loose">
+            <p class="text-sm md:text-base text-slate-700 mb-8 leading-loose">
                 Per mezzo secolo ci è stato raccomandato di sostituire il burro genuino con le margarine industriali, di eliminare il tuorlo e di consumare litri di oli di semi "leggeri". Questa narrativa ha coinciso con l'esplosione delle malattie neurodegenerative e del declino cognitivo. È giunto il momento di ripristinare il ruolo biochimico vitale dei grassi saturi naturali.
             </p>
 
-            <div class="space-y-10">
+            <div class="space-y-8 md:space-y-10">
                 <div>
-                    <h4 class="font-black text-slate-900 text-2xl mb-4 border-l-4 border-emerald-500 pl-4">1. Il Tuorlo d'Uovo e il Mito del Colesterolo</h4>
-                    <p class="text-sm text-slate-700 leading-relaxed mb-4">
+                    <h4 class="font-black text-slate-900 text-xl md:text-2xl mb-4 border-l-4 border-emerald-500 pl-4">1. Il Tuorlo d'Uovo e il Mito del Colesterolo</h4>
+                    <p class="text-xs md:text-sm text-slate-700 leading-relaxed mb-4 text-justify">
                         Consumare l'albume scartando il rosso dell'uovo è un crimine contro la biologia dell'ottimizzazione umana. Il tuorlo è uno dei cibi più densi di nutrienti sul pianeta. Oltre a contenere tutte le vitamine liposolubili (A, D, E, K2), è un concentrato ineguagliabile di <strong>Colina</strong>. Questo nutriente vitale passa la barriera emato-encefalica e agisce come precursore diretto dell'<em>acetilcolina</em>, il principale neurotrasmettitore responsabile della memoria a breve termine, dell'apprendimento veloce e del focus.
                     </p>
-                    <p class="text-sm text-slate-700 leading-relaxed">
-                        Ma cosa dire del "terribile" colesterolo alimentare? La scienza moderna ha ampiamente dimostrato che il colesterolo assunto con la dieta ha un impatto irrilevante sui livelli di colesterolo nel sangue (che viene prodotto all'80% direttamente dal nostro fegato come risposta infiammatoria, spesso scatenata proprio da un eccesso di zuccheri). Al contrario, il colesterolo alimentare nobile viene utilizzato dall'organismo come impalcatura strutturale vitale: è il mattone base per il processo di <em>Steroidogenesi</em>, ovvero la fabbricazione dei nostri ormoni sessuali più preziosi, tra cui il Testosterone e l'Estradiolo.
+                    <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                        Ma cosa dire del "terribile" colesterolo alimentare? La scienza moderna ha ampiamente dimostrato che il colesterolo assunto con la dieta ha un impatto irrilevante sui livelli di colesterolo nel sangue (che viene prodotto all'80% direttamente dal nostro fegato come risposta infiammatoria). Al contrario, il colesterolo alimentare nobile viene utilizzato dall'organismo come impalcatura strutturale vitale: è il mattone base per la sintesi dei nostri ormoni sessuali più preziosi, tra cui il Testosterone e la Vitamina D3.
                     </p>
                 </div>
 
                 <div>
-                    <h4 class="font-black text-slate-900 text-2xl mb-4 border-l-4 border-emerald-500 pl-4">2. Neuroprotezione e Barriera Emato-Encefalica</h4>
-                    <p class="text-sm text-slate-700 leading-relaxed mb-4">
+                    <h4 class="font-black text-slate-900 text-xl md:text-2xl mb-4 border-l-4 border-emerald-500 pl-4">2. Neuroprotezione e Barriera Emato-Encefalica</h4>
+                    <p class="text-xs md:text-sm text-slate-700 leading-relaxed mb-4 text-justify">
                         Togli l'acqua, e scoprirai che il cervello umano è composto per oltre il 60% da pura materia grassa. I neuroni comunicano tra loro attraverso impulsi elettrici che viaggiano su "cavi" rivestiti da una fondamentale guaina isolante chiamata <strong>Mielina</strong>. Indovina di cosa è fatta la mielina? Esatto, di grassi saturi e colesterolo.
                     </p>
-                    <p class="text-sm text-slate-700 leading-relaxed">
-                        Le diete cronicamente prive di grassi "buoni" impoveriscono letteralmente questa guaina isolante, rallentando la trasmissione del pensiero e predisponendo il cervello a cortocircuiti infiammatori. Non a caso, le ricerche d'avanguardia stanno iniziando a ridefinire patologie terribili come l'Alzheimer chiamandole "Diabete di Tipo 3", una condizione in cui il cervello, intossicato dall'eccesso di zuccheri e resistente all'insulina, non riesce più ad assorbire glucosio per produrre energia, spegnendosi lentamente. La soluzione? Fornirgli un carburante alternativo che non dipenda dall'insulina.
+                    <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                        Le diete cronicamente prive di grassi "buoni" impoveriscono letteralmente questa guaina isolante, rallentando la trasmissione del pensiero e predisponendo il cervello a cortocircuiti infiammatori. Ricerche d'avanguardia stanno iniziando a ridefinire patologie come l'Alzheimer chiamandole "Diabete di Tipo 3": una condizione in cui il cervello, intossicato dagli zuccheri, si spegne.
                     </p>
                 </div>
             </div>
@@ -488,32 +487,29 @@
         <!-- PAGINA 9: IL RISCATTO DEI GRASSI P2 -->
         <div class="page-a4">
             <span class="section-tag bg-emerald-100 text-emerald-700">Dossier Clinico / Lipidi P.2</span>
-            <h2 class="serif-font text-5xl font-black text-slate-900 mb-6 leading-tight">Chetoni e<br>L'Eccezione Ibrida.</h2>
+            <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">Chetoni e<br>L'Eccezione Ibrida.</h2>
             
-            <div class="mb-10">
-                <h4 class="font-black text-slate-900 text-2xl mb-4 border-l-4 border-emerald-500 pl-4">3. MCT: Il Bypass Metabolico del Fegato</h4>
-                <p class="text-sm text-slate-700 leading-relaxed mb-4">
-                    Quando mangiamo la maggior parte dei grassi, questi necessitano di un complesso processo digestivo che coinvolge la bile e il sistema linfatico prima di poter essere utilizzati. Esiste però un'eccezione biologica straordinaria: gli <strong>Acidi Grassi a Catena Media (MCT)</strong>, estratti in purezza principalmente dall'olio di cocco (in particolare la rara e potente frazione C8 o Acido Caprilico).
+            <div class="mb-8 md:mb-10">
+                <h4 class="font-black text-slate-900 text-xl md:text-2xl mb-4 border-l-4 border-emerald-500 pl-4">3. MCT: Il Bypass Metabolico del Fegato</h4>
+                <p class="text-xs md:text-sm text-slate-700 leading-relaxed mb-4 text-justify">
+                    Quando mangiamo la maggior parte dei grassi, questi necessitano di un complesso processo digestivo. Esiste però un'eccezione biologica straordinaria: gli <strong>Acidi Grassi a Catena Media (MCT)</strong>, estratti in purezza principalmente dall'olio di cocco (in particolare la potente frazione C8 o Acido Caprilico).
                 </p>
-                <p class="text-sm text-slate-700 leading-relaxed">
-                    Grazie alla loro catena molecolare più corta, gli MCT eludono completamente il sistema digestivo standard. Non necessitano di sali biliari. Vengono assorbiti istantaneamente nell'intestino e "sparati" attraverso la vena porta direttamente al fegato. Qui vengono brutalmente convertiti in <strong>Corpi Chetonici</strong> (in particolare il <em>beta-idrossibutirrato</em>). Anche se il resto della tua dieta prevede carboidrati, l'assunzione strategica di puro olio MCT fornisce un'ondata di chetoni che attraversano istantaneamente la barriera emato-encefalica, regalando al cervello un'energia limpidissima e immediata, senza stimolare minimamente la secrezione di insulina.
+                <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                    Grazie alla loro catena molecolare più corta, gli MCT eludono completamente il sistema digestivo standard. Non necessitano di sali biliari. Vengono assorbiti istantaneamente nell'intestino e "sparati" attraverso la vena porta direttamente al fegato. Qui vengono brutalmente convertiti in <strong>Corpi Chetonici</strong>. Forniscono un'ondata di energia immediata al cervello senza stimolare minimamente la secrezione di insulina.
                 </p>
             </div>
 
-            <div class="bg-slate-900 text-white p-10 rounded-[2rem] shadow-2xl relative overflow-hidden">
-                <div class="absolute right-0 top-0 w-1/2 h-full bg-emerald-900/30 -skew-x-12 transform translate-x-10"></div>
+            <div class="bg-slate-900 text-white p-6 md:p-10 rounded-[2rem] shadow-2xl relative overflow-hidden mt-auto">
+                <div class="absolute right-0 top-0 w-full md:w-1/2 h-full bg-emerald-900/30 md:-skew-x-12 transform md:translate-x-10 hidden md:block"></div>
                 <div class="relative z-10">
-                    <h4 class="font-black text-emerald-400 text-2xl mb-6 italic">L'Eccezione: L'Atleta Ibrido</h4>
-                    <p class="text-sm text-slate-300 leading-relaxed mb-6">
-                        In Human Plus non abbracciamo i dogmi assolutisti. Se il tuo stile di vita prevede allenamenti di altissima intensità che intaccano profondamente il sistema glicolitico (es. Crossfit pesante, Sprint sui 100 metri, Powerlifting, sport da combattimento), il tuo tessuto muscolare va inevitabilmente a svuotare le riserve interne di glicogeno.
+                    <h4 class="font-black text-emerald-400 text-xl md:text-2xl mb-4 md:mb-6 italic">L'Eccezione: L'Atleta Ibrido</h4>
+                    <p class="text-xs md:text-sm text-slate-300 leading-relaxed mb-4 md:mb-6 text-justify">
+                        In Human Plus non abbracciamo dogmi. Se ti alleni ad altissima intensità (Crossfit pesante, Sprint, Sport da combattimento), il tuo tessuto muscolare va inevitabilmente a svuotare le riserve interne di glicogeno. Vivere costantemente in uno stato di "zero carboidrati" assoluto potrebbe a lungo termine limitare la tua esplosività. La soluzione avanzata è la <strong>Ricarica Glicidica Mirata</strong>.
                     </p>
-                    <p class="text-sm text-slate-300 leading-relaxed mb-6">
-                        Vivere costantemente in uno stato di "zero carboidrati" assoluto potrebbe a lungo termine limitare la tua capacità esplosiva e stressare eccessivamente le ghiandole surrenali nel tentativo di fabbricare nuovo glucosio a partire dalle proteine (gluconeogenesi). La soluzione avanzata è la <strong>Ricarica Glicidica Mirata (Targeted Refeed)</strong>.
-                    </p>
-                    <div class="p-6 bg-slate-800 rounded-2xl border-l-4 border-amber-500">
-                        <p class="text-amber-400 font-bold text-sm uppercase tracking-widest mb-2">Protocollo Pratico per Atleti</p>
-                        <p class="text-sm text-slate-200 leading-relaxed">
-                            Manteniamo un regime a bassissimi carboidrati (e alti grassi sani) per gran parte della settimana per massimizzare la sensibilità insulinica e l'efficienza mitocondriale. Ma introduciamo una <strong>singola finestra settimanale</strong> (tipicamente la sera, dopo l'allenamento più brutale e devastante) in cui consumiamo una dose massiccia ma pulita di amidi sicuri (riso basmati ben lavato, patate novelle, platano). I muscoli completamente svuotati assorbiranno quel glucosio come spugne per ripristinare il glicogeno, non permettendo a quegli zuccheri di trasformarsi in grasso addominale. Il giorno successivo, si rientra agilmente nel metabolismo lipidico, più forti e ricaricati.
+                    <div class="p-4 md:p-6 bg-slate-800 rounded-2xl border-l-4 border-amber-500">
+                        <p class="text-amber-400 font-bold text-xs md:text-sm uppercase tracking-widest mb-2">Protocollo Pratico per Atleti</p>
+                        <p class="text-xs md:text-sm text-slate-200 leading-relaxed text-justify">
+                            Manteniamo un regime a bassi carbo per massimizzare la sensibilità insulinica, ma introduciamo una <strong>singola finestra settimanale</strong> (tipicamente la sera, dopo l'allenamento più devastante) in cui consumiamo una dose massiccia ma pulita di amidi sicuri (riso basmati ben lavato o patate novelle). I muscoli completamente svuotati assorbiranno quel glucosio come spugne per ripristinare il glicogeno, non permettendo a quegli zuccheri di trasformarsi in grasso addominale.
                         </p>
                     </div>
                 </div>
@@ -525,94 +521,91 @@
         <!-- PAGINA 10: GLYCEMIC HACKS P1 -->
         <div class="page-a4">
             <span class="section-tag bg-blue-100 text-blue-700">Bio-Ingegneria / Modulazione Glicemica</span>
-            <h2 class="serif-font text-5xl font-black text-slate-900 mb-6 leading-tight italic">Hackerare l'Indice Glicemico:<br>La Retrogradazione.</h2>
+            <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight italic">Hackerare l'Indice Glicemico:<br>La Retrogradazione.</h2>
             
-            <p class="text-base text-slate-700 mb-8 leading-loose">
+            <p class="text-sm md:text-base text-slate-700 mb-6 md:mb-8 leading-loose text-justify">
                 In biologia avanzata, non si analizza solamente la quantità di macronutrienti inseriti nel piatto, ma la struttura molecolare che essi assumono in base al trattamento termico ricevuto. Esistono vere e proprie procedure di "bioingegneria domestica" per trasformare un carboidrato ad alto rischio in un potente alleato della tua salute intestinale.
             </p>
 
-            <div class="p-10 bg-blue-50 rounded-[2.5rem] border border-blue-200 relative overflow-hidden mb-8">
-                <div class="absolute top-6 right-6 text-7xl opacity-10">❄️</div>
-                <h4 class="font-black text-blue-900 text-2xl mb-6">Il Fenomeno della Retrogradazione dell'Amido</h4>
-                <p class="text-sm text-blue-900 leading-relaxed mb-6">
-                    L'amido crudo (come quello di una patata cruda) è indigeribile. Quando lo cuoci in acqua bollente, i granuli assorbono liquido, si gonfiano e gelatinizzano. In questo stato caldo e morbido, gli enzimi digestivi umani (le amilasi) riescono a smantellarlo in glucosio nel giro di pochi minuti, causando un violento picco glicemico nel sangue.
+            <div class="p-6 md:p-10 bg-blue-50 rounded-[2rem] md:rounded-[2.5rem] border border-blue-200 relative overflow-hidden mb-8">
+                <div class="absolute top-4 right-4 md:top-6 md:right-6 text-5xl md:text-7xl opacity-10">❄️</div>
+                <h4 class="font-black text-blue-900 text-xl md:text-2xl mb-4 md:mb-6 z-10 relative">Il Fenomeno della Retrogradazione dell'Amido</h4>
+                <p class="text-xs md:text-sm text-blue-900 leading-relaxed mb-4 md:mb-6 text-justify z-10 relative">
+                    L'amido crudo è indigeribile. Quando lo cuoci in acqua bollente, i granuli assorbono liquido e gelatinizzano. In questo stato caldo e morbido, gli enzimi digestivi umani riescono a smantellarlo in glucosio nel giro di pochi minuti, causando un violento picco glicemico nel sangue.
                 </p>
-                <p class="text-sm text-blue-900 leading-relaxed mb-6">
-                    Ma ecco il trucco biologico: se prendi quelle fonti amidacee cotte (<strong>patate novelle</strong>, <strong>riso</strong>, <strong>legumi</strong>) e commetti l'azione intelligente di lasciarle <strong>raffreddare in frigorifero per almeno 12-24 ore</strong> prima di consumarle, inneschi un'alterazione molecolare strutturale. Le catene di amilosio si riallineano e si "ricristallizzano", compattandosi in una struttura che il nostro corpo fatica enormemente a spezzare. Questo nuovo composto prende il nome scientifico di <strong>Amido Resistente di Tipo 3</strong>.
+                <p class="text-xs md:text-sm text-blue-900 leading-relaxed mb-4 md:mb-6 text-justify z-10 relative">
+                    Ma ecco il trucco biologico: se prendi quelle fonti amidacee cotte (<strong>patate novelle</strong>, <strong>riso</strong>, <strong>legumi</strong>) e commetti l'azione intelligente di lasciarle <strong>raffreddare in frigorifero per almeno 12-24 ore</strong>, inneschi un'alterazione molecolare strutturale. Le catene di amilosio si "ricristallizzano", compattandosi in una struttura che il nostro corpo fatica a spezzare: l'<strong>Amido Resistente di Tipo 3</strong>.
                 </p>
                 
-                <div class="bg-white/70 p-6 rounded-2xl shadow-sm">
-                    <h5 class="font-bold text-blue-800 text-sm uppercase tracking-widest mb-4">I tre miracoli dell'Amido Resistente:</h5>
-                    <ul class="text-sm space-y-4 text-blue-900">
+                <div class="bg-white/80 md:bg-white/70 p-4 md:p-6 rounded-2xl shadow-sm z-10 relative">
+                    <h5 class="font-bold text-blue-800 text-xs md:text-sm uppercase tracking-widest mb-3 md:mb-4">I tre miracoli dell'Amido Resistente:</h5>
+                    <ul class="text-xs md:text-sm space-y-3 md:space-y-4 text-blue-900 text-justify">
                         <li class="flex items-start gap-3">
-                            <span class="font-black text-lg">1.</span> 
-                            <span class="leading-relaxed"><strong>Elusione Digestiva:</strong> Gli enzimi digestivi umani scivolano letteralmente sopra questi cristalli di amido. Non venendo assorbito nello stomaco o nell'intestino tenue, apporta fisicamente circa la metà delle calorie originarie.</span>
+                            <span class="font-black text-base md:text-lg">1.</span> 
+                            <span class="leading-relaxed"><strong>Elusione Digestiva:</strong> Gli enzimi umani scivolano sopra questi cristalli. Apporta fisicamente circa la metà delle calorie originarie.</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <span class="font-black text-lg">2.</span> 
-                            <span class="leading-relaxed"><strong>Crollo dell'Impatto Glicemico:</strong> Poiché non viene convertito in glucosio libero, l'Indice Glicemico dell'alimento subisce un abbattimento fino al 40%, scongiurando il letale picco di insulina.</span>
+                            <span class="font-black text-base md:text-lg">2.</span> 
+                            <span class="leading-relaxed"><strong>Crollo dell'Impatto Glicemico:</strong> Non venendo convertito in glucosio libero, l'Indice Glicemico subisce un abbattimento fino al 40%.</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <span class="font-black text-lg">3.</span> 
-                            <span class="leading-relaxed"><strong>Fabbrica del Butirrato:</strong> Il vero miracolo avviene nel colon profondo. Questo amido, intatto, diventa il cibo preferito di ceppi batterici simbiotici d'élite (come l'<em>Akkermansia muciniphila</em>). Fermentando questo amido, i batteri producono <em>Acido Butirrico (Butirrato)</em>, un acido grasso a corta catena noto per essere il più potente disinfiammante epiteliale e soppressore di cellule anomale dell'intero apparato digerente umano.</span>
+                            <span class="font-black text-base md:text-lg">3.</span> 
+                            <span class="leading-relaxed"><strong>Fabbrica del Butirrato:</strong> Nel colon profondo, l'amido diventa cibo per batteri simbiotici d'élite che producono <em>Acido Butirrico</em>, il più potente disinfiammante epiteliale noto.</span>
                         </li>
                     </ul>
                 </div>
-                <p class="text-xs text-blue-700 font-medium italic mt-6 text-center">
-                    *Nota bene: L'effetto di resistenza si mantiene intatto anche se decidi di riscaldare leggermente la porzione tirata fuori dal frigo, a patto di non superare temperature estreme.
+                <p class="text-[10px] md:text-xs text-blue-700 font-medium italic mt-4 md:mt-6 text-center z-10 relative">
+                    *Nota: L'effetto di resistenza si mantiene intatto anche se riscaldi leggermente la porzione tirata fuori dal frigo.
                 </p>
             </div>
 
             <div class="page-number">10</div><div class="footer-brand">Human Plus</div>
         </div>
 
-<!-- PAGINA 11: PUBBLICITÀ FULL SCREEN (NUOVA) -->
-    <div class="page-a4 p-0 relative bg-slate-900">
-        <!-- Sostituisci questo src con l'immagine della tua pubblicità -->
-        <img src="sirtpropub.png" alt="Spazio Pubblicitario" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
-        <div class="absolute bottom-4 right-4 bg-black/50 text-white/80 text-xs px-3 py-1 rounded backdrop-blur-sm font-bold tracking-widest uppercase">Adv</div>
-        <div class="page-number">11</div><div class="footer-brand">Human Plus</div>
-    </div>
+        <!-- PAGINA 11: PUBBLICITÀ FULL SCREEN (NUOVA) -->
+        <div class="page-a4 p-0 relative bg-slate-900 min-h-[60vh] md:min-h-[297mm]">
+            <!-- Immagine della pubblicità inserita dall'utente -->
+            <img src="sirtpropub.png" alt="Spazio Pubblicitario" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+            <div class="absolute bottom-4 right-4 bg-black/50 text-white/80 text-[10px] md:text-xs px-3 py-1 rounded backdrop-blur-sm font-bold tracking-widest uppercase">Adv</div>
+            <div class="page-number text-white/50">11</div><div class="footer-brand text-white/50">Human Plus</div>
+        </div>
 
-<!-- PAGINA 12: GLYCEMIC HACKS P2 -->
+        <!-- PAGINA 12: GLYCEMIC HACKS P2 -->
         <div class="page-a4">
             <span class="section-tag bg-blue-100 text-blue-700">Bio-Ingegneria / Modulazione Glicemica P.2</span>
-            <h2 class="serif-font text-5xl font-black text-slate-900 mb-6 leading-tight italic">Modulatori Glicemici Avanzati.</h2>
+            <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight italic">Modulatori Glicemici Avanzati.</h2>
             
-            <div class="space-y-10">
+            <div class="space-y-8 md:space-y-10">
                 
                 <!-- Lavaggio Riso -->
                 <div>
-                    <h4 class="font-black text-slate-900 text-2xl mb-4 border-l-4 border-blue-500 pl-4">Il Protocollo di Lavaggio del Riso</h4>
-                    <p class="text-sm text-slate-700 leading-relaxed mb-4">
-                        Lavare il riso crudo sotto abbondante acqua corrente fredda, sfregandolo con le dita finché l'acqua di scolo non risulta perfettamente limpida, non è una semplice fissazione culinaria della tradizione asiatica: è una manovra di estrazione biochimica vitale.
+                    <h4 class="font-black text-slate-900 text-xl md:text-2xl mb-4 border-l-4 border-blue-500 pl-4">Il Protocollo di Lavaggio del Riso</h4>
+                    <p class="text-xs md:text-sm text-slate-700 leading-relaxed mb-4 text-justify">
+                        Lavare il riso crudo sotto abbondante acqua corrente fredda, sfregandolo con le dita finché l'acqua di scolo non risulta limpida, è una manovra biochimica vitale.
                     </p>
-                    <p class="text-sm text-slate-700 leading-relaxed">
-                        Questo attrito idro-meccanico rimuove dalla superficie dei chicchi enormi quantità di <em>amilopectina</em> (la frazione molecolare dell'amido che è altamente ramificata, solubile e "veloce"). È proprio questa polvere fine superficiale la responsabile dell'effetto pastoso/colloso di molti risotti e, cosa ben peggiore, dell'immediato e violento picco glicemico post-ingestione che inonda il sangue. Rimuovendola accuratamente prima della cottura (lasciando prevalere l'<em>amilosio</em>, la frazione lenta), ottieni chicchi ben separati, leggeri e una curva glicemica di assorbimento drasticamente appiattita.
+                    <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                        L'attrito idro-meccanico rimuove dalla superficie dei chicchi enormi quantità di <em>amilopectina</em> (la frazione molecolare dell'amido altamente ramificata e "veloce"). È questa polvere superficiale la responsabile del violento picco glicemico post-ingestione. Rimuovendola accuratamente prima della cottura, ottieni chicchi ben separati e una curva glicemica drasticamente appiattita.
                     </p>
                 </div>
 
                 <!-- Acido Acetico -->
-                <div class="bg-amber-50 p-8 rounded-3xl border border-amber-200">
-                    <h4 class="font-black text-amber-900 text-xl mb-4 flex items-center gap-2">🍾 Gli Agenti Smaltitori di Glucosio (GDA)</h4>
-                    <p class="text-sm text-slate-800 leading-relaxed mb-4">
-                        Se decidi di concederti un pasto glucidico, puoi manipolare il modo in cui il tuo corpo risponde a quell'ormone attraverso sostanze naturali potenti.
-                    </p>
-                    <ul class="text-sm space-y-4 text-slate-800">
+                <div class="bg-amber-50 p-6 md:p-8 rounded-[2rem] border border-amber-200">
+                    <h4 class="font-black text-amber-900 text-lg md:text-xl mb-4 flex items-center gap-2">🍾 Gli Agenti Smaltitori (GDA)</h4>
+                    <ul class="text-xs md:text-sm space-y-4 text-slate-800 text-justify">
                         <li>
-                            <strong>L'Acido Acetico:</strong> Aggiungere un generoso cucchiaio di vero <em>Aceto di Mele non pastorizzato</em> (con "la madre") all'acqua di cottura, o assumerlo diluito in acqua 15 minuti prima del pasto amidaceo, sortisce due effetti clinici. Primo: inibisce parzialmente gli enzimi (alfa-amilasi) che degradano i carboidrati già nella bocca e nello stomaco. Secondo: segnala allo sfintere pilorico di ritardare lo svuotamento dello stomaco. Più la digestione è lenta, più la curva glicemica si abbassa e si allunga.
+                            <strong>L'Acido Acetico:</strong> Aggiungere un cucchiaio di vero <em>Aceto di Mele non pastorizzato</em> all'acqua di cottura, o assumerlo diluito 15 minuti prima del pasto, inibisce parzialmente gli enzimi (alfa-amilasi) che degradano i carboidrati e ritarda lo svuotamento dello stomaco. Più la digestione è lenta, più la curva glicemica si abbassa.
                         </li>
                         <li>
-                            <strong>La Cannella Ceylon:</strong> Non quella economica da supermercato (Cassia, che ad alte dosi è epatotossica), ma la vera variante Ceylon. Una spolverata di questa preziosa corteccia mima l'azione dell'insulina sulle cellule recettrici muscolari, obbligando il muscolo ad assorbire lo zucchero circolante in eccesso e togliendolo dal circolo ematico senza affaticare il pancreas.
+                            <strong>La Cannella Ceylon:</strong> Una spolverata di vera corteccia Ceylon mima l'azione dell'insulina sulle cellule recettrici muscolari, obbligando il muscolo ad assorbire lo zucchero circolante togliendolo dal sangue senza affaticare il pancreas.
                         </li>
                     </ul>
                 </div>
 
                 <!-- L'importanza assoluta -->
-                <div class="p-8 bg-slate-900 text-white rounded-3xl shadow-xl">
-                    <h4 class="font-black text-emerald-400 text-xl mb-3">L'Enzima Chiave: La Lipasi Ormono-Sensibile</h4>
-                    <p class="text-sm text-slate-300 leading-relaxed">
-                        Perché insistiamo in modo maniacale sull'abbattere i picchi insulinici? La risposta risiede in un enzima cruciale chiamato <strong>Lipasi Ormono-Sensibile (HSL)</strong>, il guardiano dei nostri depositi di grasso. L'HSL è il "passepartout" che sblocca il grasso stipato nelle cellule adipose permettendogli di fluire nel sangue per essere bruciato. Il problema biochimico è che l'Insulina è l'antagonista assoluto dell'HSL. Finché i recettori del tuo corpo rilevano insulina in circolo (a causa del picco glicemico post-prandiale), la Lipasi Ormono-Sensibile viene brutalmente spenta. Tradotto: <strong>è fisiologicamente impossibile bruciare i grassi adiposi di scorta finché l'insulina resta alta</strong>.
+                <div class="p-6 md:p-8 bg-slate-900 text-white rounded-[2rem] shadow-xl mt-auto">
+                    <h4 class="font-black text-emerald-400 text-lg md:text-xl mb-3">L'Enzima: La Lipasi Ormono-Sensibile</h4>
+                    <p class="text-xs md:text-sm text-slate-300 leading-relaxed text-justify">
+                        Perché insistiamo sull'abbattere i picchi insulinici? L'insulina è l'antagonista assoluto della <strong>Lipasi Ormono-Sensibile (HSL)</strong>, l'enzima che sblocca il grasso stipato nelle cellule adipose permettendogli di essere bruciato. Finché i recettori rilevano insulina in circolo, la HSL viene brutalmente spenta. <strong>È fisiologicamente impossibile bruciare i grassi di scorta finché l'insulina resta alta</strong>.
                     </p>
                 </div>
             </div>
@@ -623,47 +616,44 @@
         <!-- PAGINA 13: RICETTARIO FUNZIONALE VOL 05 - RICETTA 1 -->
         <div class="page-a4">
             <span class="section-tag bg-amber-100 text-amber-700">Ricettario Applicato / Volume 05 - Formula 01</span>
-            <h2 class="serif-font text-5xl font-black text-slate-900 mb-4 leading-tight">Il Tonico Mentale<br>agli MCT.</h2>
-            <p class="text-base text-slate-600 mb-8 font-medium">Una colazione liquida termogenica che agisce come un vero e proprio "defibrillatore cognitivo", eludendo le dinamiche insuliniche e accendendo la chetosi cerebrale.</p>
+            <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-4 leading-tight">Il Tonico Mentale<br>agli MCT.</h2>
+            <p class="text-sm md:text-base text-slate-600 mb-6 md:mb-8 font-medium">Una colazione liquida termogenica che agisce come un vero e proprio "defibrillatore cognitivo", eludendo le dinamiche insuliniche e accendendo la chetosi cerebrale.</p>
 
-            <div class="w-full h-64 rounded-[2rem] overflow-hidden mb-8 shadow-xl border-4 border-slate-100">
+            <div class="w-full h-48 md:h-64 rounded-[2rem] overflow-hidden mb-6 md:mb-8 shadow-xl border-4 border-slate-100">
                 <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=1200&q=80" alt="Tonico Mentale MCT" class="w-full h-full object-cover">
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
                 <div>
-                    <h4 class="font-black text-slate-900 text-lg uppercase tracking-widest mb-4 border-b-2 border-slate-200 pb-2">Ingredienti Strutturali</h4>
-                    <ul class="text-sm space-y-4 text-slate-700 font-medium">
+                    <h4 class="font-black text-slate-900 text-base md:text-lg uppercase tracking-widest mb-4 border-b-2 border-slate-200 pb-2">Ingredienti Strutturali</h4>
+                    <ul class="text-xs md:text-sm space-y-3 md:space-y-4 text-slate-700 font-medium">
                         <li class="flex items-start gap-3">
-                            <span class="text-amber-500 text-xl leading-none">✔️</span> 
-                            <span>1 Tazza abbondante di caffè organico monorigine (ideale se estratto a freddo "cold brew" o in stile americano molto lungo, per ridurre l'acidità gastrica).</span>
+                            <span class="text-amber-500 text-lg md:text-xl leading-none">✔️</span> 
+                            <span>1 Tazza di caffè organico monorigine (ideale estratto a freddo "cold brew" per ridurre l'acidità gastrica).</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <span class="text-amber-500 text-xl leading-none">✔️</span> 
-                            <span>10ml (un cucchiaio raso) di purissimo Olio MCT estrato dal cocco (assicurarsi in etichetta che sia composto al 100% da Acido Caprilico o catena C8, la più veloce e potente).</span>
+                            <span class="text-amber-500 text-lg md:text-xl leading-none">✔️</span> 
+                            <span>10ml di purissimo Olio MCT (composto al 100% da Acido Caprilico C8, la catena più veloce).</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <span class="text-amber-500 text-xl leading-none">✔️</span> 
-                            <span>5g di vero Burro Ghee (burro chiarificato della tradizione ayurvedica, completamente epurato e privo di caseina e lattosio pro-infiammatori).</span>
+                            <span class="text-amber-500 text-lg md:text-xl leading-none">✔️</span> 
+                            <span>5g di vero Burro Ghee (burro chiarificato privo di caseina e lattosio).</span>
                         </li>
-                        <li class="flex items-start gap-3 bg-amber-50 p-3 rounded-xl border border-amber-200 mt-2">
-                            <span class="text-amber-600 text-xl leading-none">✔️</span> 
-                            <span class="font-black text-slate-900">1 Misurino abbondante di Proteine Isolate del Siero a zero zuccheri (disponibili in esclusiva assoluta su relifenutrition.com al sapore vaniglia reale).</span>
+                        <li class="flex items-start gap-3 bg-amber-50 p-3 md:p-4 rounded-xl md:rounded-2xl border border-amber-200 mt-2">
+                            <span class="text-amber-600 text-lg md:text-xl leading-none">✔️</span> 
+                            <span class="font-black text-slate-900">1 Misurino di Proteine Isolate del Siero a zero zuccheri (su relifenutrition.com).</span>
                         </li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="font-black text-slate-900 text-lg uppercase tracking-widest mb-4 border-b-2 border-slate-200 pb-2">Procedimento e Bio-Logica</h4>
-                    <div class="text-sm text-slate-700 leading-relaxed space-y-4 text-justify">
+                    <h4 class="font-black text-slate-900 text-base md:text-lg uppercase tracking-widest mb-4 border-b-2 border-slate-200 pb-2">Procedimento e Bio-Logica</h4>
+                    <div class="text-xs md:text-sm text-slate-700 leading-relaxed space-y-4 text-justify">
                         <p>
-                            La preparazione richiede un'azione meccanica aggressiva, non basta un cucchiaino. Unire i liquidi ben caldi (ma mai oltre l'ebollizione per non denaturare le preziosissime proteine isolate in polvere) e i lipidi solidi all'interno di un potente frullatore o frullatore a immersione. 
+                            Unire i liquidi ben caldi e i lipidi solidi all'interno di un potente frullatore. <strong>Processare alla massima velocità per 30/40 secondi esatti.</strong> Questo processo ad alta energia cinetica è vitale per creare una <em>"micella" stabile</em> (un'emulsione cremosa che unisce magicamente l'acqua con gli acidi grassi).
                         </p>
-                        <p>
-                            <strong>Processare alla massima velocità possibile per 30/40 secondi esatti.</strong> Questo processo ad alta energia cinetica è vitale per creare una <em>"micella" stabile</em> (un'emulsione perfetta e cremosa che unisce magicamente l'acqua del caffè con gli acidi grassi). Visivamente otterrai una spuma densa identica a un cappuccino da bar di lusso.
-                        </p>
-                        <p class="p-4 bg-slate-900 text-amber-400 rounded-xl font-medium mt-4">
-                            L'introduzione strategica delle proteine purissime firmate Relife Nutrition garantisce l'afflusso silente e vitale di un pool di aminoacidi plastici necessari per preservare e nutrire la massa magra muscolare durante le dure mattinate di digiuno, mantenendo nel contempo il profilo di secrezione insulinica forzatamente bloccato ai minimi storici controllati. La matrice complessa dei grassi assorbe la caffeina e la rilascia nel cervello "col contagocce", offrendo 5 ore di energia titanica e zero tremori collaterali.
+                        <p class="p-4 bg-slate-900 text-amber-400 rounded-xl md:rounded-2xl font-medium mt-4 md:mt-6">
+                            L'introduzione strategica delle proteine purissime firmate Relife Nutrition garantisce l'afflusso di aminoacidi plastici necessari per preservare la massa magra muscolare durante le mattinate di digiuno, mantenendo il profilo di secrezione insulinica forzatamente bloccato. La matrice complessa dei grassi assorbe la caffeina e la rilascia nel cervello "col contagocce", offrendo ore di energia senza tremori.
                         </p>
                     </div>
                 </div>
@@ -675,47 +665,44 @@
         <!-- PAGINA 14: RICETTARIO FUNZIONALE VOL 05 - RICETTA 2 -->
         <div class="page-a4">
             <span class="section-tag bg-emerald-100 text-emerald-700">Ricettario Applicato / Volume 05 - Formula 02</span>
-            <h2 class="serif-font text-5xl font-black text-slate-900 mb-4 leading-tight">Le Patate Resistenti<br>allo Zinco Nascente.</h2>
-            <p class="text-base text-slate-600 mb-8 font-medium">Il contorno tattico e strategico, ideato su misura per gestire le delicate fasi serali di ricarica epato-muscolare a seguito degli stress indotti dagli allenamenti anaerobici.</p>
+            <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-4 leading-tight">Le Patate Resistenti<br>allo Zinco Nascente.</h2>
+            <p class="text-sm md:text-base text-slate-600 mb-6 md:mb-8 font-medium">Il contorno tattico e strategico, ideato su misura per gestire le delicate fasi serali di ricarica epato-muscolare a seguito degli stress indotti dagli allenamenti anaerobici.</p>
 
-            <div class="w-full h-64 rounded-[2rem] overflow-hidden mb-8 shadow-xl border-4 border-slate-100">
+            <div class="w-full h-48 md:h-64 rounded-[2rem] overflow-hidden mb-6 md:mb-8 shadow-xl border-4 border-slate-100">
                 <img src="https://images.unsplash.com/photo-1518330104161-d096e5d02931?auto=format&fit=crop&w=1200&q=80" alt="Patate Resistenti Funzionali" class="w-full h-full object-cover">
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
                 <div>
-                    <h4 class="font-black text-slate-900 text-lg uppercase tracking-widest mb-4 border-b-2 border-slate-200 pb-2">Ingredienti Strutturali</h4>
-                    <ul class="text-sm space-y-4 text-slate-700 font-medium">
+                    <h4 class="font-black text-slate-900 text-base md:text-lg uppercase tracking-widest mb-4 border-b-2 border-slate-200 pb-2">Ingredienti Strutturali</h4>
+                    <ul class="text-xs md:text-sm space-y-3 md:space-y-4 text-slate-700 font-medium">
                         <li class="flex items-start gap-3">
-                            <span class="text-emerald-500 text-xl leading-none">✔️</span> 
-                            <span>250g di Patate novelle a buccia fina (tassativamente già bollite il giorno prima, riposate al buio del frigorifero per 24 ore e consumate a modesta temperatura ambiente senza cuocerle di nuovo o distruggerne la struttura).</span>
+                            <span class="text-emerald-500 text-lg md:text-xl leading-none">✔️</span> 
+                            <span>250g di Patate novelle a buccia fina (bollite, riposate in frigo 24 ore e consumate a temperatura ambiente per l'amido resistente).</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <span class="text-emerald-500 text-xl leading-none">✔️</span> 
-                            <span>30g di Semi di Zucca giganti, verdi, sgusciati e testati al momento in padella caldissima a secco per liberare appieno gli intensi e fragranti oli essenziali nascosti nel cuore del seme.</span>
+                            <span class="text-emerald-500 text-lg md:text-xl leading-none">✔️</span> 
+                            <span>30g di Semi di Zucca verdi, tostati in padella a secco per liberare gli oli essenziali.</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <span class="text-emerald-500 text-xl leading-none">✔️</span> 
-                            <span>2 Cucchiai generosi e stracolmi di Olio Extravergine di Oliva (Evo), rigorosamente estratto a prima spremitura meccanica a freddo e a crudo per non denaturare i fragili polifenoli.</span>
+                            <span class="text-emerald-500 text-lg md:text-xl leading-none">✔️</span> 
+                            <span>2 Cucchiai stracolmi di Olio Extravergine di Oliva (Evo), rigorosamente spremuto a freddo.</span>
                         </li>
                         <li class="flex items-start gap-3">
-                            <span class="text-emerald-500 text-xl leading-none">✔️</span> 
-                            <span>Un pizzico violento di autentico e grosso Sale Marino Integrale grigio o rosa (che vanta, a differenza del finto sale chimico, ben oltre ottanta rari oligoelementi preziosi, tra cui iodio bio-disponibile).</span>
+                            <span class="text-emerald-500 text-lg md:text-xl leading-none">✔️</span> 
+                            <span>Sale Marino Integrale grigio o rosa (vanta oltre ottanta oligoelementi preziosi).</span>
                         </li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 class="font-black text-slate-900 text-lg uppercase tracking-widest mb-4 border-b-2 border-slate-200 pb-2">Procedimento e Bio-Logica</h4>
-                    <div class="text-sm text-slate-700 leading-relaxed space-y-4 text-justify">
+                    <h4 class="font-black text-slate-900 text-base md:text-lg uppercase tracking-widest mb-4 border-b-2 border-slate-200 pb-2">Procedimento e Bio-Logica</h4>
+                    <div class="text-xs md:text-sm text-slate-700 leading-relaxed space-y-4 text-justify">
                         <p>
-                            Prelevare le patate precedentemente sottoposte al rigido processo termico di retrogradazione dal gelo del frigo e tagliarle grossolanamente in ampi e voluminosi spicchi rustici senza asportare minimamente la buccia (fonte vitale primaria di minerali rari del suolo). 
+                            Prelevare le patate sottoposte a retrogradazione termica, tagliarle in ampi spicchi rustici senza asportare la buccia (fonte vitale di minerali). Condire a crudo massaggiando con l'olio EVO extravergine puro per avvolgere di protezione lipidica la struttura amidacea.
                         </p>
-                        <p>
-                            In un'ampia e capiente ciotola adagiare le patate e condire a crudo sversando maestosamente l'olio EVO extravergine puro; massaggiare delicatamente per avvolgere di protezione lipidica la struttura amidacea. Chiudere l'opera d'arte culinaria distribuendo pioggia copiosa di croccanti ed enormi semi di zucca tostati al caldo per esaltarne il sentore forte legnoso.
-                        </p>
-                        <p class="p-4 bg-emerald-50 text-emerald-900 rounded-xl font-medium mt-4 border-l-4 border-emerald-500">
-                            La chimica della nutrizione non mente: l'aggiunta esterna della densa matrice lipidica rappresentata dall'ottimo olio di oliva abbatte repentinamente ed ulteriormente il già modesto e ridotto indice glicemico causato dalla patata fredda amiloidale. La sontuosa pioggia di semi di zucca giganti regala dosi erculee e massicce del preziosissimo Zinco biodisponibile, un minerale cruciale drammaticamente disperso con le enormi sudate da sforzo atletico, ed unico e potente vero mediatore noto alle scienze biologiche in grado di supportare energicamente la complessa e magica conversione dell'ormone tiroideo in fase attiva e favorire la potente sintesi surrenalica notturna dell'ambito testosterone libero nel torrente ematico.
+                        <p class="p-4 bg-emerald-50 text-emerald-900 rounded-xl md:rounded-2xl font-medium mt-4 md:mt-6 border-l-4 border-emerald-500">
+                            La chimica non mente: la matrice lipidica dell'olio di oliva abbatte ulteriormente il ridotto indice glicemico della patata fredda. La sontuosa pioggia di semi di zucca giganti regala dosi erculee del preziosissimo <strong>Zinco biodisponibile</strong>, un minerale cruciale per favorire la potente sintesi surrenalica notturna di testosterone libero nel torrente ematico.
                         </p>
                     </div>
                 </div>
@@ -726,28 +713,5 @@
 
     </div>
 
-    <script>
-        function generatePDF() {
-            const btn = document.getElementById('downloadBtn');
-            const btnText = document.getElementById('btnText');
-            
-            btnText.innerHTML = 'Generazione in corso...';
-            btn.disabled = true;
-
-            const element = document.getElementById('magazine-container');
-            const opt = {
-                margin: 0,
-                filename: 'HumanPlus_Vol05_CarburanteMetabolico_Esteso.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2, useCORS: true, scrollY: 0 },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            };
-
-            html2pdf().set(opt).from(element).save().then(() => {
-                btnText.innerHTML = 'Scarica Volume 05 (PDF)';
-                btn.disabled = false;
-            });
-        }
-    </script>
 </body>
 </html>
