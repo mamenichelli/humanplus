@@ -39,7 +39,7 @@
             width: 100%;
             max-width: 210mm;
             min-height: 100vh;
-            padding: 2rem 1.5rem;
+            padding: 2rem 1.5rem 5rem 1.5rem;
             margin: 0 auto 1.5rem auto;
             background: white;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
@@ -53,7 +53,7 @@
         @media (min-width: 768px) {
             .page-a4 {
                 min-height: 297mm;
-                padding: 20mm;
+                padding: 20mm 20mm 32mm 20mm;
                 margin: 10mm auto;
                 box-shadow: 0 0 20px rgba(0,0,0,0.1);
             }
@@ -83,7 +83,7 @@
         /* Footer Assoluto Responsivo */
         .page-number {
             position: absolute;
-            bottom: 1rem;
+            bottom: 5rem;
             right: 1.5rem;
             font-weight: 800;
             font-size: 14px;
@@ -91,7 +91,7 @@
         }
         .footer-brand {
             position: absolute;
-            bottom: 1rem;
+            bottom: 5rem;
             left: 1.5rem;
             font-weight: 800;
             font-size: 12px;
@@ -365,7 +365,7 @@
         <!-- PAGINA 5: DOSSIER CARBOIDRATI NASCOSTI P1 -->
         <div class="page-a4">
             <span class="section-tag bg-orange-100 text-orange-700">Dossier Investigativo / Glucidi P.1</span>
-            <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">L'Inganno del "Verde":<br>Le false insalate.</h2>
+            <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">Guida pratica":<br>Tabella delle verdure.</h2>
             
             <p class="text-sm md:text-base text-slate-700 mb-8 leading-loose">
                 L'industria del fitness e le diete commerciali ci hanno convinti che "qualsiasi cosa di colore verde sia automaticamente dietetica e benefica". In realtà, moltissimi alimenti vegetali percepiti come "sani, leggeri e a volontà" nascondono vuoti nutrizionali imbarazzanti, o peggio, un carico glicemico e infiammatorio capace di bloccare a lungo termine il dimagrimento. Iniziamo a smascherare i falsi miti.
@@ -411,8 +411,116 @@
 
             <div class="page-number">05</div><div class="footer-brand">Human Plus</div>
         </div>
+<!-- PAGINA 6: DOSSIER CARBOIDRATI NASCOSTI P1 (VERSIONE EDITORIALE PREMIUM) -->
+<div class="page-a4">
+    <span class="section-tag bg-orange-100 text-orange-700">Dossier Investigativo / Glucidi P.1</span>
+    <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">
+        L'Inganno del "Verde":<br>le false verdure.
+    </h2>
 
-        <!-- PAGINA 6: DOSSIER CARBOIDRATI NASCOSTI P2 -->
+    <p class="text-sm md:text-base text-slate-700 mb-8 leading-loose">
+        L’errore più comune nella nutrizione moderna è confondere il colore con la funzione metabolica. “Verde” non significa automaticamente “neutro”. Alcune verdure sono biologicamente irrilevanti, altre sono veri e propri carboidrati mascherati. Questo è il vero filtro decisionale.
+    </p>
+
+    <!-- BLOCCO SEMAFORO PREMIUM -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+
+        <!-- VERDE -->
+        <div class="rounded-[2rem] p-6 bg-emerald-50 border border-emerald-200 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-4 h-4 rounded-full bg-emerald-500 shadow"></div>
+                <h4 class="font-black text-emerald-800 uppercase tracking-widest text-sm">
+                    Verde Metabolico
+                </h4>
+            </div>
+
+            <p class="text-[11px] text-emerald-900 font-bold mb-4 uppercase tracking-wide">
+                impatto glicemico trascurabile
+            </p>
+
+            <div class="space-y-2 text-sm text-slate-800 font-medium">
+                <p>Rucola • Cicoria • Tarassaco</p>
+                <p>Spinaci • Bietole • Cavolo nero</p>
+                <p>Broccoli • Cavolfiore • Verza</p>
+                <p>Zucchine • Cetrioli • Sedano</p>
+                <p>Finocchi • Asparagi • Funghi</p>
+                <p>Erbe aromatiche • Germogli</p>
+                <p>Radicchio • Songino</p>
+            </div>
+
+            <div class="mt-4 text-xs text-emerald-900 leading-relaxed">
+                Base alimentare libera. Nessuna necessità di controllo insulinico.
+            </div>
+        </div>
+
+        <!-- ARANCIONE -->
+        <div class="rounded-[2rem] p-6 bg-amber-50 border border-amber-200 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-4 h-4 rounded-full bg-amber-500 shadow"></div>
+                <h4 class="font-black text-amber-800 uppercase tracking-widest text-sm">
+                    Zona Arancione
+                </h4>
+            </div>
+
+            <p class="text-[11px] text-amber-900 font-bold mb-4 uppercase tracking-wide">
+                risposta glicemica variabile
+            </p>
+
+            <div class="space-y-2 text-sm text-slate-800 font-medium">
+                <p>Carote • Cipolle • Pomodori</p>
+                <p>Carciofi • Fagiolini • Piselli</p>
+                <p>Peperoni • Ravanelli</p>
+                <p>Zucca • Barbabietola</p>
+                <p>Lenticchie • Ceci • Fagioli</p>
+                <p>Lupini • Edamame</p>
+                <p>Topinambur • Olive</p>
+            </div>
+
+            <div class="mt-4 text-xs text-amber-900 leading-relaxed">
+                Dipende da cottura, quantità e contesto metabolico.
+            </div>
+        </div>
+
+        <!-- ROSSO -->
+        <div class="rounded-[2rem] p-6 bg-red-50 border border-red-200 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-4 h-4 rounded-full bg-red-500 shadow"></div>
+                <h4 class="font-black text-red-800 uppercase tracking-widest text-sm">
+                    Rosso Metabolico
+                </h4>
+            </div>
+
+            <p class="text-[11px] text-red-900 font-bold mb-4 uppercase tracking-wide">
+                trattali come carboidrati puri
+            </p>
+
+            <div class="space-y-2 text-sm text-slate-800 font-medium">
+                <p>Patate • Patate dolci</p>
+                <p>Mais • Riso • Quinoa</p>
+                <p>Avena • Polenta</p>
+                <p>Manioca • Tapioca</p>
+                <p>Barbabietola cotta</p>
+                <p>Zucca cotta/frullata</p>
+                <p>Cereali e derivati amidacei</p>
+            </div>
+
+            <div class="mt-4 text-xs text-red-900 leading-relaxed">
+                Risposta insulinica completa. Non sono “verdure”.
+            </div>
+        </div>
+
+    </div>
+
+    <!-- BOX CONCLUSIVO -->
+    <div class="mt-8 p-6 bg-slate-900 text-slate-200 rounded-[2rem] border-l-4 border-amber-500">
+        <p class="text-sm leading-relaxed text-justify">
+            <strong class="text-amber-400">Regola biologica reale:</strong> il corpo non riconosce il “nome commerciale” dell’alimento, ma la sua struttura molecolare. Tutto ciò che genera glucosio rapido nel sangue deve essere trattato come carburante, non come contorno.
+        </p>
+    </div>
+
+    <div class="page-number">06</div><div class="footer-brand">Human Plus</div>
+</div>
+        <!-- PAGINA 7: DOSSIER CARBOIDRATI NASCOSTI P2 -->
         <div class="page-a4">
             <span class="section-tag bg-orange-100 text-orange-700">Dossier Investigativo / Glucidi P.2</span>
             <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">I Falsi Amici:<br>Verdure che non lo sono.</h2>
@@ -466,10 +574,10 @@
                 </p>
             </div>
 
-            <div class="page-number">06</div><div class="footer-brand">Human Plus</div>
+            <div class="page-number">07</div><div class="footer-brand">Human Plus</div>
         </div>
 
-        <!-- PAGINA 7: TABELLA FRUTTA SECCA -->
+        <!-- PAGINA 8: TABELLA FRUTTA SECCA -->
         <div class="page-a4">
             <span class="section-tag bg-emerald-100 text-emerald-700">Manuale Operativo / Lipidi Vegetali</span>
             <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-4 leading-tight">La Tavola Periodica della<br>Frutta a Guscio.</h2>
@@ -540,10 +648,10 @@
                 </p>
             </div>
 
-            <div class="page-number">07</div><div class="footer-brand">Human Plus</div>
+            <div class="page-number">08</div><div class="footer-brand">Human Plus</div>
         </div>
 
-        <!-- PAGINA 8: TABELLA ZUCCHERI OCCULTI -->
+        <!-- PAGINA 9: TABELLA ZUCCHERI OCCULTI -->
         <div class="page-a4">
             <span class="section-tag bg-orange-100 text-orange-700">Analisi Chimica / Zuccheri</span>
             <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-4 leading-tight">Il Dossier degli<br>Zuccheri Occulti.</h2>
@@ -595,10 +703,10 @@
                 </table>
             </div>
 
-            <div class="page-number">08</div><div class="footer-brand">Human Plus</div>
+            <div class="page-number">09</div><div class="footer-brand">Human Plus</div>
         </div>
 
-        <!-- PAGINA 9: IL RISCATTO DEI GRASSI P1 -->
+        <!-- PAGINA 10: IL RISCATTO DEI GRASSI P1 -->
         <div class="page-a4">
             <span class="section-tag bg-emerald-100 text-emerald-700">Dossier Clinico / Lipidi P.1</span>
             <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">La Rivincita dei<br>Grassi Saturi.</h2>
@@ -629,10 +737,10 @@
                 </div>
             </div>
 
-            <div class="page-number">09</div><div class="footer-brand">Human Plus</div>
+            <div class="page-number">10</div><div class="footer-brand">Human Plus</div>
         </div>
 
-        <!-- PAGINA 10: IL RISCATTO DEI GRASSI P2 -->
+        <!-- PAGINA 11: IL RISCATTO DEI GRASSI P2 -->
         <div class="page-a4">
             <span class="section-tag bg-emerald-100 text-emerald-700">Dossier Clinico / Lipidi P.2</span>
             <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">Chetoni e<br>L'Eccezione Ibrida.</h2>
@@ -663,10 +771,10 @@
                 </div>
             </div>
 
-            <div class="page-number">10</div><div class="footer-brand">Human Plus</div>
+            <div class="page-number">11</div><div class="footer-brand">Human Plus</div>
         </div>
 
-        <!-- PAGINA 11: GLYCEMIC HACKS P1 -->
+        <!-- PAGINA 12: GLYCEMIC HACKS P1 -->
         <div class="page-a4">
             <span class="section-tag bg-blue-100 text-blue-700">Bio-Ingegneria / Modulazione Glicemica</span>
             <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight italic">Hackerare l'Indice Glicemico:<br>La Retrogradazione.</h2>
@@ -707,18 +815,18 @@
                 </p>
             </div>
 
-            <div class="page-number">11</div><div class="footer-brand">Human Plus</div>
+            <div class="page-number">12</div><div class="footer-brand">Human Plus</div>
         </div>
 
-        <!-- PAGINA 12: PUBBLICITÀ FULL SCREEN (NUOVA) -->
+        <!-- PAGINA 13: PUBBLICITÀ FULL SCREEN (NUOVA) -->
         <div class="page-a4 p-0 relative bg-slate-900 min-h-[60vh] md:min-h-[297mm]">
             <!-- Immagine della pubblicità inserita dall'utente -->
             <img src="sirtpropub.png" alt="Spazio Pubblicitario" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
             <div class="absolute bottom-4 right-4 bg-black/50 text-white/80 text-[10px] md:text-xs px-3 py-1 rounded backdrop-blur-sm font-bold tracking-widest uppercase">Adv</div>
-            <div class="page-number text-white/50">12</div><div class="footer-brand text-white/50">Human Plus</div>
+            <div class="page-number text-white/50">13</div><div class="footer-brand text-white/50">Human Plus</div>
         </div>
 
-        <!-- PAGINA 13: GLYCEMIC HACKS P2 -->
+        <!-- PAGINA 14: GLYCEMIC HACKS P2 -->
         <div class="page-a4">
             <span class="section-tag bg-blue-100 text-blue-700">Bio-Ingegneria / Modulazione Glicemica P.2</span>
             <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight italic">Modulatori Glicemici Avanzati.</h2>
@@ -758,10 +866,10 @@
                 </div>
             </div>
 
-            <div class="page-number">13</div><div class="footer-brand">Human Plus</div>
+            <div class="page-number">14</div><div class="footer-brand">Human Plus</div>
         </div>
 
-        <!-- PAGINA 14: RICETTARIO FUNZIONALE VOL 05 - RICETTA 1 -->
+        <!-- PAGINA 15: RICETTARIO FUNZIONALE VOL 05 - RICETTA 1 -->
         <div class="page-a4">
             <span class="section-tag bg-amber-100 text-amber-700">Ricettario Applicato / Volume 05 - Formula 01</span>
             <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-4 leading-tight">Il Tonico Mentale<br>agli MCT.</h2>
@@ -807,10 +915,10 @@
                 </div>
             </div>
 
-            <div class="page-number">14</div><div class="footer-brand">Human Plus</div>
+            <div class="page-number">15</div><div class="footer-brand">Human Plus</div>
         </div>
 
-        <!-- PAGINA 15: RICETTARIO FUNZIONALE VOL 05 - RICETTA 2 -->
+        <!-- PAGINA 16: RICETTARIO FUNZIONALE VOL 05 - RICETTA 2 -->
         <div class="page-a4">
             <span class="section-tag bg-emerald-100 text-emerald-700">Ricettario Applicato / Volume 05 - Formula 02</span>
             <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-4 leading-tight">Patate in crosta<br>con Semi di Zucca tostati.</h2>
@@ -859,7 +967,7 @@
                 </div>
             </div>
 
-            <div class="page-number">15</div><div class="footer-brand">Human Plus</div>
+            <div class="page-number">16</div><div class="footer-brand">Human Plus</div>
         </div>
 
     </div>
