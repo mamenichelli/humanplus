@@ -213,9 +213,15 @@
                             </p>
                         </div>
 
-                        <div class="text-right flex-shrink-0 bg-gray-900 px-3 py-2 rounded-lg border border-gray-700">
-                            <span class="block font-black text-sm text-white">${ex.sets}</span>
-                            <span class="block text-xs font-bold text-orange-500">× ${ex.reps}</span>
+                        <div class="flex-shrink-0 flex items-stretch bg-gray-900 rounded-lg border border-gray-700 overflow-hidden shadow-sm">
+                            <div class="px-2.5 py-1.5 bg-gray-800/80 border-r border-gray-700 flex flex-col items-center justify-center">
+                                <span class="text-[9px] text-gray-400 uppercase font-bold tracking-wider">Set</span>
+                                <span class="font-black text-base text-white leading-none mt-0.5">${ex.sets}</span>
+                            </div>
+                            <div class="px-2.5 py-1.5 flex flex-col items-center justify-center min-w-[4rem] bg-orange-500/10">
+                                <span class="text-[9px] text-orange-400 uppercase font-bold tracking-wider">Rep</span>
+                                <span class="font-bold text-sm text-orange-500 leading-none mt-0.5">${ex.reps}</span>
+                            </div>
                         </div>
                     </div>
                 `;
