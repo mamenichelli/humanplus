@@ -100,6 +100,16 @@
 
     </main>
 
+    <!-- Modale per ingrandire le immagini -->
+    <div id="image-modal" class="fixed inset-0 z-[100] hidden bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 cursor-pointer transition-opacity" onclick="closeModal()">
+        <img id="modal-image" src="" alt="Esercizio ingrandito" class="max-w-full max-h-[80vh] object-contain rounded-xl shadow-2xl">
+        <button class="absolute top-6 right-6 text-white bg-gray-800/80 rounded-full p-2 hover:bg-gray-700 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+    </div>
+
     <script>
         // Dati della scheda di allenamento
         const workoutData = [
@@ -184,10 +194,11 @@
                         
                         <div class="relative w-16 h-16 flex-shrink-0 mr-4 rounded-lg overflow-hidden bg-white border border-gray-700">
                             <img src="${ex.img}" alt="${ex.name}" 
-                                 class="w-full h-full object-contain p-1"
+                                 class="w-full h-full object-contain p-1 cursor-pointer"
+                                 onclick="openModal('${ex.img}')"
                                  referrerpolicy="no-referrer"
                                  onerror="this.src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiMzNzQxNTEiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZpbGw9IiM5Q0EzQUYiIGR5PSIuM2VtIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7wn4+LPC90ZXh0Pjwvc3ZnPg=='" />
-                            <div class="absolute top-0 left-0 bg-gray-900/60 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-br-lg">
+                            <div class="absolute top-0 left-0 bg-gray-900/60 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-br-lg pointer-events-none">
                                 ${exIndex + 1}
                             </div>
                         </div>
@@ -243,6 +254,19 @@
                 });
             });
         });
+
+        // Funzioni per la modale delle immagini
+        function openModal(imgSrc) {
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-image');
+            modalImg.src = imgSrc;
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('image-modal');
+            modal.classList.add('hidden');
+        }
     </script>
 </body>
 </html>
