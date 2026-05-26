@@ -15,14 +15,14 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="Human Plus - Vol. 05: Carburante Metabolico">
     <meta property="og:description" content="La fine del dogma degli zuccheri. Scopri le strategie per ottimizzare i mitocondri, hackerare l'indice glicemico e sbloccare la vera flessibilità metabolica.">
-    <meta property="og:image" content="https://humanplusmagazine.com/immagine-social.png"> <!-- DEVE ESSERE IL LINK COMPLETO (URL ASSOLUTO) -->
-    <meta property="og:url" content="https://humanplusmagazine.com/"> <!-- Inserisci l'URL definitivo della tua pagina -->
+    <meta property="og:image" content="https://humanplusmagazine.com/immagine-social.png">
+    <meta property="og:url" content="https://humanplusmagazine.com/">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Human Plus - Vol. 05: Carburante Metabolico">
     <meta name="twitter:description" content="Il manuale definitivo per hackerare l'indice glicemico e ottimizzare l'energia cellulare attraverso i grassi.">
-    <meta name="twitter:image" content="https://humanplusmagazine.com/immagine-social.png"> <!-- DEVE ESSERE IL LINK COMPLETO (URL ASSOLUTO) -->
+    <meta name="twitter:image" content="https://humanplusmagazine.com/immagine-social.png">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="fav.png">
@@ -39,7 +39,7 @@
             width: 100%;
             max-width: 210mm;
             min-height: 100vh;
-            padding: 2rem 1.5rem 5rem 1.5rem;
+            padding: 2rem 1.5rem 2rem 1.5rem; /* Rimosso l'eccesso di padding inferiore */
             margin: 0 auto 1.5rem auto;
             background: white;
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
@@ -53,7 +53,7 @@
         @media (min-width: 768px) {
             .page-a4 {
                 min-height: 297mm;
-                padding: 20mm 20mm 32mm 20mm;
+                padding: 20mm 20mm 20mm 20mm; /* Regolato il padding */
                 margin: 10mm auto;
                 box-shadow: 0 0 20px rgba(0,0,0,0.1);
             }
@@ -80,29 +80,57 @@
             margin: 1.5rem 0;
         }
 
-        /* Footer Assoluto Responsivo */
-        .page-number {
-            position: absolute;
-            bottom: 5rem;
-            right: 1.5rem;
-            font-weight: 800;
-            font-size: 14px;
-            color: #94a3b8;
+        /* Footer Strutturale - Anti Overlap */
+        .page-footer {
+            margin-top: auto; /* Forza il blocco sempre al fondo pagina */
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            width: 100%;
+            z-index: 20;
         }
+        
+        .footer-meta {
+            display: flex;
+            align-items: baseline;
+            gap: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .scientific-notes {
+            flex: 1;
+            padding-right: 2rem;
+            font-size: 9px;
+            color: #64748b;
+            line-height: 1.5;
+            text-align: left;
+        }
+        
+        .scientific-notes strong { color: #475569; }
+
         .footer-brand {
-            position: absolute;
-            bottom: 5rem;
-            left: 1.5rem;
             font-weight: 800;
             font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 0.2em;
             color: #cbd5e1;
         }
+        
+        .page-number {
+            font-weight: 800;
+            font-size: 14px;
+            color: #94a3b8;
+        }
 
-        @media (min-width: 768px) {
-            .page-number { bottom: 20mm; right: 20mm; }
-            .footer-brand { bottom: 20mm; left: 20mm; }
+        /* Override Footer per Pagina Pubblicitaria (Full Cover) */
+        .page-a4.adv-page .page-number {
+            position: absolute;
+            bottom: 20mm; right: 20mm;
+        }
+        .page-a4.adv-page .footer-brand {
+            position: absolute;
+            bottom: 20mm; left: 20mm;
         }
 
         p { text-align: justify; hyphens: auto; }
@@ -253,7 +281,13 @@
                 </div>
             </div>
 
-            <div class="page-number">02</div><div class="footer-brand">Human Plus</div>
+            <div class="page-footer">
+                <div class="scientific-notes"></div>
+                <div class="footer-meta">
+                    <span class="footer-brand">Human Plus</span>
+                    <span class="page-number">02</span>
+                </div>
+            </div>
         </div>
 
         <!-- PAGINA 3: EDITORIALE P1 -->
@@ -298,7 +332,13 @@
                 </div>
             </div>
             
-            <div class="page-number">03</div><div class="footer-brand">Human Plus</div>
+            <div class="page-footer">
+                <div class="scientific-notes"></div>
+                <div class="footer-meta">
+                    <span class="footer-brand">Human Plus</span>
+                    <span class="page-number">03</span>
+                </div>
+            </div>
         </div>
 
         <!-- PAGINA 4: EDITORIALE P2 -->
@@ -359,13 +399,19 @@
                 </div>
             </div>
             
-            <div class="page-number">04</div><div class="footer-brand">Human Plus</div>
+            <div class="page-footer">
+                <div class="scientific-notes"></div>
+                <div class="footer-meta">
+                    <span class="footer-brand">Human Plus</span>
+                    <span class="page-number">04</span>
+                </div>
+            </div>
         </div>
 
         <!-- PAGINA 5: DOSSIER CARBOIDRATI NASCOSTI P1 -->
         <div class="page-a4">
             <span class="section-tag bg-orange-100 text-orange-700">Dossier Investigativo / Glucidi P.1</span>
-            <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">Guida pratica":<br>Tabella delle verdure.</h2>
+            <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">Guida pratica:<br>Tabella delle verdure.</h2>
             
             <p class="text-sm md:text-base text-slate-700 mb-8 leading-loose">
                 L'industria del fitness e le diete commerciali ci hanno convinti che "qualsiasi cosa di colore verde sia automaticamente dietetica e benefica". In realtà, moltissimi alimenti vegetali percepiti come "sani, leggeri e a volontà" nascondono vuoti nutrizionali imbarazzanti, o peggio, un carico glicemico e infiammatorio capace di bloccare a lungo termine il dimagrimento. Iniziamo a smascherare i falsi miti.
@@ -409,117 +455,131 @@
                 </div>
             </div>
 
-            <div class="page-number">05</div><div class="footer-brand">Human Plus</div>
-        </div>
-<!-- PAGINA 6: DOSSIER CARBOIDRATI NASCOSTI P1 (VERSIONE EDITORIALE PREMIUM) -->
-<div class="page-a4">
-    <span class="section-tag bg-orange-100 text-orange-700">Dossier Investigativo / Glucidi P.1</span>
-    <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">
-        L'Inganno del "Verde":<br>le false verdure.
-    </h2>
-
-    <p class="text-sm md:text-base text-slate-700 mb-8 leading-loose">
-        L’errore più comune nella nutrizione moderna è confondere il colore con la funzione metabolica. “Verde” non significa automaticamente “neutro”. Alcune verdure sono biologicamente irrilevanti, altre sono veri e propri carboidrati mascherati. Questo è il vero filtro decisionale.
-    </p>
-
-    <!-- BLOCCO SEMAFORO PREMIUM -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-
-        <!-- VERDE -->
-        <div class="rounded-[2rem] p-6 bg-emerald-50 border border-emerald-200 shadow-sm">
-            <div class="flex items-center gap-3 mb-4">
-                <div class="w-4 h-4 rounded-full bg-emerald-500 shadow"></div>
-                <h4 class="font-black text-emerald-800 uppercase tracking-widest text-sm">
-                    Verde Metabolico
-                </h4>
+            <div class="page-footer">
+                <div class="scientific-notes"></div>
+                <div class="footer-meta">
+                    <span class="footer-brand">Human Plus</span>
+                    <span class="page-number">05</span>
+                </div>
             </div>
+        </div>
 
-            <p class="text-[11px] text-emerald-900 font-bold mb-4 uppercase tracking-wide">
-                impatto glicemico trascurabile
+        <!-- PAGINA 6: DOSSIER CARBOIDRATI NASCOSTI P1 (VERSIONE EDITORIALE PREMIUM) -->
+        <div class="page-a4">
+            <span class="section-tag bg-orange-100 text-orange-700">Dossier Investigativo / Glucidi P.1</span>
+            <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">
+                L'Inganno del "Verde":<br>le false verdure.
+            </h2>
+
+            <p class="text-sm md:text-base text-slate-700 mb-8 leading-loose">
+                L’errore più comune nella nutrizione moderna è confondere il colore con la funzione metabolica. “Verde” non significa automaticamente “neutro”. Alcune verdure sono biologicamente irrilevanti, altre sono veri e propri carboidrati mascherati. Questo è il vero filtro decisionale.
             </p>
 
-            <div class="space-y-2 text-sm text-slate-800 font-medium">
-                <p>Rucola • Cicoria • Tarassaco</p>
-                <p>Spinaci • Bietole • Cavolo nero</p>
-                <p>Broccoli • Cavolfiore • Verza</p>
-                <p>Zucchine • Cetrioli • Sedano</p>
-                <p>Finocchi • Asparagi • Funghi</p>
-                <p>Erbe aromatiche • Germogli</p>
-                <p>Radicchio • Songino</p>
+            <!-- BLOCCO SEMAFORO PREMIUM -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+
+                <!-- VERDE -->
+                <div class="rounded-[2rem] p-6 bg-emerald-50 border border-emerald-200 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-4 h-4 rounded-full bg-emerald-500 shadow"></div>
+                        <h4 class="font-black text-emerald-800 uppercase tracking-widest text-sm">
+                            Verde Metabolico
+                        </h4>
+                    </div>
+
+                    <p class="text-[11px] text-emerald-900 font-bold mb-4 uppercase tracking-wide">
+                        impatto glicemico trascurabile
+                    </p>
+
+                    <div class="space-y-2 text-sm text-slate-800 font-medium">
+                        <p>Rucola • Cicoria • Tarassaco</p>
+                        <p>Spinaci • Bietole • Cavolo nero</p>
+                        <p>Broccoli • Cavolfiore • Verza</p>
+                        <p>Zucchine • Cetrioli • Sedano</p>
+                        <p>Finocchi • Asparagi • Funghi</p>
+                        <p>Erbe aromatiche • Germogli</p>
+                        <p>Radicchio • Songino</p>
+                    </div>
+
+                    <div class="mt-4 text-xs text-emerald-900 leading-relaxed">
+                        Base alimentare libera. Nessuna necessità di controllo insulinico.
+                    </div>
+                </div>
+
+                <!-- ARANCIONE -->
+                <div class="rounded-[2rem] p-6 bg-amber-50 border border-amber-200 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-4 h-4 rounded-full bg-amber-500 shadow"></div>
+                        <h4 class="font-black text-amber-800 uppercase tracking-widest text-sm">
+                            Zona Arancione
+                        </h4>
+                    </div>
+
+                    <p class="text-[11px] text-amber-900 font-bold mb-4 uppercase tracking-wide">
+                        risposta glicemica variabile
+                    </p>
+
+                    <div class="space-y-2 text-sm text-slate-800 font-medium">
+                        <p>Carote • Cipolle • Pomodori</p>
+                        <p>Carciofi • Fagiolini • Piselli</p>
+                        <p>Peperoni • Ravanelli</p>
+                        <p>Zucca • Barbabietola</p>
+                        <p>Lenticchie • Ceci • Fagioli</p>
+                        <p>Lupini • Edamame</p>
+                        <p>Topinambur • Olive</p>
+                    </div>
+
+                    <div class="mt-4 text-xs text-amber-900 leading-relaxed">
+                        Dipende da cottura, quantità e contesto metabolico.
+                    </div>
+                </div>
+
+                <!-- ROSSO -->
+                <div class="rounded-[2rem] p-6 bg-red-50 border border-red-200 shadow-sm">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-4 h-4 rounded-full bg-red-500 shadow"></div>
+                        <h4 class="font-black text-red-800 uppercase tracking-widest text-sm">
+                            Rosso Metabolico
+                        </h4>
+                    </div>
+
+                    <p class="text-[11px] text-red-900 font-bold mb-4 uppercase tracking-wide">
+                        trattali come carboidrati puri
+                    </p>
+
+                    <div class="space-y-2 text-sm text-slate-800 font-medium">
+                        <p>Patate • Patate dolci</p>
+                        <p>Mais • Riso • Quinoa</p>
+                        <p>Avena • Polenta</p>
+                        <p>Manioca • Tapioca</p>
+                        <p>Barbabietola cotta</p>
+                        <p>Zucca cotta/frullata</p>
+                        <p>Cereali e derivati amidacei</p>
+                    </div>
+
+                    <div class="mt-4 text-xs text-red-900 leading-relaxed">
+                        Risposta insulinica completa. Non sono “verdure”.
+                    </div>
+                </div>
+
             </div>
 
-            <div class="mt-4 text-xs text-emerald-900 leading-relaxed">
-                Base alimentare libera. Nessuna necessità di controllo insulinico.
+            <!-- BOX CONCLUSIVO -->
+            <div class="mt-8 p-6 bg-slate-900 text-slate-200 rounded-[2rem] border-l-4 border-amber-500">
+                <p class="text-sm leading-relaxed text-justify">
+                    <strong class="text-amber-400">Regola biologica reale:</strong> il corpo non riconosce il “nome commerciale” dell’alimento, ma la sua struttura molecolare. Tutto ciò che genera glucosio rapido nel sangue deve essere trattato come carburante, non come contorno.
+                </p>
+            </div>
+
+            <div class="page-footer">
+                <div class="scientific-notes"></div>
+                <div class="footer-meta">
+                    <span class="footer-brand">Human Plus</span>
+                    <span class="page-number">06</span>
+                </div>
             </div>
         </div>
 
-        <!-- ARANCIONE -->
-        <div class="rounded-[2rem] p-6 bg-amber-50 border border-amber-200 shadow-sm">
-            <div class="flex items-center gap-3 mb-4">
-                <div class="w-4 h-4 rounded-full bg-amber-500 shadow"></div>
-                <h4 class="font-black text-amber-800 uppercase tracking-widest text-sm">
-                    Zona Arancione
-                </h4>
-            </div>
-
-            <p class="text-[11px] text-amber-900 font-bold mb-4 uppercase tracking-wide">
-                risposta glicemica variabile
-            </p>
-
-            <div class="space-y-2 text-sm text-slate-800 font-medium">
-                <p>Carote • Cipolle • Pomodori</p>
-                <p>Carciofi • Fagiolini • Piselli</p>
-                <p>Peperoni • Ravanelli</p>
-                <p>Zucca • Barbabietola</p>
-                <p>Lenticchie • Ceci • Fagioli</p>
-                <p>Lupini • Edamame</p>
-                <p>Topinambur • Olive</p>
-            </div>
-
-            <div class="mt-4 text-xs text-amber-900 leading-relaxed">
-                Dipende da cottura, quantità e contesto metabolico.
-            </div>
-        </div>
-
-        <!-- ROSSO -->
-        <div class="rounded-[2rem] p-6 bg-red-50 border border-red-200 shadow-sm">
-            <div class="flex items-center gap-3 mb-4">
-                <div class="w-4 h-4 rounded-full bg-red-500 shadow"></div>
-                <h4 class="font-black text-red-800 uppercase tracking-widest text-sm">
-                    Rosso Metabolico
-                </h4>
-            </div>
-
-            <p class="text-[11px] text-red-900 font-bold mb-4 uppercase tracking-wide">
-                trattali come carboidrati puri
-            </p>
-
-            <div class="space-y-2 text-sm text-slate-800 font-medium">
-                <p>Patate • Patate dolci</p>
-                <p>Mais • Riso • Quinoa</p>
-                <p>Avena • Polenta</p>
-                <p>Manioca • Tapioca</p>
-                <p>Barbabietola cotta</p>
-                <p>Zucca cotta/frullata</p>
-                <p>Cereali e derivati amidacei</p>
-            </div>
-
-            <div class="mt-4 text-xs text-red-900 leading-relaxed">
-                Risposta insulinica completa. Non sono “verdure”.
-            </div>
-        </div>
-
-    </div>
-
-    <!-- BOX CONCLUSIVO -->
-    <div class="mt-8 p-6 bg-slate-900 text-slate-200 rounded-[2rem] border-l-4 border-amber-500">
-        <p class="text-sm leading-relaxed text-justify">
-            <strong class="text-amber-400">Regola biologica reale:</strong> il corpo non riconosce il “nome commerciale” dell’alimento, ma la sua struttura molecolare. Tutto ciò che genera glucosio rapido nel sangue deve essere trattato come carburante, non come contorno.
-        </p>
-    </div>
-
-    <div class="page-number">06</div><div class="footer-brand">Human Plus</div>
-</div>
         <!-- PAGINA 7: DOSSIER CARBOIDRATI NASCOSTI P2 -->
         <div class="page-a4">
             <span class="section-tag bg-orange-100 text-orange-700">Dossier Investigativo / Glucidi P.2</span>
@@ -574,7 +634,13 @@
                 </p>
             </div>
 
-            <div class="page-number">07</div><div class="footer-brand">Human Plus</div>
+            <div class="page-footer">
+                <div class="scientific-notes"></div>
+                <div class="footer-meta">
+                    <span class="footer-brand">Human Plus</span>
+                    <span class="page-number">07</span>
+                </div>
+            </div>
         </div>
 
         <!-- PAGINA 8: TABELLA FRUTTA SECCA -->
@@ -612,7 +678,7 @@
                             <td class="p-3 font-bold text-slate-900">Mandorle</td>
                             <td class="p-3 leading-relaxed">Densissime di Vitamina E (scudo antiossidante per le membrane) e Magnesio. Ottime per il controllo dell'appetito.</td>
                             <td class="p-3 text-emerald-700 font-bold">Metà Mattina</td>
-                            <td class="p-3 leading-relaxed"><strong>Sbucciate o Attivate</strong>. La buccia marrone è ricchissima di tannini che inibiscono l'assorbimento del ferro.</td>
+                            <td class="p-3 leading-relaxed"><strong>Sbucciate o Attivate</strong>. La buccia marrone è ricchissima di tannini che inibiscono l'assorbimento del ferro.*</td>
                         </tr>
                         <tr class="border-b border-slate-100 hover:bg-slate-50">
                             <td class="p-3 font-bold text-slate-900">Noci del Brasile</td>
@@ -648,7 +714,15 @@
                 </p>
             </div>
 
-            <div class="page-number">08</div><div class="footer-brand">Human Plus</div>
+            <div class="page-footer">
+                <div class="scientific-notes">
+                    <strong>* Referenza Scientifica:</strong> I tannini e l'acido fitico presenti in alte concentrazioni nella pellicina della frutta a guscio sono comprovati e potenti inibitori dell'assorbimento del ferro non eme a livello intestinale. <em>(Hurrell RF, et al. Iron bioavailability and dietary reference values. Am J Clin Nutr. 2010).</em>
+                </div>
+                <div class="footer-meta">
+                    <span class="footer-brand">Human Plus</span>
+                    <span class="page-number">08</span>
+                </div>
+            </div>
         </div>
 
         <!-- PAGINA 9: TABELLA ZUCCHERI OCCULTI -->
@@ -703,7 +777,13 @@
                 </table>
             </div>
 
-            <div class="page-number">09</div><div class="footer-brand">Human Plus</div>
+            <div class="page-footer">
+                <div class="scientific-notes"></div>
+                <div class="footer-meta">
+                    <span class="footer-brand">Human Plus</span>
+                    <span class="page-number">09</span>
+                </div>
+            </div>
         </div>
 
         <!-- PAGINA 10: IL RISCATTO DEI GRASSI P1 -->
@@ -722,7 +802,7 @@
                         Consumare l'albume scartando il rosso dell'uovo è un crimine contro la biologia dell'ottimizzazione umana. Il tuorlo è uno dei cibi più densi di nutrienti sul pianeta. Oltre a contenere tutte le vitamine liposolubili (A, D, E, K2), è un concentrato ineguagliabile di <strong>Colina</strong>. Questo nutriente vitale passa la barriera emato-encefalica e agisce come precursore diretto dell'<em>acetilcolina</em>, il principale neurotrasmettitore responsabile della memoria a breve termine, dell'apprendimento veloce e del focus.
                     </p>
                     <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
-                        Ma cosa dire del "terribile" colesterolo alimentare? La scienza moderna ha ampiamente dimostrato che il colesterolo assunto con la dieta ha un impatto irrilevante sui livelli di colesterolo nel sangue (che viene prodotto all'80% direttamente dal nostro fegato come risposta infiammatoria). Al contrario, il colesterolo alimentare nobile viene utilizzato dall'organismo come impalcatura strutturale vitale: è il mattone base per la sintesi dei nostri ormoni sessuali più preziosi, tra cui il Testosterone e la Vitamina D3.
+                        Ma cosa dire del "terribile" colesterolo alimentare? La scienza moderna ha ampiamente dimostrato che il colesterolo assunto con la dieta ha un impatto irrilevante sui livelli di colesterolo nel sangue* (che viene prodotto all'80% direttamente dal nostro fegato come risposta infiammatoria). Al contrario, il colesterolo alimentare nobile viene utilizzato dall'organismo come impalcatura strutturale vitale: è il mattone base per la sintesi dei nostri ormoni sessuali più preziosi, tra cui il Testosterone e la Vitamina D3.
                     </p>
                 </div>
 
@@ -737,7 +817,15 @@
                 </div>
             </div>
 
-            <div class="page-number">10</div><div class="footer-brand">Human Plus</div>
+            <div class="page-footer">
+                <div class="scientific-notes">
+                    <strong>* Referenza Scientifica:</strong> Numerosi studi confermano che l'assunzione di colesterolo tramite la dieta ha un impatto clinico e sistemico trascurabile sui livelli di colesterolo sierico e sul rischio cardiovascolare per la grande maggioranza degli individui. <em>(Soliman GA. Dietary Cholesterol and the Lack of Evidence in Cardiovascular Disease. Nutrients. 2018).</em>
+                </div>
+                <div class="footer-meta">
+                    <span class="footer-brand">Human Plus</span>
+                    <span class="page-number">10</span>
+                </div>
+            </div>
         </div>
 
         <!-- PAGINA 11: IL RISCATTO DEI GRASSI P2 -->
@@ -751,7 +839,7 @@
                     Quando mangiamo la maggior parte dei grassi, questi necessitano di un complesso processo digestivo. Esiste però un'eccezione biologica straordinaria: gli <strong>Acidi Grassi a Catena Media (MCT)</strong>, estratti in purezza principalmente dall'olio di cocco (in particolare la potente frazione C8 o Acido Caprilico).
                 </p>
                 <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
-                    Grazie alla loro catena molecolare più corta, gli MCT eludono completamente il sistema digestivo standard. Non necessitano di sali biliari. Vengono assorbiti istantaneamente nell'intestino e "sparati" attraverso la vena porta direttamente al fegato. Qui vengono brutalmente convertiti in <strong>Corpi Chetonici</strong>. Forniscono un'ondata di energia immediata al cervello senza stimolare minimamente la secrezione di insulina.
+                    Grazie alla loro catena molecolare più corta, gli MCT eludono completamente il sistema digestivo standard. Non necessitano di sali biliari. Vengono assorbiti istantaneamente nell'intestino e "sparati" attraverso la vena porta direttamente al fegato.* Qui vengono brutalmente convertiti in <strong>Corpi Chetonici</strong>. Forniscono un'ondata di energia immediata al cervello senza stimolare minimamente la secrezione di insulina.
                 </p>
             </div>
 
@@ -771,7 +859,15 @@
                 </div>
             </div>
 
-            <div class="page-number">11</div><div class="footer-brand">Human Plus</div>
+            <div class="page-footer">
+                <div class="scientific-notes">
+                    <strong>* Referenza Scientifica:</strong> Gli Acidi Grassi a Catena Media (MCT) presentano la peculiarità biochimica di bypassare il sistema circolatorio linfatico: vengono assorbiti intatti nell'intestino crasso e trasportati direttamente al fegato attraverso la circolazione sanguigna portale. <em>(Schönfeld P, et al. Short- and medium-chain fatty acids in energy metabolism. J Lipid Res. 2016).</em>
+                </div>
+                <div class="footer-meta">
+                    <span class="footer-brand">Human Plus</span>
+                    <span class="page-number">11</span>
+                </div>
+            </div>
         </div>
 
         <!-- PAGINA 12: GLYCEMIC HACKS P1 -->
@@ -806,7 +902,7 @@
                         </li>
                         <li class="flex items-start gap-3">
                             <span class="font-black text-base md:text-lg">3.</span> 
-                            <span class="leading-relaxed"><strong>Fabbrica del Butirrato:</strong> Nel colon profondo, l'amido diventa cibo per batteri simbiotici d'élite che producono <em>Acido Butirrico</em>, il più potente disinfiammante epiteliale noto.</span>
+                            <span class="leading-relaxed"><strong>Fabbrica del Butirrato:</strong> Nel colon profondo, l'amido diventa cibo per batteri simbiotici d'élite che producono <em>Acido Butirrico</em>, il più potente disinfiammante epiteliale noto.*</span>
                         </li>
                     </ul>
                 </div>
@@ -815,15 +911,24 @@
                 </p>
             </div>
 
-            <div class="page-number">12</div><div class="footer-brand">Human Plus</div>
+            <div class="page-footer">
+                <div class="scientific-notes">
+                    <strong>* Referenza Scientifica:</strong> L'amido resistente di tipo 3 (RS3) fermenta nel microbiota del colon producendo una massiccia quota di acidi grassi a catena corta (SCFA), in particolare butirrato, che rappresenta la fonte di energia primaria ed essenziale per la salute delle cellule della mucosa intestinale. <em>(Birt DF, et al. Resistant starch: promise for improving human health. Adv Nutr. 2013).</em>
+                </div>
+                <div class="footer-meta">
+                    <span class="footer-brand">Human Plus</span>
+                    <span class="page-number">12</span>
+                </div>
+            </div>
         </div>
 
         <!-- PAGINA 13: PUBBLICITÀ FULL SCREEN (NUOVA) -->
-        <div class="page-a4 p-0 relative bg-slate-900 min-h-[60vh] md:min-h-[297mm]">
+        <div class="page-a4 adv-page p-0 relative bg-slate-900 min-h-[60vh] md:min-h-[297mm]">
             <!-- Immagine della pubblicità inserita dall'utente -->
             <img src="sirtpropub.png" alt="Spazio Pubblicitario" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
-            <div class="absolute bottom-4 right-4 bg-black/50 text-white/80 text-[10px] md:text-xs px-3 py-1 rounded backdrop-blur-sm font-bold tracking-widest uppercase">Adv</div>
-            <div class="page-number text-white/50">13</div><div class="footer-brand text-white/50">Human Plus</div>
+            <div class="absolute bottom-4 right-4 bg-black/50 text-white/80 text-[10px] md:text-xs px-3 py-1 rounded backdrop-blur-sm font-bold tracking-widest uppercase z-10">Adv</div>
+            <div class="page-number text-white/50">13</div>
+            <div class="footer-brand text-white/50">Human Plus</div>
         </div>
 
         <!-- PAGINA 14: GLYCEMIC HACKS P2 -->
@@ -861,12 +966,20 @@
                 <div class="p-6 md:p-8 bg-slate-900 text-white rounded-[2rem] shadow-xl mt-auto">
                     <h4 class="font-black text-emerald-400 text-lg md:text-xl mb-3">L'Enzima: La Lipasi Ormono-Sensibile</h4>
                     <p class="text-xs md:text-sm text-slate-300 leading-relaxed text-justify">
-                        Perché insistiamo sull'abbattere i picchi insulinici? L'insulina è l'antagonista assoluto della <strong>Lipasi Ormono-Sensibile (HSL)</strong>, l'enzima che sblocca il grasso stipato nelle cellule adipose permettendogli di essere bruciato. Finché i recettori rilevano insulina in circolo, la HSL viene brutalmente spenta. <strong>È fisiologicamente impossibile bruciare i grassi di scorta finché l'insulina resta alta</strong>.
+                        Perché insistiamo sull'abbattere i picchi insulinici? L'insulina è l'antagonista assoluto della <strong>Lipasi Ormono-Sensibile (HSL)</strong>*, l'enzima che sblocca il grasso stipato nelle cellule adipose permettendogli di essere bruciato. Finché i recettori rilevano insulina in circolo, la HSL viene brutalmente spenta. <strong>È fisiologicamente impossibile bruciare i grassi di scorta finché l'insulina resta alta</strong>.
                     </p>
                 </div>
             </div>
 
-            <div class="page-number">14</div><div class="footer-brand">Human Plus</div>
+            <div class="page-footer">
+                <div class="scientific-notes">
+                    <strong>* Referenza Scientifica:</strong> L'insulina circolante è il principale e più potente inibitore fisiologico della lipasi ormono-sensibile (HSL), innescando cascate molecolari che bloccano attivamente e sistematicamente la lipolisi nel tessuto adiposo. <em>(Holm C. Molecular mechanisms regulating hormone-sensitive lipase and lipolysis. Biochem Soc Trans. 2003).</em>
+                </div>
+                <div class="footer-meta">
+                    <span class="footer-brand">Human Plus</span>
+                    <span class="page-number">14</span>
+                </div>
+            </div>
         </div>
 
         <!-- PAGINA 15: RICETTARIO FUNZIONALE VOL 05 - RICETTA 1 -->
@@ -915,7 +1028,13 @@
                 </div>
             </div>
 
-            <div class="page-number">15</div><div class="footer-brand">Human Plus</div>
+            <div class="page-footer">
+                <div class="scientific-notes"></div>
+                <div class="footer-meta">
+                    <span class="footer-brand">Human Plus</span>
+                    <span class="page-number">15</span>
+                </div>
+            </div>
         </div>
 
         <!-- PAGINA 16: RICETTARIO FUNZIONALE VOL 05 - RICETTA 2 -->
@@ -967,7 +1086,13 @@
                 </div>
             </div>
 
-            <div class="page-number">16</div><div class="footer-brand">Human Plus</div>
+            <div class="page-footer">
+                <div class="scientific-notes"></div>
+                <div class="footer-meta">
+                    <span class="footer-brand">Human Plus</span>
+                    <span class="page-number">16</span>
+                </div>
+            </div>
         </div>
 
     </div>
