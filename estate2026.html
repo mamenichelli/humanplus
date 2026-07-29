@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Plus - L'Energia Nascosta</title>
+    
+    <!-- SEO Ottimizzata & Social Meta Tags -->
+    <meta name="description" content="Il manuale pratico di Human Plus per l'estate: bio-hacking dell'abbronzatura, difesa dalle zanzare, sonno col caldo e trucchi glicemici.">
+    <meta name="keywords" content="bio-hacking, estate, sole, abbronzatura, zanzare, glicemia, SIRTPRO MAX, L'Arte di fregare la Morte, Marco Menichelli, salute">
+    <meta name="author" content="Marco Menichelli">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Condivisione Social (Facebook, WhatsApp, LinkedIn) -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Human Plus - Speciale Estate">
+    <meta property="og:description" content="Tutta la verità sul sole, come abbronzarsi senza scottarsi, i trucchi per non ingrassare in vacanza e dormire col caldo.">
+    <meta property="og:image" content="https://www.iltuosito.com/immagine-social.png"> <!-- DEVE ESSERE IL LINK COMPLETO (URL ASSOLUTO) -->
+    <meta property="og:url" content="https://www.iltuosito.com/human-plus"> <!-- Inserisci l'URL definitivo della tua pagina -->
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Human Plus - Speciale Estate">
+    <meta name="twitter:description" content="Il manuale definitivo per l'estate: energia, sole e metabolismo.">
+    <meta name="twitter:image" content="https://www.iltuosito.com/immagine-social.png"> <!-- DEVE ESSERE IL LINK COMPLETO (URL ASSOLUTO) -->
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="fav.png">
+    <link rel="apple-touch-icon" href="fav.png">
+
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --a4-width: 210mm;
+            --brand-dark: #0f172a;
+            --brand-blue: #2563eb;
+            --brand-accent: #f59e0b;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #374151;
+            line-height: 1.6;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, .serif-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Regole Responsive per l'A4 */
+        .page-a4 {
+            width: 100%;
+            max-width: var(--a4-width);
+            min-height: auto;
+            padding: 1.5rem;
+            margin: 1rem auto;
+            background: white;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        @media (min-width: 768px) {
+            .page-a4 {
+                width: var(--a4-width);
+                min-height: 297mm;
+                padding: 20mm;
+                margin: 2rem auto;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            }
+        }
+
+        .dropcap {
+            float: left;
+            font-size: 4rem;
+            line-height: 3.5rem;
+            padding-right: 0.75rem;
+            font-weight: 900;
+            color: var(--brand-blue);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        @media (min-width: 768px) {
+            .dropcap {
+                font-size: 5.5rem;
+                line-height: 4.5rem;
+                padding-right: 1rem;
+            }
+        }
+
+        @media print {
+            body { background: white; margin: 0; }
+            .page-a4 { 
+                margin: 0; 
+                box-shadow: none; 
+                width: 100%; 
+                min-height: 100vh;
+                page-break-after: always;
+            }
+            .no-print { display: none; }
+        }
+        
+        .magazine-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            line-height: 1.3;
+            color: var(--brand-dark);
+            border-left: 4px solid var(--brand-blue);
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            font-weight: 900;
+            font-style: italic;
+        }
+        
+        @media (min-width: 768px) {
+            .magazine-quote {
+                font-size: 1.8rem;
+                border-left: 6px solid var(--brand-blue);
+                padding-left: 1.5rem;
+                margin: 2rem 0;
+            }
+        }
+
+        .hack-box {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: white;
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.2);
+        }
+        @media (min-width: 768px) {
+            .hack-box { padding: 2rem; margin: 2rem 0; }
+        }
+
+        /* Stile Tabelle Magazine Responsive */
+        table { width: 100%; border-collapse: separate; border-spacing: 0 10px; font-size: 0.8rem; }
+        @media (min-width: 768px) { table { font-size: 0.9rem; } }
+        table th { text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; color: #6b7280; padding-bottom: 10px; border-bottom: 2px solid #e5e7eb; text-align: left; }
+        table td { padding: 12px; background-color: #f8fafc; }
+        @media (min-width: 768px) { table td { padding: 16px; } }
+        table tr td:first-child { border-top-left-radius: 12px; border-bottom-left-radius: 12px; font-weight: 700; color: #111827; }
+        table tr td:last-child { border-top-right-radius: 12px; border-bottom-right-radius: 12px; }
+        
+        .section-tag {
+            display: inline-block;
+            background-color: #eff6ff;
+            color: var(--brand-blue);
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        /* Posizionamento footer responsive */
+        .page-number { position: absolute; bottom: 5mm; right: 5mm; font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 700; color: #cbd5e1; }
+        .footer-brand { position: absolute; bottom: 5mm; left: 5mm; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #cbd5e1; }
+        @media (min-width: 768px) {
+            .page-number { bottom: 15mm; right: 20mm; font-size: 0.875rem; }
+            .footer-brand { bottom: 15mm; left: 20mm; font-size: 0.75rem; }
+        }
+    </style>
+    <!-- Libreria per la generazione PDF esatta -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+    <!-- Pulsante Export (Commentato come richiesto) -->
+    <!--
+    <div class="fixed top-8 right-8 z-[100] no-print">
+        <button id="downloadBtn" onclick="generatePDF()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-2xl transition-all transform hover:scale-105 flex items-center space-x-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+            </svg>
+            <span id="btnText">Scarica il Magazine</span>
+        </button>
+    </div>
+    -->
+
+    <div id="magazine-container" class="w-full flex flex-col items-center bg-[#f3f4f6]">
+    
+    <!-- PAGINA 1: COPERTINA -->
+    <div class="page-a4 justify-center bg-slate-900 text-white p-0 relative">
+        <div class="h-full w-full p-8 md:p-20 flex flex-col justify-between relative overflow-hidden z-10">
+            <!-- Background Image -->
+            <div class="absolute inset-0 opacity-50 mix-blend-screen" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80&fm=webp'); background-size: cover; background-position: center;"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-amber-900/80 via-slate-900/40 to-slate-900/95"></div>
+            
+            <div class="relative z-20">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0 mb-8 md:mb-16">
+                    <!-- Logo sostituibile -->
+                    <img src="LOGO_HP.png" alt="Human Plus Logo" class="h-12 sm:h-16 lg:h-20 object-contain drop-shadow-md">
+                    <div class="text-left sm:text-right flex flex-col items-start sm:items-end gap-2">
+                        <span class="bg-amber-500 text-slate-900 px-5 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-lg">Luglio 2026</span>
+                        <span class="text-[10px] text-slate-300 font-bold uppercase tracking-widest">Speciale Estate</span>
+                    </div>
+                </div>
+
+                <div class="space-y-4 md:space-y-6 mt-12 md:mt-24">
+                    <p class="text-amber-400 font-bold tracking-[0.2em] uppercase text-xs md:text-sm border-l-4 border-amber-500 pl-3">Dossier Bio-Hacking Estivo • 18 Pagine</p>
+                    <h1 class="serif-font text-6xl md:text-[90px] leading-tight md:leading-[0.85] font-black drop-shadow-2xl">
+                        IL SOLE<br>NON FA MALE.<br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400 drop-shadow-none">SE LO CAPISCI.</span>
+                    </h1>
+                    
+                    <p class="text-lg md:text-xl font-light text-slate-200 max-w-lg mt-6 md:mt-8 leading-relaxed border-l-2 border-slate-700 pl-4 md:pl-6">
+                        I trucchi secolari e le nuove scoperte per abbronzarti senza bruciarti, bloccare le zanzare dall'interno, fregare la glicemia degli aperitivi e non perdere le energie.
+                    </p>
+                </div>
+            </div>
+
+            <div class="relative z-20 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 border-t border-slate-700/80 pt-6 md:pt-8 mt-12 md:mt-24">
+                <div class="bg-white/5 p-4 md:p-5 rounded-2xl backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
+                    <p class="text-amber-400 font-bold text-[10px] uppercase tracking-widest mb-2 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-amber-400"></span>Il Callo Solare</p>
+                    <p class="font-semibold text-sm text-slate-200 leading-tight">Perché l'ufficio d'inverno è il vero colpevole delle scottature d'agosto.</p>
+                </div>
+                <div class="bg-white/5 p-4 md:p-5 rounded-2xl backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-colors">
+                    <p class="text-amber-400 font-bold text-[10px] uppercase tracking-widest mb-2 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-amber-400"></span>Difesa Naturale</p>
+                    <p class="font-semibold text-sm text-slate-200 leading-tight">Zanzare e glicemia: scopri perché pungono proprio te e cosa mangiare per evitarlo.</p>
+                </div>
+                <div class="bg-gradient-to-br from-amber-500/20 to-transparent p-4 md:p-5 rounded-2xl backdrop-blur-sm border border-amber-500/30">
+                    <p class="text-amber-400 font-bold text-[10px] uppercase tracking-widest mb-2 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-amber-400"></span>Pagine Speciali</p>
+                    <p class="font-semibold text-sm text-slate-200 leading-tight">Anteprima esclusiva dal libro "L'Arte di Fregare la Morte" e Ricettario Estivo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGINA 2: SOMMARIO -->
+    <div class="page-a4 bg-slate-900 text-white p-0 relative">
+        <div class="absolute inset-0 opacity-10" style="background-image: url('https://images.unsplash.com/photo-1507413245164-6160d8298b31?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80&fm=webp'); background-size: cover; background-position: center;"></div>
+        
+        <div class="p-8 md:p-20 relative z-10 flex flex-col h-full">
+            <div>
+                <span class="section-tag bg-amber-600/20 text-amber-400 border border-amber-500/30">Indice Analitico</span>
+                <h2 class="serif-font text-5xl md:text-7xl font-black mb-8 md:mb-12 border-b-2 border-slate-700 pb-6 md:pb-8 text-white mt-4 md:mt-6">Sommario.</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-16 gap-y-4 md:gap-y-6 text-base md:text-lg font-medium mt-4">
+                <div class="flex justify-between items-end border-b border-slate-700/50 pb-2">
+                    <span class="text-slate-300 pr-4">Editoriale: La grande truffa dell'inverno</span> 
+                    <span class="text-amber-500 font-black text-2xl md:text-3xl leading-none">03</span>
+                </div>
+                <div class="flex justify-between items-end border-b border-slate-700/50 pb-2">
+                    <span class="text-slate-300 pr-4">Il Callo Solare: Abbronzarsi da dentro</span> 
+                    <span class="text-amber-500 font-black text-2xl md:text-3xl leading-none">04</span>
+                </div>
+                <div class="flex justify-between items-end border-b border-slate-700/50 pb-2">
+                    <span class="text-slate-300 pr-4">Pelli Chiare e Cheratosi: Strategie</span> 
+                    <span class="text-amber-500 font-black text-2xl md:text-3xl leading-none">05</span>
+                </div>
+                <div class="flex justify-between items-end border-b border-slate-700/50 pb-2">
+                    <span class="text-slate-300 pr-4">Bio-Hacking dell'Abbronzatura (Olio di Cocco)</span> 
+                    <span class="text-amber-500 font-black text-2xl md:text-3xl leading-none">06</span>
+                </div>
+                <div class="flex justify-between items-end border-b border-slate-700/50 pb-2">
+                    <span class="text-slate-300 pr-4">Il Caldo che Sfianca: Pressione e Calo</span> 
+                    <span class="text-amber-500 font-black text-2xl md:text-3xl leading-none">07</span>
+                </div>
+                <div class="flex justify-between items-end border-b border-slate-700/50 pb-2">
+                    <span class="text-slate-300 pr-4">Ritrovare l'Energia (Magnesio & SIRTPRO)</span> 
+                    <span class="text-amber-500 font-black text-2xl md:text-3xl leading-none">08</span>
+                </div>
+                <div class="flex justify-between items-end border-b border-slate-700/50 pb-2">
+                    <span class="text-slate-300 pr-4">Scudo Anti-Zanzare: Cambia Odore</span> 
+                    <span class="text-amber-500 font-black text-2xl md:text-3xl leading-none">09</span>
+                </div>
+                <div class="flex justify-between items-end border-b border-slate-700/50 pb-2">
+                    <span class="text-slate-300 pr-4">Aperitivi e Gelati: Trucchi Glicemici</span> 
+                    <span class="text-amber-500 font-black text-2xl md:text-3xl leading-none">10</span>
+                </div>
+                <div class="flex justify-between items-end border-b border-slate-700/50 pb-2">
+                    <span class="text-slate-300 pr-4">La Verità sull'Anguria e la Frutta Estiva</span> 
+                    <span class="text-amber-500 font-black text-2xl md:text-3xl leading-none">11</span>
+                </div>
+                <div class="flex justify-between items-end border-b border-slate-700/50 pb-2">
+                    <span class="text-slate-300 pr-4">Dormire Bene anche a 30 Gradi</span> 
+                    <span class="text-amber-500 font-black text-2xl md:text-3xl leading-none">12</span>
+                </div>
+                <div class="flex justify-between items-end border-b border-slate-700/50 pb-2">
+                    <span class="text-amber-500 font-bold pr-4">Pubblicità / Sponsor</span> 
+                    <span class="text-amber-500 font-black text-2xl md:text-3xl leading-none">13</span>
+                </div>
+                <div class="flex justify-between items-end border-b border-amber-500/50 pb-2">
+                    <span class="text-amber-400 font-bold pr-4 italic">Speciale: "L'Arte di Fregare la Morte"</span> 
+                    <span class="text-amber-400 font-black text-2xl md:text-3xl leading-none">14</span>
+                </div>
+                <div class="flex justify-between items-end border-b border-slate-700/50 pb-2">
+                    <span class="text-brand-accent font-bold pr-4">Ricettario Funzionale / 01</span> 
+                    <span class="text-brand-accent font-black text-2xl md:text-3xl leading-none">15</span>
+                </div>
+                <div class="flex justify-between items-end border-b border-slate-700/50 pb-2">
+                    <span class="text-brand-accent font-bold pr-4">Ricettario Funzionale / 02</span> 
+                    <span class="text-brand-accent font-black text-2xl md:text-3xl leading-none">16</span>
+                </div>
+                <div class="flex justify-between items-end border-b border-slate-700/50 pb-2">
+                    <span class="text-brand-accent font-bold pr-4">Ricettario Funzionale / 03</span> 
+                    <span class="text-brand-accent font-black text-2xl md:text-3xl leading-none">17</span>
+                </div>
+            </div>
+            
+            <div class="mt-auto pt-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-4 md:gap-0 opacity-60">
+                <div>
+                    <!-- Logo sostituibile -->
+                    <img src="LOGO_HP.png" alt="Human Plus Logo" class="h-8 md:h-10 object-contain mb-1">
+                    <span class="text-[10px] tracking-widest uppercase">Speciale Estate / Vol. 06</span>
+                </div>
+                <div class="text-left md:text-right">
+                    <span class="text-xs md:text-sm font-bold text-slate-400 italic">"Sopravvivere o Prosperare?"</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-number">02</div><div class="footer-brand">Human Plus</div>
+    </div>
+
+    <!-- PAGINA 3: L'EDITORIALE -->
+    <div class="page-a4">
+        <span class="section-tag bg-amber-100 text-amber-700">L'Editoriale</span>
+        <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-6 md:mb-8 leading-tight">Il sole non fa male. <br>Fa male viverci lontano tutto l'anno.</h2>
+        
+        <div class="columns-1 md:columns-2 gap-6 md:gap-10 text-justify text-[15px]">
+            <p><span class="dropcap">O</span>gni anno, verso Maggio, i media lanciano lo stesso identico allarme: "Proteggetevi dal sole, è il nemico pubblico numero uno per la vostra pelle". Ci hanno convinti che i raggi solari siano un raggio laser pronto a distruggerci, obbligandoci a spalmarci creme chimiche fin dal primo giorno di mare. Ma fermiamoci a ragionare con la logica della biologia: l'essere umano si è evoluto per milioni di anni sotto il sole, a petto nudo, cacciando e raccogliendo. Se il sole fosse davvero così tossico di per sé, saremmo già estinti da un pezzo.</p>
+            
+            <p>Il vero problema non è la stella che ci illumina. Il problema è il nostro <strong>stile di vita da grotta moderna</strong>.</p>
+
+            <p><strong>La Sindrome dell'Impiegato</strong><br>
+            Cosa facciamo noi oggi? Passiamo da Ottobre a Giugno rinchiusi in uffici illuminati da luci al neon, seduti in auto, chiusi in casa. La nostra pelle perde ogni memoria della luce solare, diventa bianca, sottile, indifesa. Poi, il 15 Agosto, andiamo in ferie e ci buttiamo a pancia in giù su un lettino a mezzogiorno per sei ore di fila. È ovvio che ci bruciamo! È come pretendere di correre una maratona alzandosi dal divano dopo un anno di inattività totale: i muscoli cedono. Allo stesso modo, la pelle non allenata, cede.</p>
+
+            <p><strong>Il Paradosso del Melanoma</strong><br>
+            C'è un dato che i dermatologi faticano a spiegare: le persone che lavorano all'aperto tutto l'anno (contadini, muratori, pescatori) hanno tassi di tumori della pelle molto inferiori rispetto a chi lavora in ufficio tutto l'anno e prende il sole solo due settimane in vacanza in modo violento. Il motivo? Si chiama adattamento biologico.</p>
+
+            <div class="magazine-quote">
+                "La pelle non è un pezzo di carta che si brucia. È un organo vivo che si allena, si fortifica e risponde agli stimoli."
+            </div>
+
+            <div class="flex items-center gap-4 mt-6 mb-6">
+                <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-blue-600 shadow-md flex-shrink-0">
+                    <img src="mm.jpg" alt="Marco Menichelli" class="w-full h-full object-cover" loading="lazy">
+                </div>
+                <div>
+                    <p class="font-black text-lg text-slate-900 leading-tight">Marco Menichelli</p>
+                    <p class="text-[10px] font-bold text-blue-600 uppercase tracking-widest">CEO Relife Nutrition</p>
+                </div>
+            </div>
+            
+            <p>In questo numero, cambieremo le regole della tua estate. Ti sveleremo come preparare la pelle dall'interno creando quello che gli antichi chiamavano "Callo Solare", e scopriremo i vecchi rimedi per far fronte a zanzare, caldo sfiancante e aperitivi che rovinano la linea. L'estate non è fatta per sopravvivere coperti di creme. È fatta per prosperare.</p>
+        </div>
+        
+        <div class="mt-8 md:mt-12 bg-amber-50 rounded-3xl p-6 md:p-8 flex flex-col sm:flex-row items-start gap-4 md:gap-6 border border-amber-200 shadow-inner">
+            <div class="w-12 h-12 md:w-16 md:h-16 bg-amber-500 rounded-full flex items-center justify-center text-white text-2xl md:text-3xl flex-shrink-0 shadow-lg">☀️</div>
+            <div>
+                <h4 class="font-black text-lg md:text-xl text-amber-900 mb-2">Il vero ruolo della Crema Solare</h4>
+                <p class="text-sm text-amber-800 leading-relaxed">Attenzione: non stiamo dicendo che le scottature facciano bene. Le scottature distruggono il DNA della pelle! Ma la crema solare ad alta protezione andrebbe usata solo come strumento di emergenza quando si è costretti a stare sotto il sole cocente per troppe ore. Usarla costantemente, fin dal mattino presto, <strong>blocca la produzione del 95% della Vitamina D</strong>, un ormone fondamentale per la salute delle ossa e per prevenire proprio i tumori. Il trucco è l'esposizione intelligente e progressiva.</p>
+            </div>
+        </div>
+        <div class="page-number">03</div><div class="footer-brand">Human Plus</div>
+    </div>
+
+    <!-- PAGINA 4: IL CALLO SOLARE -->
+    <div class="page-a4">
+        <span class="section-tag bg-amber-100 text-amber-700">Dossier Pelle / Parte 1</span>
+        <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-4 md:mb-6 leading-tight">Costruire il "Callo Solare":<br>Abbronzarsi da dentro.</h2>
+        <p class="text-sm md:text-base mb-6 md:mb-8 text-slate-600 font-medium">L'abbronzatura non è un difetto estetico, è un perfetto sistema di difesa del corpo. Quando i raggi UV colpiscono la pelle, il corpo produce melanina, uno scudo scuro che assorbe la luce ed evita che bruci gli strati profondi. Ma questo scudo ha bisogno di tempo e di materie prime per essere costruito.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8">
+            <div class="bg-white border border-slate-200 p-6 rounded-[2rem] shadow-sm">
+                <span class="text-4xl mb-3 block">🕰️</span>
+                <h4 class="font-black text-slate-900 text-lg mb-2">La Regola dei 15 Minuti</h4>
+                <p class="text-xs md:text-sm text-slate-700 leading-relaxed">
+                    Come si allena la pelle? Non spalmandosi di crema 50 e stando 8 ore al sole. Si comincia a Maggio/Giugno. Esponiti al sole vero (senza crema) per <strong>soli 10 o 15 minuti al giorno</strong>, magari in pausa pranzo. Questo tempo brevissimo non basta per farti bruciare, ma è sufficiente per dare al corpo il segnale: "Ehi, c'è il sole, inizia a produrre melanina". Giorno dopo giorno, la pelle si ispessisce e si scurisce, creando il "callo solare". Ad Agosto, avrai già un'armatura naturale.
+                </p>
+            </div>
+            
+            <div class="bg-white border border-slate-200 p-6 rounded-[2rem] shadow-sm">
+                <span class="text-4xl mb-3 block">💊</span>
+                <h4 class="font-black text-slate-900 text-lg mb-2">L'Astaxantina: Il filtro solare da bere</h4>
+                <p class="text-xs md:text-sm text-slate-700 leading-relaxed">
+                    Sapevi perché i fenicotteri sono rosa o i salmoni sono rossi? Perché mangiano un'alga potentissima chiamata Astaxantina. Questa molecola è il più forte antiossidante in natura. Assunta come integratore un mese prima dell'estate, si deposita nella tua pelle e agisce letteralmente come una crema solare interna, assorbendo i radicali liberi generati dai raggi UV e prevenendo l'eritema solare.
+                </p>
+            </div>
+        </div>
+
+        <h3 class="font-black text-slate-900 text-xl mb-4 border-b-2 border-slate-200 pb-2">I Mattoni dell'Abbronzatura (Cosa mangiare)</h3>
+        <table class="block md:table w-full overflow-x-auto">
+            <thead>
+                <tr>
+                    <th style="width: 25%">Il Nutriente</th>
+                    <th style="width: 35%">Come funziona sulla pelle</th>
+                    <th style="width: 40%">Dove lo trovi (Senza integratori)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span class="block text-lg font-black text-slate-900 whitespace-nowrap">Tirosina</span>
+                    </td>
+                    <td>È l'amminoacido (proteina) base da cui il corpo "fabbrica" fisicamente il colore nero della melanina. Senza di lei, non ti scurisci.</td>
+                    <td>Carne bianca, mandorle, semi di zucca e parmigiano. Se mangi solo insalatine per la prova costume, non ti abbronzerai mai bene.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="block text-lg font-black text-slate-900 whitespace-nowrap">Rame</span>
+                    </td>
+                    <td>Funziona come un operaio specializzato che aiuta la Tirosina a trasformarsi in melanina.</td>
+                    <td>Fegato (la fonte migliore in assoluto), ostriche, funghi shiitake e cacao amaro.</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="block text-lg font-black text-slate-900 whitespace-nowrap">Licopene</span>
+                    </td>
+                    <td>Non previene l'ustione, ma dona alla pelle un sottotono dorato e caldo, molto più bello del classico "rosso peperone".</td>
+                    <td>Pomodori cotti (non crudi! Il calore libera il licopene), anguria e pompelmo rosa.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="hack-box">
+            <div class="flex flex-col sm:flex-row items-start gap-4">
+                <div class="bg-amber-500 rounded-full p-2 mt-1">
+                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+                <div>
+                    <h4 class="font-black text-lg md:text-xl mb-1 text-white">Attenzione agli occhiali da sole!</h4>
+                    <p class="text-xs md:text-sm text-slate-300 leading-relaxed">
+                        Un trucco pazzesco: il nostro cervello capisce quanto sole c'è fuori guardando attraverso i nostri occhi. Quando la luce forte colpisce la retina, la ghiandola pituitaria invia l'ordine alla pelle di produrre melanina per difendersi. Se stai al mare tutto il giorno con occhiali da sole scurissimi, il tuo cervello penserà di essere all'ombra! Risultato? Smetterà di inviare l'ordine di difendersi, e la tua pelle si scotterà molto più facilmente. Togli gli occhiali nei momenti meno luminosi per far capire al corpo dove ti trovi.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="page-number">04</div><div class="footer-brand">Human Plus</div>
+    </div>
+
+    <!-- PAGINA 5: TIPI DI PELLE -->
+    <div class="page-a4">
+        <span class="section-tag bg-amber-100 text-amber-700">Dossier Pelle / Parte 2</span>
+        <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-6 md:mb-8 leading-tight">Non siamo tutti uguali:<br>Pelli bianche e Cheratosi.</h2>
+        
+        <div class="columns-1 md:columns-2 gap-6 md:gap-10 text-justify text-[15px]">
+            <p><span class="dropcap">È</span> inutile girarci intorno: la genetica gioca un ruolo enorme. Chi ha la pelle olivastra o scura (fototipo 4 o 5) ha già in partenza una fabbrica di melanina molto efficiente. Ma cosa deve fare chi ha la pelle "color latte", capelli rossi, lentiggini o chi ha sviluppato macchie ruvide chiamate cheratosi attiniche?</p>
+            
+            <p>Se appartieni ai fototipi chiari (1 e 2), il tuo corpo non riuscirà mai a produrre abbastanza melanina per diventare nero. Il tuo obiettivo non deve essere l'abbronzatura selvaggia, ma <strong>l'ispessimento della pelle</strong> senza infiammazione. Ecco le strategie mirate.</p>
+
+            <p><strong>La Strategia per la Pelle Bianca</strong><br>
+            Per te la regola dei 15 minuti deve diventare la <strong>regola dei 5 minuti</strong>. Esponiti nelle primissime ore del mattino (entro le 10:00) o nel tardo pomeriggio (dopo le 17:00). In questi orari, i raggi UVB (quelli che scottano) sono deboli, mentre i raggi UVA e gli infrarossi (che scaldano e guariscono) sono ottimi. Il tuo alleato numero uno si chiama <strong>Tè Verde (EGCG)</strong>: bere molto tè verde o prenderne l'estratto blocca i danni al DNA causati dai raggi UV nelle pelli chiarissime.</p>
+
+            <p><strong>Affrontare le Macchie e le Cheratosi</strong><br>
+            Le macchie solari (discromie) o le cheratosi (quei pezzetti di pelle ruvida e squamosa che vengono con l'età e il troppo sole) non sono solo un problema estetico: sono cellule danneggiate che non riescono a ripararsi. Se hai questo problema, esporsi brutalmente al sole è vietato. Ma c'è un trucco clinico eccezionale: la <strong>Vitamina B3 (Niacinamide)</strong>.</p> 
+            
+            <p>Assumere integratori di Niacinamide pura o usare sieri viso che la contengono, fornisce alle cellule della pelle l'esatta "batteria" (ATP) necessaria per far partire i meccanismi di riparazione del DNA. Molti studi dimostrano che la Niacinamide riduce drasticamente lo sviluppo di nuove cheratosi nelle persone predisposte.</p>
+
+            <div class="magazine-quote break-inside-avoid mt-6 md:mt-8">
+                "La pelle chiara non è 'sbagliata'. Al Nord Europa, chi ha la pelle bianca assorbe Vitamina D anche con pochissimo sole invernale."
+            </div>
+        </div>
+
+        <div class="mt-8 md:mt-12 bg-white rounded-3xl p-6 md:p-8 shadow-xl border-t-8 border-red-500 relative overflow-hidden">
+            <h3 class="font-black text-xl md:text-2xl uppercase tracking-widest text-slate-900 mb-2">Pericolo: Oli che friggono</h3>
+            <p class="text-xs md:text-sm text-slate-600 leading-relaxed mb-4">
+                Molte persone, nel tentativo di abbronzarsi di più, si spalmano oli solari a buon mercato o peggio, "oli Johnson's baby" (che è puro petrolato). Se usi oli composti da grassi instabili e ti metti sotto i 40 gradi del sole, quegli oli <strong>inizieranno letteralmente a friggere e irrancidire sulla tua pelle</strong>, creando milioni di radicali liberi che causano invecchiamento precoce e rughe profonde. Se vuoi usare un olio, gira pagina e scopri l'unico che dovresti davvero usare.
+            </p>
+        </div>
+        <div class="page-number">05</div><div class="footer-brand">Human Plus</div>
+    </div>
+
+    <!-- PAGINA 6: L'OLIO DI COCCO -->
+    <div class="page-a4">
+        <span class="section-tag bg-cyan-100 text-cyan-700">Bio-Ingegneria / Tradizioni Secolari</span>
+        <h2 class="serif-font text-4xl font-black text-slate-900 mb-4 md:mb-6 leading-tight">Il trucco per abbronzarsi:<br>Senza filtri chimici.</h2>
+        <p class="text-sm md:text-base mb-6 md:mb-8 text-slate-600 font-medium">Ti sei mai chiesto come facevano i popoli dei Tropici o delle isole del Pacifico, che vivono sotto un sole cocente 365 giorni all'anno, ad avere pelli perfette, lisce e zero scottature prima che inventassero le creme solari negli anni '50? Semplice: usavano la tecnologia della natura.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8">
+            <div>
+                <img src="https://images.unsplash.com/photo-1587311925978-312cb927f8a9?auto=format&fit=crop&w=800&q=80" alt="Cocco" class="w-full h-48 object-cover rounded-2xl shadow-md mb-4">
+                <h4 class="font-black text-lg mb-2">L'Olio di Cocco Puro</h4>
+                <p class="text-xs md:text-sm text-slate-700 leading-relaxed">
+                    L'Olio di cocco vergine è un grasso saturo estremamente stabile. Questo significa che, a differenza di altri oli, <strong>non "frigge" e non si ossida</strong> sotto i raggi del sole. Al contrario, quando lo spalmi sulla pelle, fa tre cose magiche: nutre la pelle impedendo che si secchi, funge da leggero e naturale fattore di protezione solare (SPF circa 4 o 5) permettendo comunque l'assorbimento della Vitamina D, e ha potenti proprietà antibatteriche. È il segreto millenario dei polinesiani.
+                </p>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1615486171431-7299a4e320f2?auto=format&fit=crop&w=800&q=80" alt="Oli Naturali" class="w-full h-48 object-cover rounded-2xl shadow-md mb-4">
+                <h4 class="font-black text-lg mb-2">Olio di Semi di Lampone</h4>
+                <p class="text-xs md:text-sm text-slate-700 leading-relaxed">
+                    Questo è un "hack" per intenditori. L'olio estratto a freddo dai semi di lampone rosso ha dimostrato in studi di laboratorio di possedere una naturale capacità di deviare i raggi solari, con un fattore di protezione stimato (non ufficiale, ma molto alto) contro i raggi UVA e UVB. Mescolare un paio di gocce di olio di lampone con l'olio di cocco crea uno scudo naturale fantastico per le passeggiate mattutine.
+                </p>
+            </div>
+        </div>
+
+        <div class="mt-8 bg-cyan-50 border border-cyan-200 rounded-3xl p-6 md:p-8 relative overflow-hidden">
+            <div class="absolute -right-4 -top-4 text-[80px] md:text-[120px] font-black text-cyan-100/50">🧴</div>
+            <div class="relative z-10">
+                <h4 class="font-black text-xl md:text-2xl text-cyan-900 mb-2">Il lato oscuro delle Creme Solari (Filtri Chimici)</h4>
+                <p class="text-xs md:text-sm text-cyan-800 leading-relaxed mb-4">
+                    Molte creme solari da supermercato usano "filtri chimici" come l'Oxybenzone. Queste sostanze non riflettono il sole, ma penetrano nel tuo sangue per assorbire i raggi. Il problema? L'Oxybenzone è un noto <strong>interferente endocrino</strong>: significa che disturba i tuoi ormoni (come gli estrogeni) e può causare problemi al sistema riproduttivo. Inoltre, distrugge le barriere coralline quando fai il bagno.
+                </p>
+                <p class="text-xs md:text-sm font-bold text-cyan-900 uppercase tracking-wide">
+                    La Soluzione: Quando DEVI stare al sole forte e serve la crema, usa solo creme con FILTRI FISICI (chiamati anche minerali). Cerca nell'etichetta solo due ingredienti: "Ossido di Zinco" o "Biossido di Titanio". Fanno un po' l'effetto "fantasma bianco" sulla pelle, ma restano in superficie e fanno scudo senza avvelenarti il sangue.
+                </p>
+            </div>
+        </div>
+        <div class="page-number">06</div><div class="footer-brand">Human Plus</div>
+    </div>
+
+    <!-- PAGINA 7: IL CALDO CHE SFIANCA -->
+    <div class="page-a4">
+        <span class="section-tag">Focus Corpo ed Estate</span>
+        <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-6 md:mb-8 leading-tight">Perché in estate ci sentiamo<br>come stracci bagnati?</h2>
+        
+        <div class="columns-1 md:columns-2 gap-6 md:gap-10 text-justify text-[15px]">
+            <p><span class="dropcap">A</span>rriva il caldo, superiamo i 30 gradi, e improvvisamente fare le scale sembra faticoso come scalare una montagna. Le gambe pesano, la testa gira, e la voglia di fare crolla. Incolpiamo l'afa, ma cosa sta succedendo davvero dentro le nostre vene?</p>
+            
+            <p>Il corpo umano è una macchina termoregolatrice perfetta. Il nostro cervello (precisamente l'ipotalamo) deve mantenere gli organi interni a circa 36.5 gradi. Quando l'aria esterna è bollente, il corpo deve "buttare fuori" il calore in eccesso, altrimenti andremmo in ebollizione.</p>
+
+            <p><strong>La Vasodilatazione Periferica</strong><br>
+            Per raffreddarsi, il corpo usa due trucchi: suda (usando l'acqua per raffreddare la pelle evaporando) e <strong>allarga i vasi sanguigni</strong> vicino alla superficie della pelle per far disperdere il calore del sangue nell'aria. Allargando i vasi, però, si crea un problema meccanico: è come far passare la stessa quantità d'acqua in un tubo grande il doppio. La pressione dell'acqua crolla. <strong>Ecco perché ti gira la testa e ti senti stanco: la tua pressione sanguigna scende a picco.</strong></p>
+
+            <p><strong>L'emorragia di Elettroliti</strong><br>
+            Il secondo problema è il sudore. Non stiamo sudando solo acqua pura. Stiamo letteralmente svuotando le nostre riserve preziose di minerali che fungono da "elettricità" per i nostri muscoli e per il nostro cervello. Senza di loro, la trasmissione nervosa rallenta, causando la tipica sonnolenza estiva.</p>
+
+            <div class="magazine-quote">
+                "Non sei senza energie. È il tuo corpo che sta spendendo tutte le tue forze nel disperato tentativo di farti rimanere fresco."
+            </div>
+
+            <p>Come facciamo a fregare questo sistema? Bere semplice acqua non basta (anzi, troppa acqua senza sali minerali diluisce ancora di più il sangue peggiorando le cose). Dobbiamo rimettere dentro l'hardware, i mattoni strutturali. Voltiamo pagina e scopriamo gli interruttori giusti da schiacciare per rimetterti in piedi.</p>
+        </div>
+
+        <div class="mt-8 md:mt-10 bg-slate-50 border-l-8 border-brand-blue p-5 md:p-6 rounded-r-3xl">
+            <h4 class="font-black text-lg md:text-xl mb-2 text-slate-900">Il falso mito dello Zucchero</h4>
+            <p class="text-xs md:text-sm text-slate-700 italic">Quando abbiamo i cali di pressione d'estate, le nonne ci dicevano: "Prendi acqua e zucchero!". Sbagliatissimo. Lo zucchero alza la glicemia, che dopo mezz'ora crollerà facendoti sentire peggio di prima. Quello che serve quando hai i giramenti di testa non è lo zucchero, è il <strong>SALE</strong>. Il sodio trattiene l'acqua nelle vene, alzando immediatamente la pressione sanguigna in modo sano.</p>
+        </div>
+        <div class="page-number">07</div><div class="footer-brand">Human Plus</div>
+    </div>
+
+    <!-- PAGINA 8: RITROVARE L'ENERGIA -->
+    <div class="page-a4">
+        <span class="section-tag">Manuale Operativo / Recupero Estivo</span>
+        <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-6 md:mb-8 leading-tight">Riattaccare la spina:<br>I minerali del vigore.</h2>
+        
+        <p class="text-base md:text-lg text-slate-700 leading-relaxed mb-6 md:mb-8">
+            Abbiamo capito che stiamo perdendo corrente elettrica sudando. Per riattaccare la spina, devi essere chirurgico. Comprare quegli integratori frizzanti color arancione al supermercato non serve a nulla: sono pieni di edulcoranti chimici e usano forme di minerali economiche che il tuo intestino butterà via. Ecco le vere armi del Bio-Hacker.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-8 md:mb-10">
+            <div class="bg-white border border-slate-200 rounded-2xl p-5 md:p-6 shadow-sm">
+                <span class="text-3xl mb-3 block">🍌</span>
+                <h3 class="font-black text-xl text-slate-900 mb-2">Potassio (Il Voltaggio)</h3>
+                <p class="text-sm text-slate-700">È il re dell'energia intracellulare. Aiuta il cuore a battere forte e i muscoli a non sentirsi svuotati. La regola d'oro del Potassio è <strong>mangiarlo, non integrarlo</strong> (gli integratori per legge ne contengono troppo poco per essere sicuri). Mangia avocado, banane mature, patate bollite fredde o bevi la pura acqua di cocco naturale senza zuccheri aggiunti.</p>
+            </div>
+            
+            <div class="bg-white border border-slate-200 rounded-2xl p-5 md:p-6 shadow-sm">
+                <span class="text-3xl mb-3 block">🧂</span>
+                <h3 class="font-black text-xl text-slate-900 mb-2">Magnesio (Il Rilassatore)</h3>
+                <p class="text-sm text-slate-700">Se il potassio è l'acceleratore, il Magnesio è l'olio del motore. Calma i battiti accelerati dal caldo e toglie la stanchezza mentale. Se sudi, è lui il primo a scappare via. <strong>Integra ogni sera 400mg di Magnesio Bisglicinato o Malato</strong> (scappa se leggi Magnesio Ossido dietro l'etichetta).</p>
+            </div>
+        </div>
+
+        <div class="p-6 md:p-10 bg-slate-900 text-white rounded-[2rem] shadow-2xl relative overflow-hidden mt-auto">
+            <div class="absolute right-0 top-0 w-32 md:w-64 h-full bg-blue-600/20 transform skew-x-12 translate-x-10 hidden md:block"></div>
+            
+            <div class="relative z-10 flex flex-col md:flex-row gap-6 items-center">
+                <div class="w-full md:w-2/3">
+                    <h4 class="font-black text-blue-400 text-lg md:text-2xl mb-3 uppercase tracking-widest">L'Arte di "Svegliare" le Cellule</h4>
+                    <p class="text-xs md:text-sm text-slate-300 leading-relaxed mb-4 text-justify">
+                        Oltre ai minerali, la fiacca estiva è dovuta a un calo di efficienza dei mitocondri (le nostre centrali energetiche). C'è una classe di proteine nel nostro corpo, chiamate <strong>Sirtuine</strong> (note come i geni della longevità), che quando vengono attivate dicono al corpo di smettere di invecchiare e iniziare a produrre energia pulita.
+                    </p>
+                    <p class="text-xs md:text-sm text-slate-300 leading-relaxed text-justify">
+                        L'integrazione d'avanguardia usa complessi naturali (come resveratrolo, polidatina e pterostilbene) per accendere questi geni. Se vuoi spazzare via la nebbia mentale e la fiacca estiva alla radice, il trucco è unire i minerali giusti a un attivatore metabolico potente come <strong>SIRTPRO MAX</strong> (il complex avanzato di Relife Nutrition).
+                    </p>
+                </div>
+                <div class="w-full md:w-1/3 flex justify-center">
+                    <!-- Placeholder per eventuale prodotto o icona -->
+                    <div class="w-24 h-24 md:w-32 md:h-32 bg-blue-800 rounded-full flex items-center justify-center border-4 border-blue-500 shadow-[0_0_30px_rgba(37,99,235,0.5)]">
+                        <span class="font-black text-2xl md:text-3xl text-white">SIRT</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-number">08</div><div class="footer-brand">Human Plus</div>
+    </div>
+
+    <!-- PAGINA 9: ZANZARE -->
+    <div class="page-a4">
+        <span class="section-tag bg-red-100 text-red-700">Hacks Estivi / Difesa Naturale</span>
+        <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-6 md:mb-8 leading-tight">Perché pungono proprio te?<br>Il bio-hacking anti-zanzare.</h2>
+        
+        <div class="columns-1 md:columns-2 gap-6 md:gap-10 text-justify text-[15px]">
+            <p><span class="dropcap">S</span>iamo a una grigliata all'aperto. Ci sono 10 persone, ma le zanzare sembrano accanirsi sempre e solo contro una o due di loro, ignorando gli altri. Ti sei mai chiesto perché? Non è una questione di "sangue dolce" (che è una diceria delle nonne), ma è pura chimica olfattiva.</p>
+            
+            <p>Le zanzare non vedono benissimo, ma hanno un olfatto formidabile. Ci individuano da decine di metri di distanza "annusando" il nostro respiro (l'anidride carbonica) e, soprattutto, <strong>annuendo i composti chimici che espelliamo attraverso il sudore della pelle.</strong></p>
+
+            <p>Se mangi male, se consumi tanti zuccheri e carboidrati raffinati, o se bevi birra, il tuo corpo produrrà molto <em>Acido Lattico</em> e <em>Acido Urico</em>, sostanze che le zanzare trovano assolutamente irresistibili. Sei praticamente un faro luminoso nella notte per loro.</p>
+            
+            <p>Ma ecco come possiamo fregare il loro sistema di navigazione cambiando il nostro odore dall'interno, senza spruzzarci addosso sostanze chimiche tossiche (come il DEET) che entrano nei nostri polmoni e nel nostro flusso sanguigno.</p>
+        </div>
+
+        <div class="mt-8 space-y-4">
+            <!-- Hack 1 -->
+            <div class="bg-white border-l-4 border-red-500 p-4 shadow-sm rounded-r-xl">
+                <h4 class="font-black text-lg text-slate-900 mb-1">1. Il trucco della Vitamina B1 (Tiamina)</h4>
+                <p class="text-sm text-slate-700">Questo è l'hack dei vecchi esploratori. Se prendi buone dosi di Vitamina B1 (Tiamina) per qualche settimana, il tuo corpo espellerà un leggerissimo odore attraverso i pori della pelle. A te (e alle altre persone) risulterà totalmente inodore e impercettibile, ma <strong>per le zanzare puzzerà di lievito andato a male</strong>, mascherando il tuo vero odore. Non si avvicineranno nemmeno.</p>
+            </div>
+            
+            <!-- Hack 2 -->
+            <div class="bg-white border-l-4 border-red-500 p-4 shadow-sm rounded-r-xl">
+                <h4 class="font-black text-lg text-slate-900 mb-1">2. L'Aglio Inodoro</h4>
+                <p class="text-sm text-slate-700">L'allicina presente nell'aglio è un repellente naturale fantastico. Ovviamente mangiare aglio crudo non è l'ideale per le uscite estive. La soluzione è comprare capsule di "Estratto di Aglio Invecchiato" (Aged Garlic Extract). Ha tutti i benefici protettivi, cambia il tuo sapore per gli insetti, ma zero odore per gli umani.</p>
+            </div>
+
+            <!-- Hack 3 -->
+            <div class="bg-white border-l-4 border-red-500 p-4 shadow-sm rounded-r-xl">
+                <h4 class="font-black text-lg text-slate-900 mb-1">3. Olio di Neem (Uso Esterno)</h4>
+                <p class="text-sm text-slate-700">Se proprio devi mettere qualcosa sulla pelle, dimentica gli spray chimici da supermercato. L'Olio di Neem (un albero indiano) ha un odore particolare e un po' forte, ma scombussola totalmente i recettori delle zanzare. Diluisci qualche goccia di Olio di Neem puro in olio di mandorle e spalmalo sulle caviglie.</p>
+            </div>
+        </div>
+
+        <div class="page-number">09</div><div class="footer-brand">Human Plus</div>
+    </div>
+
+    <!-- PAGINA 10: TRUCCHI GLICEMICI -->
+    <div class="page-a4">
+        <span class="section-tag bg-blue-100 text-blue-700">Bio-Ingegneria / La Vita Sociale</span>
+        <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-6 md:mb-8 leading-tight italic">Sopravvivere agli Aperitivi:<br>I trucchi glicemici.</h2>
+        
+        <p class="text-sm md:text-base text-slate-700 mb-6 md:mb-8 leading-loose text-justify">
+            L'estate non è fatta per stare chiusi in casa a pesare il petto di pollo. Ci sono le cene fuori, gli spritz al tramonto, i coni gelato passeggiando sul lungomare. Ma ingozzarsi di carboidrati e alcolici senza regole ti farà svegliare gonfio come un pallone e pieno di fiacca. Come facciamo a goderci la vita senza far impazzire l'insulina? Usando i trucchi biochimici giusti.
+        </p>
+
+        <div class="space-y-6 md:space-y-8">
+            
+            <!-- Il Trucco dell'Ordine -->
+            <div class="flex flex-col md:flex-row gap-4 md:gap-6 items-start p-6 bg-slate-50 rounded-3xl border border-slate-200">
+                <div class="text-4xl mt-1">🥗</div>
+                <div>
+                    <h4 class="font-black text-slate-900 text-lg mb-2">L'Ordine del Piatto: Fibra e Proteine prima</h4>
+                    <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                        Sei a cena fuori e stai per mangiare una bella pizza o un piatto di pasta di mare? Il modo peggiore di farlo è a stomaco vuoto: lo zucchero arriverà nel sangue come uno tsunami. <strong>Il trucco? Ordina sempre una bella insalata verde condita con olio prima del pasto vero.</strong> Le fibre delle verdure e i grassi dell'olio creeranno una "rete" viscida all'interno del tuo stomaco e del tuo intestino. Quando poi mangerai la pizza, l'amido verrà intrappolato in questa rete e passerà nel sangue molto più lentamente. Un gesto banale che ti salva dal picco glicemico.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Il Trucco dell'Aceto -->
+            <div class="flex flex-col md:flex-row gap-4 md:gap-6 items-start p-6 bg-slate-50 rounded-3xl border border-slate-200">
+                <div class="text-4xl mt-1">🍏</div>
+                <div>
+                    <h4 class="font-black text-slate-900 text-lg mb-2">L'Hack dell'Aceto di Mele</h4>
+                    <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                        L'acido acetico è il nemico numero uno degli enzimi che digeriscono i carboidrati. Se bevi un cucchiaio di Aceto di Mele puro non pastorizzato (diluito in un grande bicchiere d'acqua) circa 15 minuti prima del pasto sgarro o del gelato, l'aceto bloccherà parzialmente la scomposizione degli zuccheri, rallentando drasticamente il rilascio di glucosio. È scienza, e costa pochi centesimi.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Il Trucco del Movimento -->
+            <div class="flex flex-col md:flex-row gap-4 md:gap-6 items-start p-6 bg-slate-50 rounded-3xl border border-slate-200">
+                <div class="text-4xl mt-1">🚶‍♂️</div>
+                <div>
+                    <h4 class="font-black text-slate-900 text-lg mb-2">Passeggiata Post-Prandiale: Muscoli come spugne</h4>
+                    <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                        Hai mangiato il gelato o sei andato oltre con le birre? Non sederti al tavolo a chiacchierare per ore. Alzati e fai una camminata vivace di 10 o 15 minuti. Quando i tuoi muscoli lavorano (anche solo camminando), diventano in grado di assorbire il glucosio dal sangue <strong>senza bisogno di usare l'insulina</strong>. La camminata dopo cena abbassa letteralmente lo zucchero nel sangue bruciandolo all'istante.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        <div class="page-number">10</div><div class="footer-brand">Human Plus</div>
+    </div>
+
+    <!-- PAGINA 11: LA FRUTTA ESTIVA -->
+    <div class="page-a4">
+        <span class="section-tag bg-red-100 text-red-700">Dossier Nutrizione / I falsi amici</span>
+        <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-6 md:mb-8 leading-tight">La Verità sull'Anguria<br>e la frutta sotto l'ombrellone.</h2>
+        
+        <div class="columns-1 md:columns-2 gap-6 md:gap-10 text-[15px] text-justify">
+            <p class="text-base md:text-lg font-bold text-red-600 mb-4 block">L'immagine classica dell'estate? Mangiarsi mezza anguria fredda sulla spiaggia per rinfrescarsi e mantenersi leggeri. Pessima, pessima idea.</p>
+            <p>La frutta moderna non è la frutta che mangiavano i nostri nonni. L'agricoltura ha selezionato frutti sempre più grandi, più dolci e privi di semi (eliminando le fibre). L'anguria di oggi, ad esempio, è letteralmente <strong>acqua e fruttosio zuccherino</strong>, quasi priva di qualsiasi freno fibroso che ne rallenti l'assorbimento.</p>
+            
+            <p>Se mangi due grosse fette di anguria a stomaco vuoto (sotto il sole in spiaggia, o peggio come pasto sostitutivo), lo zucchero schizza direttamente nel tuo fegato. Il fegato umano fa una tremenda fatica a smaltire grandi quantità di fruttosio in un solo colpo: non potendolo usare come energia per i muscoli, lo converte direttamente in <strong>trigliceridi (grasso)</strong>.</p>
+
+            <p>Inoltre, questo rapido picco farà scattare un violento rilascio di insulina. Dopo 40 minuti, il tuo zucchero nel sangue crollerà: avrai una fame da lupi, ti sentirai spossato, la pressione ti scenderà e rovinerai il tuo pomeriggio in spiaggia con una letargia invincibile.</p>
+            
+            <h4 class="font-black text-slate-900 text-lg mt-6 mb-2">Ma l'anguria fa tutto male? Assolutamente no!</h4>
+            <p>La polpa (specie verso la parte bianca della buccia) è ricchissima di <strong>Citrullina</strong>, un amminoacido pazzesco che rilassa i vasi sanguigni, abbassa la pressione, migliora la circolazione e per gli sportivi fa arrivare più sangue ai muscoli.</p>
+
+            <p><strong>Come si mangia la frutta zuccherina d'estate?</strong><br>
+            Mai, mai a stomaco vuoto. Mangia la tua fetta di anguria, o di melone, o le tue pesche, <strong>esattamente alla fine di un bel pasto proteico</strong> (magari dopo aver mangiato del pesce, o delle uova, o una bella insalata con olive). Le proteine e i grassi del pasto che hai appena fatto nello stomaco rallenteranno l'assorbimento del fruttosio, permettendoti di goderti il gusto e i benefici (come la citrullina) senza subire il maledetto crollo di energia e senza ingrassare.</p>
+        </div>
+
+        <div class="mt-8 bg-red-50 border border-red-200 rounded-3xl p-6 relative overflow-hidden">
+            <h4 class="font-black text-xl text-red-900 mb-2">La frutta sicura: I Frutti Rossi</h4>
+            <p class="text-sm text-red-800 leading-relaxed">
+                Se proprio vuoi fare uno spuntino di frutta a stomaco vuoto senza combinare disastri, devi scegliere l'unica frutta che è rimasta fedele alla natura: <strong>i frutti di bosco (mirtilli, more, lamponi)</strong>. Sono piccolissimi, pieni zeppi di fibra dura e hanno pochissimo fruttosio. In compenso sono bombe nere o rosse di polifenoli (potenti antiossidanti che difendono la pelle dal sole). Un cestino di mirtilli sotto l'ombrellone è un trucco da vero bio-hacker.
+            </p>
+        </div>
+
+        <div class="page-number">11</div><div class="footer-brand">Human Plus</div>
+    </div>
+
+    <!-- PAGINA 12: DORMIRE COL CALDO -->
+    <div class="page-a4">
+        <span class="section-tag bg-indigo-100 text-indigo-700">Architettura del Sonno / Estate</span>
+        <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-6 md:mb-8 leading-tight">Dormire bene anche<br>a 30 gradi in camera.</h2>
+        
+        <p class="text-sm md:text-base text-slate-700 mb-6 md:mb-8 leading-loose text-justify">
+            È la maledizione di Luglio e Agosto: ci si rigira nel letto sudati, le lenzuola appiccicano, e il cervello non vuole saperne di spegnersi. Senza aria condizionata (che a lungo andare secca la gola e blocca la cervicale), dormire sembra un'impresa eroica. Perché succede e come lo hackeriamo?
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-10">
+            <div>
+                <h4 class="font-black text-slate-900 text-lg mb-2">La Regola Biologica del Freddo</h4>
+                <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                    Per permettere al cervello di staccare la spina e scendere nelle fasi di sonno profondo (quelle che ti fanno svegliare riposato), <strong>la tua temperatura interna (il cuore del corpo) deve obbligatoriamente scendere di circa mezzo grado</strong>. Se in stanza ci sono 30 gradi, il corpo non riesce a disperdere calore. Resta caldo, resta in allerta, e tu non ti addormenti.
+                </p>
+            </div>
+            <div class="bg-indigo-50 border border-indigo-200 p-5 rounded-2xl">
+                <h4 class="font-black text-indigo-900 text-lg mb-2">Il trucco della "Doccia Ingannatrice"</h4>
+                <p class="text-xs md:text-sm text-indigo-800 leading-relaxed text-justify">
+                    Molti fanno una doccia gelata prima di dormire sperando di raffreddarsi. Sbagliato! La doccia gelata fa restringere i vasi sanguigni e "intrappola" il calore dentro il tuo corpo, facendoti sudare il doppio dopo 10 minuti. Il vero bio-hack è farsi una <strong>doccia tiepida/calduccia</strong>. L'acqua calda fa dilatare i pori e le vene vicino alla pelle, così non appena esci dal box doccia, il calore interno fuggirà via nell'aria, raffreddando il cuore del tuo corpo in modo naturale e facendoti venire sonno all'istante.
+                </p>
+            </div>
+        </div>
+
+        <div class="space-y-6">
+            <!-- Hack mani e piedi -->
+            <div class="flex items-start gap-4 p-5 bg-white border border-slate-200 shadow-sm rounded-2xl">
+                <div class="text-3xl mt-1">🦶</div>
+                <div>
+                    <h4 class="font-black text-slate-900 text-base md:text-lg mb-1">Piedi scoperti: I radiatori del corpo</h4>
+                    <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                        I palmi delle mani e le piante dei piedi sono pieni di vene speciali chiamate "anastomosi". Funzionano come i radiatori dell'automobile: sono progettati per buttare fuori calore in fretta. Se non riesci a dormire, tieni il corpo leggermente coperto da un lenzuolo sottile (dà sicurezza al cervello), ma tieni <strong>sempre i piedi scoperti e all'aria</strong> o vicini a una borsa del ghiaccio. Disperderanno calore per tutto il corpo, aiutando il cervello a spegnersi.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Magnesio Glicinato -->
+            <div class="flex items-start gap-4 p-5 bg-white border border-slate-200 shadow-sm rounded-2xl">
+                <div class="text-3xl mt-1">🧂</div>
+                <div>
+                    <h4 class="font-black text-slate-900 text-base md:text-lg mb-1">Il sedativo naturale: Magnesio e Glicina</h4>
+                    <p class="text-xs md:text-sm text-slate-700 leading-relaxed text-justify">
+                        Ne abbiamo già parlato, ma in estate è vitale. L'amminoacido Glicina è noto nella scienza per abbassare attivamente la temperatura corporea centrale innescando il sonno. Se unito al Magnesio (che toglie i crampi e rilassa i nervi), crea la pozione magica. Prendi <strong>Magnesio Bisglicinato</strong> 45 minuti prima di mettere la testa sul cuscino sudato. Sarà il tuo condizionatore chimico interno.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-number">12</div><div class="footer-brand">Human Plus</div>
+    </div>
+
+    <!-- PAGINA 13: PUBBLICITÀ FULL SCREEN -->
+    <div class="page-a4 adv-page p-0 relative bg-slate-900 min-h-[60vh] md:min-h-[297mm]">
+        <!-- Immagine della pubblicità inserita dall'utente -->
+        <img src="sirtpropub.png" alt="Spazio Pubblicitario" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+        <div class="absolute bottom-4 right-4 bg-black/50 text-white/80 text-[10px] md:text-xs px-3 py-1 rounded backdrop-blur-sm font-bold tracking-widest uppercase z-10">Adv</div>
+        <div class="page-number text-white/50">13</div>
+        <div class="footer-brand text-white/50">Human Plus</div>
+    </div>
+
+    <!-- PAGINA 14: L'ARTE DI FREGARE LA MORTE -->
+    <div class="page-a4 bg-amber-50">
+        <span class="section-tag bg-amber-900 text-amber-400">Speciale Letterario / Estratto</span>
+        <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-6 leading-tight">L'Arte di fregare<br>la Morte.</h2>
+        
+        <div class="flex flex-col md:flex-row gap-8 items-center mb-8">
+            <div class="w-full md:w-1/3">
+                <div class="w-full aspect-[2/3] bg-slate-800 rounded-xl shadow-2xl relative overflow-hidden border-4 border-white flex items-center justify-center">
+                    <!-- Placeholder copertina libro (stilizzato) -->
+                    <div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1544640808-32cb4f68eb27?auto=format&fit=crop&w=400&q=80')] bg-cover"></div>
+                    <div class="text-center z-10 px-4">
+                        <p class="text-amber-500 font-bold text-[10px] tracking-widest uppercase mb-2">Marco Menichelli</p>
+                        <h3 class="serif-font text-white font-black text-2xl leading-tight">L'Arte di<br>fregare<br>la Morte</h3>
+                        <div class="w-12 h-1 bg-amber-500 mx-auto mt-4"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="w-full md:w-2/3">
+                <h3 class="font-black text-xl md:text-2xl text-slate-900 mb-4">I rimedi della nonna? Molte volte la Scienza ha dovuto dargli ragione.</h3>
+                <p class="text-sm md:text-base text-slate-700 leading-relaxed mb-4 text-justify">
+                    In questo rivoluzionario saggio, esploriamo come le tradizioni secolari e le apparenti "stregonerie" del passato nascondessero profonde intuizioni biologiche. Molto prima dei microscopi, i nostri antenati avevano già capito come manipolare il calore, il freddo, la dieta e il riposo per ottimizzare la salute e sfuggire alle malattie.
+                </p>
+                <p class="text-sm md:text-base text-slate-700 leading-relaxed mb-6 text-justify">
+                    Questo non è un libro di vecchie favole: è un viaggio affascinante in cui la medicina molecolare moderna viene usata per <em>spiegare scientificamente</em> perché quegli antichi stratagemmi funzionavano dannatamente bene, e come possiamo applicarli noi, oggi, per hackerare la nostra fisiologia e allontanare l'invecchiamento.
+                </p>
+                <a href="https://www.amazon.it/LArte-fregare-Morte-esperimenti-funzionavano/dp/B0GPNFKZYB" target="_blank" class="inline-block bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:-translate-y-1">
+                    Scoprilo su Amazon Italia
+                </a>
+            </div>
+        </div>
+
+        <div class="bg-white p-6 md:p-8 rounded-[2rem] border border-amber-200 shadow-sm">
+            <h4 class="font-black text-amber-900 text-lg mb-3">Un estratto dai temi trattati:</h4>
+            <ul class="space-y-3 text-sm text-slate-700 leading-relaxed">
+                <li class="flex gap-3"><span class="text-amber-500">🔥</span> <strong>L'Ormesi Termica:</strong> Perché il caldo estremo (la sauna antica) e il freddo brutale non ci uccidono, ma rendono i nostri geni antifragili.</li>
+                <li class="flex gap-3"><span class="text-amber-500">🍽️</span> <strong>Il Digiuno Strategico:</strong> Non morire di fame, ma insegnare alle cellule a fare l'autofagia (mangiare la propria "spazzatura" interna per restare giovani).</li>
+                <li class="flex gap-3"><span class="text-amber-500">🌿</span> <strong>Botanica Dimenticata:</strong> Le piante usate per millenni che la scienza ha scoperto essere potenti attivatori del metabolismo e difensori immunitari.</li>
+            </ul>
+        </div>
+        
+        <div class="mt-6 text-center text-xs text-slate-500">
+            Disponibile in versione Cartacea o Digitale anche su <a href="https://relifenutrition.com/products/arte-di-fregare-la-morte" class="underline text-amber-600 font-bold" target="_blank">RelifeNutrition.com</a>
+        </div>
+
+        <div class="page-number">14</div><div class="footer-brand">Human Plus</div>
+    </div>
+
+    <!-- PAGINA 15: RICETTARIO 1 - PUDDING SURRENALE -->
+    <div class="page-a4">
+        <span class="section-tag bg-amber-100 text-amber-700">Ricettario Funzionale / Ricetta 01</span>
+        <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-2 leading-tight">Il Frullato dell'Abbronzatura Estrema.</h2>
+        <p class="text-base md:text-lg text-slate-600 mb-6 md:mb-8 font-medium">Un concentrato rapido per dare alla tua pelle esattamente i mattoni (Tirosina, Rame, Antiossidanti) che servono per fabbricare la melanina, mantenendoti fresco e idratato.</p>
+
+        <div class="w-full h-48 md:h-64 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden mb-6 md:mb-8 shadow-lg">
+            <!-- Immagine Smoothie -->
+            <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?auto=format&fit=crop&w=1200&q=80" alt="Smoothie Abbronzatura" class="w-full h-full object-cover" loading="lazy">
+        </div>
+
+        <!-- Info Bar -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 md:mb-8">
+            <div class="bg-white border border-slate-200 rounded-2xl p-3 md:p-4 text-center shadow-sm">
+                <span class="block text-xl md:text-2xl mb-1">⏱️</span>
+                <span class="block text-[10px] md:text-xs font-bold uppercase text-slate-500">Preparazione</span>
+                <span class="block text-sm md:text-base font-black text-slate-900">4 Min</span>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-2xl p-3 md:p-4 text-center shadow-sm">
+                <span class="block text-xl md:text-2xl mb-1">🔪</span>
+                <span class="block text-[10px] md:text-xs font-bold uppercase text-slate-500">Abilità</span>
+                <span class="block text-sm md:text-base font-black text-slate-900">Frullatore</span>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-2xl p-3 md:p-4 text-center shadow-sm">
+                <span class="block text-xl md:text-2xl mb-1">💪</span>
+                <span class="block text-[10px] md:text-xs font-bold uppercase text-slate-500">Beneficio</span>
+                <span class="block text-sm md:text-base font-black text-slate-900">Melanina</span>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-2xl p-3 md:p-4 text-center shadow-sm">
+                <span class="block text-xl md:text-2xl mb-1">📉</span>
+                <span class="block text-[10px] md:text-xs font-bold uppercase text-slate-500">Zuccheri</span>
+                <span class="block text-sm md:text-base font-black text-slate-900">Bassi</span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-10">
+            <div class="col-span-1 md:col-span-2">
+                <h4 class="font-black text-lg md:text-xl border-b-2 border-amber-400 pb-2 mb-3 md:mb-4 text-slate-900">Gli Ingredienti</h4>
+                <ul class="space-y-2 md:space-y-3 text-xs md:text-sm text-slate-700">
+                    <li class="flex items-start gap-2">✔️ <span class="leading-tight">200ml latte di mandorla al naturale freddo.</span></li>
+                    <li class="flex items-start gap-2">✔️ <span class="leading-tight">1 Carota cruda (ottima per i carotenoidi base).</span></li>
+                    <li class="flex items-start gap-2">✔️ <span class="font-bold text-slate-900 leading-tight">1 misurino di Proteine Isolate Gusto Vaniglia (fonti ricchissime di Tirosina pura).</span></li>
+                    <li class="flex items-start gap-2">✔️ <span class="leading-tight">Un cucchiaio colmo di vero Cacao Amaro in polvere (una bomba di Rame e antiossidanti).</span></li>
+                    <li class="flex items-start gap-2">✔️ <span class="leading-tight">Qualche Nocciola sgusciata.</span></li>
+                    <li class="flex items-start gap-2">✔️ <span class="leading-tight">5/6 cubetti di ghiaccio grandi.</span></li>
+                </ul>
+            </div>
+            <div class="col-span-1 md:col-span-3">
+                <h4 class="font-black text-lg md:text-xl border-b-2 border-slate-200 pb-2 mb-3 md:mb-4 text-slate-900">La Preparazione</h4>
+                <ol class="space-y-3 md:space-y-4 text-xs md:text-sm text-slate-700 list-decimal pl-4">
+                    <li class="pl-2 leading-relaxed">Pulisci e taglia la carota a pezzetti piccoli per non sforzare il frullatore.</li>
+                    <li class="pl-2 leading-relaxed">Versa il latte di mandorla freddissimo nel bicchiere del frullatore, aggiungi le carote, le nocciole e il cacao amaro.</li>
+                    <li class="pl-2 leading-relaxed">Aggiungi ora l'ingrediente segreto per il sapore e la struttura muscolare: il <strong>misurino di Proteine alla Vaniglia</strong>. Eviterà che il tuo zucchero nel sangue schizzi alle stelle regalandoti un sapore dolce senza sensi di colpa.</li>
+                    <li class="pl-2 leading-relaxed">Metti il ghiaccio e aziona il frullatore alla massima potenza per un minuto pieno, per frantumare bene le carote e il ghiaccio, creando una consistenza da vero "Frappuccino" freddo.</li>
+                    <li class="pl-2 leading-relaxed">Bevilo a colazione o come spuntino fresco a metà pomeriggio, lontano dai pasti pesanti.</li>
+                </ol>
+
+                <div class="mt-6 bg-slate-900 text-white rounded-2xl p-4 md:p-5 shadow-lg">
+                    <h5 class="font-bold text-amber-400 mb-1 flex items-center gap-2 text-sm md:text-base">🧠 Il Segreto Salutare della Ricetta</h5>
+                    <p class="text-[10px] md:text-xs text-slate-300 leading-relaxed">
+                        Per fare l'abbronzatura, il corpo prende un amminoacido (la Tirosina) e usando un enzima (che funziona a Rame) lo trasforma nel pigmento scuro Melanina. Questo frullato ti dà alte dosi di Tirosina biodisponibile tramite le Proteine isolate del siero, e tantissimo Rame organico tramite il cacao amaro. Unito ai carotenoidi delle carote, stai letteralmente bevendo gli operai e i mattoni per costruire il tuo muro solare.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="page-number">15</div><div class="footer-brand">Human Plus</div>
+    </div>
+
+    <!-- PAGINA 16: RICETTARIO 2 -->
+    <div class="page-a4">
+        <span class="section-tag bg-cyan-100 text-cyan-700">Ricettario Funzionale / Ricetta 02</span>
+        <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-2 leading-tight">Insalata Spacca-Glicemia.</h2>
+        <p class="text-base md:text-lg text-slate-600 mb-6 md:mb-8 font-medium">L'antipasto obbligatorio perfetto da mangiare 15 minuti prima della cena sgarro estiva (pizza o frittura di pesce), progettata per "ingabbiare" gli zuccheri e abbassare la glicemia.</p>
+
+        <div class="w-full h-48 md:h-64 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden mb-6 md:mb-8 shadow-lg">
+            <!-- Immagine insalata aceto -->
+            <img src="https://images.unsplash.com/photo-1512621843614-b4bf1c50a6ae?auto=format&fit=crop&w=1200&q=80" alt="Insalata Glicemica" class="w-full h-full object-cover" loading="lazy">
+        </div>
+
+        <!-- Info Bar -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 md:mb-8">
+            <div class="bg-white border border-slate-200 rounded-2xl p-3 md:p-4 text-center shadow-sm">
+                <span class="block text-xl md:text-2xl mb-1">⏱️</span>
+                <span class="block text-[10px] md:text-xs font-bold uppercase text-slate-500">Preparazione</span>
+                <span class="block text-sm md:text-base font-black text-slate-900">5 Min</span>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-2xl p-3 md:p-4 text-center shadow-sm">
+                <span class="block text-xl md:text-2xl mb-1">🔪</span>
+                <span class="block text-[10px] md:text-xs font-bold uppercase text-slate-500">Abilità</span>
+                <span class="block text-sm md:text-base font-black text-slate-900">Base</span>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-2xl p-3 md:p-4 text-center shadow-sm">
+                <span class="block text-xl md:text-2xl mb-1">💰</span>
+                <span class="block text-[10px] md:text-xs font-bold uppercase text-slate-500">Spesa</span>
+                <span class="block text-sm md:text-base font-black text-slate-900">Economica</span>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-2xl p-3 md:p-4 text-center shadow-sm">
+                <span class="block text-xl md:text-2xl mb-1">📉</span>
+                <span class="block text-[10px] md:text-xs font-bold uppercase text-slate-500">Impatto</span>
+                <span class="block text-sm md:text-base font-black text-slate-900">Zero Calorie</span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-10">
+            <div class="col-span-1 md:col-span-2">
+                <h4 class="font-black text-lg md:text-xl border-b-2 border-cyan-400 pb-2 mb-3 md:mb-4 text-slate-900">Gli Ingredienti</h4>
+                <ul class="space-y-2 md:space-y-3 text-xs md:text-sm text-slate-700">
+                    <li class="flex items-start gap-2">✔️ <span class="leading-tight">Verdure in foglia verde scuro e amara (Rucola, Radicchio, Cicoria, Spinacini crudi). Dimentica la lattuga chiara.</span></li>
+                    <li class="flex items-start gap-2">✔️ <span class="leading-tight">1 Cucchiaiata di Aceto di Mele non pastorizzato (con la "madre" torbida sul fondo).</span></li>
+                    <li class="flex items-start gap-2">✔️ <span class="leading-tight">1 Cucchiaio di Olio Extra Vergine di Oliva buonissimo.</span></li>
+                    <li class="flex items-start gap-2">✔️ <span class="leading-tight">Una manciata di semi di Lino o di Chia per una struttura a gel.</span></li>
+                    <li class="flex items-start gap-2">✔️ <span class="leading-tight">Sale marino integrale per gli elettroliti.</span></li>
+                </ul>
+            </div>
+            <div class="col-span-1 md:col-span-3">
+                <h4 class="font-black text-lg md:text-xl border-b-2 border-slate-200 pb-2 mb-3 md:mb-4 text-slate-900">La Strategia Pratica</h4>
+                <ol class="space-y-3 md:space-y-4 text-xs md:text-sm text-slate-700 list-decimal pl-4">
+                    <li class="pl-2 leading-relaxed">Crea l'insalata unendo le verdure a foglia scura amara. Il sapore amaro stimola i recettori sulla lingua che inviano un segnale al fegato: preparati a produrre bile e succhi gastrici forti.</li>
+                    <li class="pl-2 leading-relaxed">Condisci rigorosamente con molto Olio Extra Vergine di Oliva (che rallenta lo svuotamento dello stomaco) e il vero segreto: <strong>l'Aceto di Mele torbido</strong>. Niente glasse dolci!</li>
+                    <li class="pl-2 leading-relaxed">Spargi sopra i semi di lino o chia e un pizzico di sale e mastica l'insalata molto lentamente, prima che ti portino la pizza o i dolci al tavolo.</li>
+                </ol>
+
+                <div class="mt-6 bg-slate-900 text-white rounded-2xl p-4 md:p-5 shadow-lg">
+                    <h5 class="font-bold text-cyan-400 mb-1 flex items-center gap-2 text-sm md:text-base">🛡️ Il Segreto Salutare della Ricetta</h5>
+                    <p class="text-[10px] md:text-xs text-slate-300 leading-relaxed">
+                        L'acido acetico (dell'aceto di mele) paralizza letteralmente l'enzima Alfa-Amilasi, quello che di solito usa la saliva e lo stomaco per spaccare i carboidrati e trasformarli in glucosio rapido. Mettendo prima nello stomaco una rete fitta (fibre della verdura amara) bagnata di grassi (olio d'oliva) e acido acetico, i carboidrati della pizza che mangerai dopo si incastreranno in questa rete, scendendo lentamente nell'intestino e abbassando il picco di insulina anche del 30-40%. Furbizia molecolare.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="page-number">16</div><div class="footer-brand">Human Plus</div>
+    </div>
+
+    <!-- PAGINA 17: RICETTARIO 3 - MAGNESIO SERALE -->
+    <div class="page-a4">
+        <span class="section-tag bg-emerald-100 text-emerald-700">Ricettario Funzionale / Ricetta 03</span>
+        <h2 class="serif-font text-4xl md:text-5xl font-black text-slate-900 mb-2 leading-tight">L'Elisir Estivo<br>Del Riposo.</h2>
+        <p class="text-base md:text-lg text-slate-600 mb-6 md:mb-8 font-medium">Una tisana tiepida e rinfrescante (non bollente!), studiata appositamente per abbassare la temperatura interna, integrare i minerali persi sudando e spegnere l'ansia pre-nanna estiva.</p>
+
+        <div class="w-full h-48 md:h-64 rounded-[1.5rem] md:rounded-[2rem] overflow-hidden mb-6 md:mb-8 shadow-lg">
+            <!-- Immagine tisana fredda -->
+            <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=1200&q=80" alt="Tisana fredda relax" class="w-full h-full object-cover" loading="lazy">
+        </div>
+
+        <!-- Info Bar -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 md:mb-8">
+            <div class="bg-white border border-slate-200 rounded-2xl p-3 md:p-4 text-center shadow-sm">
+                <span class="block text-xl md:text-2xl mb-1">⏱️</span>
+                <span class="block text-[10px] md:text-xs font-bold uppercase text-slate-500">Preparazione</span>
+                <span class="block text-sm md:text-base font-black text-slate-900">5 Min</span>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-2xl p-3 md:p-4 text-center shadow-sm">
+                <span class="block text-xl md:text-2xl mb-1">🔪</span>
+                <span class="block text-[10px] md:text-xs font-bold uppercase text-slate-500">Abilità</span>
+                <span class="block text-sm md:text-base font-black text-slate-900">Facile</span>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-2xl p-3 md:p-4 text-center shadow-sm">
+                <span class="block text-xl md:text-2xl mb-1">💤</span>
+                <span class="block text-[10px] md:text-xs font-bold uppercase text-slate-500">Beneficio</span>
+                <span class="block text-sm md:text-base font-black text-slate-900">Sonno a Gocce</span>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-2xl p-3 md:p-4 text-center shadow-sm">
+                <span class="block text-xl md:text-2xl mb-1">📉</span>
+                <span class="block text-[10px] md:text-xs font-bold uppercase text-slate-500">Zuccheri</span>
+                <span class="block text-sm md:text-base font-black text-slate-900">Zero</span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-10">
+            <div class="col-span-1 md:col-span-2">
+                <h4 class="font-black text-lg md:text-xl border-b-2 border-emerald-400 pb-2 mb-3 md:mb-4 text-slate-900">Gli Ingredienti</h4>
+                <ul class="space-y-2 md:space-y-3 text-xs md:text-sm text-slate-700">
+                    <li class="flex items-start gap-2">✔️ <span class="leading-tight">Una tazza di acqua filtrata tiepida (non dal frigo, non bollente).</span></li>
+                    <li class="flex items-start gap-2">✔️ <span class="font-bold text-slate-900 leading-tight">2 misurini di Magnesio puro (forma Citrato o Bisglicinato). Evita la forma ossido.</span></li>
+                    <li class="flex items-start gap-2">✔️ <span class="leading-tight">1 bustina (o cucchiaio se sfusa) di fiori di Camomilla purissima (Altissima Apigenina).</span></li>
+                    <li class="flex items-start gap-2">✔️ <span class="leading-tight">Un ciuffetto di menta piperita fresca (per abbassare la percezione termica).</span></li>
+                    <li class="flex items-start gap-2">✔️ <span class="leading-tight">Niente miele, niente zucchero. L'insulina deve restare a terra prima di dormire.</span></li>
+                </ul>
+            </div>
+            <div class="col-span-1 md:col-span-3">
+                <h4 class="font-black text-lg md:text-xl border-b-2 border-slate-200 pb-2 mb-3 md:mb-4 text-slate-900">La Semplicissima Preparazione</h4>
+                <ol class="space-y-3 md:space-y-4 text-xs md:text-sm text-slate-700 list-decimal pl-4">
+                    <li class="pl-2 leading-relaxed">Porta l'acqua a 60-70 gradi massimo (non deve bollire fortissimo per non bruciare la delicatezza dei fiori). Lascia in infusione la vera camomilla e le foglioline di menta schiacciate per 6-8 minuti, chiusa con un coperchio per non far evaporare gli oli essenziali che calmano il respiro.</li>
+                    <li class="pl-2 leading-relaxed">Rimuovi i fiori e le erbe e lascia intiepidire il liquido a temperatura ambiente per altri 5-10 minuti. Ricorda il bio-hack: in estate se bevi robe ghiacciate il corpo brucia calorie per ri-scaldarle, facendoti sudare; se bevi tiepido il corpo apre i pori e disperde calore, rinfrescandoti davvero.</li>
+                    <li class="pl-2 leading-relaxed">Ora, sciogli la dose di <strong>Magnesio in polvere</strong> nel liquido tiepido, mescolando finché l'acqua non torna trasparente (niente granelli sul fondo!).</li>
+                    <li class="pl-2 leading-relaxed">Sorseggia sul divano, possibilmente in penombra o con luce rossa, una mezz'ora prima di strisciare tra le lenzuola.</li>
+                </ol>
+
+                <div class="mt-6 bg-slate-900 text-white rounded-2xl p-4 md:p-5 shadow-lg">
+                    <h5 class="font-bold text-emerald-400 mb-1 flex items-center gap-2 text-sm md:text-base">⚙️ Il Segreto Salutare della Ricetta</h5>
+                    <p class="text-[10px] md:text-xs text-slate-300 leading-relaxed">
+                        L'Apigenina presente nei veri fiori di camomilla non è una leggenda della nonna: si attacca fisicamente ai recettori GABA del cervello, funzionando quasi come un blando ansiolitico farmaceutico (ma senza farti alcun male e senza dare dipendenza). Il Magnesio unito a liquidi tiepidi rilassa la tensione contrattuale muscolare che si accumula quando passiamo ore fermi in stanze troppo calde o sotto l'aria condizionata gelida. Menta per illudere le mucose termiche della gola con un tocco di "falso freddo".
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="page-number">17</div><div class="footer-brand">Human Plus</div>
+    </div>
+
+    <!-- Pagine Extra Placeholder o Chiusura -->
+    <div class="page-a4 justify-center bg-slate-900 text-white text-center">
+        <h2 class="serif-font text-5xl font-black text-amber-500 mb-4 italic">Enjoy the Sun.</h2>
+        <p class="text-slate-400 font-bold uppercase tracking-widest text-sm">Fine Volume 06 / Speciale Estate.</p>
+        <div class="page-number">18</div><div class="footer-brand">Human Plus</div>
+    </div>
+
+    </div> <!-- Fine magazine-container -->
+    
+    <script>
+        function generatePDF() {
+            const btn = document.getElementById('downloadBtn');
+            const btnText = document.getElementById('btnText');
+            const originalText = btnText.innerHTML;
+            
+            // Feedback visivo all'utente
+            btnText.innerHTML = 'Generazione in corso...';
+            btn.classList.add('animate-pulse', 'opacity-80');
+            btn.disabled = true;
+
+            const container = document.getElementById('magazine-container');
+            const pages = document.querySelectorAll('.page-a4');
+            
+            // Preparazione esatta delle pagine per html2pdf
+            pages.forEach((p, index) => {
+                p.style.margin = '0';
+                p.style.boxShadow = 'none';
+                p.style.width = '210mm';
+                p.style.height = '297mm'; // Fissa l'altezza esattamente ad un foglio A4
+                p.style.maxHeight = '297mm';
+                p.style.overflow = 'hidden'; // Taglia fuori eventuali pixel in eccesso per evitare spezzamenti
+                // Aggiunge un page-break CSS esplicito tra le pagine
+                if(index > 0) {
+                    p.style.pageBreakBefore = 'always';
+                }
+            });
+
+            // Opzioni di html2pdf per alta qualità e allineamento perfetto
+            var opt = {
+                margin:       0,
+                filename:     'Human_Plus_Issue06_Summer.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { 
+                    scale: 2, 
+                    useCORS: true, 
+                    scrollY: 0 // Assicura che l'offset di scroll non sfalsi il canvas
+                },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+                // Istruiamo html2pdf a leggere i page-break CSS e ad evitare rotture interne ai container
+                pagebreak:    { mode: ['css', 'avoid-all'] }
+            };
+
+            html2pdf().set(opt).from(container).save().then(() => {
+                // Ripristiniamo il layout originale dopo il download
+                pages.forEach(p => {
+                    p.style.margin = '';
+                    p.style.boxShadow = '';
+                    p.style.width = '';
+                    p.style.height = '';
+                    p.style.maxHeight = '';
+                    p.style.overflow = '';
+                    p.style.pageBreakBefore = '';
+                });
+                btnText.innerHTML = originalText;
+                btn.classList.remove('animate-pulse', 'opacity-80');
+                btn.disabled = false;
+            });
+        }
+    </script>
+</body>
+</html>
